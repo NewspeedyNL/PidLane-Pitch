@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PidLane — Koop je volgende auto met zekerheid</title>
+<meta name="description" content="PidLane checkt via OBD2 én online de auto die je wilt kopen: bekende merk-modelproblemen bij die kilometerstand, foutcodes, verborgen gebreken en een eerlijk eindoordeel. In gewoon Nederlands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0A0E1A;--card:#111827;--card2:#161D2E;--blue:#1A6FFF;--cyan:#00D4FF;
+--green:#00FF88;--okgreen:#22C55E;--orange:#FF6B35;--red:#EF4444;--yellow:#F59E0B;
+--white:#FFFFFF;--mist:#8892A4;--border:#1E2A3E;
+--f-display:'Space Grotesk',sans-serif;--f-body:'Inter',sans-serif;--f-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--white);font-family:var(--f-body);line-height:1.6;overflow-x:hidden}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,14,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--f-display);font-weight:700;font-size:20px;display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:var(--mist);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--green);color:#062013;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;transition:transform .2s}
+.nav-cta:hover{transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:130px 48px 80px;position:relative;overflow:hidden;gap:50px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 35%,rgba(0,255,136,.10) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 85% 65%,rgba(0,212,255,.06) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.28}
+.hero-content{position:relative;z-index:1;max-width:560px;flex-shrink:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.25);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+h1{font-family:var(--f-display);font-size:clamp(38px,4.6vw,62px);font-weight:700;line-height:1.08;margin-bottom:22px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(135deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:var(--mist);max-width:480px;margin-bottom:34px;line-height:1.7}
+.hero-sub strong{color:var(--white);font-weight:600}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.btn-p{background:var(--green);color:#062013;padding:14px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;transition:transform .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-p:hover{transform:translateY(-1px)}
+.btn-s{background:transparent;color:var(--white);padding:14px 30px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--border);transition:all .2s}
+.btn-s:hover{border-color:var(--green);color:var(--green)}
+.hero-proof{display:flex;gap:24px;flex-wrap:wrap}
+.hp{display:flex;flex-direction:column;gap:2px}
+.hp-v{font-family:var(--f-mono);font-size:18px;color:var(--cyan)}
+.hp-l{font-size:11px;color:var(--mist)}
+
+/* HERO — aankoop-check kaart */
+.hero-visual{position:relative;z-index:1;flex:1;display:flex;justify-content:flex-end;min-width:0}
+.check-card{width:420px;max-width:100%;background:var(--card);border-radius:18px;border:1px solid var(--border);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,255,136,.08)}
+.cc-top{background:#0D1424;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.cc-brand{display:flex;align-items:center;gap:7px;font-family:var(--f-display);font-weight:700;font-size:14px}
+.cc-step{font-family:var(--f-mono);font-size:9px;color:var(--green)}
+.cc-body{padding:16px 18px}
+.cc-q{font-size:9px;color:var(--mist);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 5px}
+.cc-input{display:flex;align-items:center;justify-content:space-between;background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px}
+.cc-input .lab{color:var(--mist);font-size:11px}
+.cc-input .val{font-family:var(--f-mono);font-size:12px;color:var(--white)}
+.plate{display:inline-flex;align-items:center;background:#FFD200;color:#0b0b0b;font-family:var(--f-mono);font-weight:700;font-size:13px;letter-spacing:1px;border-radius:5px;padding:3px 9px;border:1px solid #c9a700}
+.stars{color:var(--green);font-size:13px;letter-spacing:1px}
+.cc-divider{height:1px;background:var(--border);margin:14px 0}
+.cc-scan{display:flex;align-items:center;gap:9px;font-size:11px;color:var(--cyan);margin-bottom:10px}
+.cc-scan .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:pulse 1.4s infinite;flex-shrink:0}
+.cc-find{font-size:11px;color:var(--mist);line-height:1.6;padding:4px 0;display:flex;gap:8px;align-items:flex-start}
+.cc-find b{color:var(--white);font-weight:600}
+.cc-find .ic{flex-shrink:0}
+
+/* SECTIONS */
+section{padding:90px 48px}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+h2{font-family:var(--f-display);font-size:clamp(28px,3.8vw,44px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.section-sub{font-size:16px;color:var(--mist);max-width:560px;line-height:1.7}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 48px}
+
+/* AANKOOP-CHECK uitleg */
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:52px}
+.flow-steps{display:flex;flex-direction:column;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.fs{background:var(--card);padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:background .2s}
+.fs:hover{background:var(--card2)}
+.fs-n{font-family:var(--f-mono);font-size:12px;color:var(--green);flex-shrink:0;width:24px;padding-top:1px}
+.fs-t{font-family:var(--f-display);font-size:15px;font-weight:600;margin-bottom:3px}
+.fs-d{font-size:12px;color:var(--mist);line-height:1.6}
+.flow-aside{background:linear-gradient(135deg,rgba(0,255,136,.06),rgba(0,212,255,.04));border:1px solid rgba(0,255,136,.2);border-radius:16px;padding:28px}
+.flow-aside h3{font-family:var(--f-display);font-size:19px;font-weight:600;margin-bottom:12px}
+.flow-aside p{font-size:14px;color:var(--mist);line-height:1.7}
+.flow-aside .badge{display:inline-block;font-family:var(--f-mono);font-size:10px;color:var(--green);background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.25);border-radius:6px;padding:4px 9px;margin-bottom:14px}
+.new-pill{display:inline-block;background:var(--green);color:#062013;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;padding:3px 8px;vertical-align:middle;margin-left:8px}
+
+/* INPUT POINTS */
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:32px}
+.pt{background:var(--card);padding:18px 16px}
+.pt-ic{font-size:20px;margin-bottom:8px}
+.pt-t{font-family:var(--f-display);font-size:14px;font-weight:600;margin-bottom:3px}
+.pt-d{font-size:11px;color:var(--mist);line-height:1.5}
+
+/* ANGST / GERUSTSTELLING */
+.fears{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:48px}
+.fc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
+.fc-q{font-family:var(--f-display);font-size:16px;font-weight:600;margin-bottom:10px;color:var(--white)}
+.fc-a{font-size:13px;color:var(--mist);line-height:1.65}
+.fc-a strong{color:var(--green)}
+
+/* RAPPORTEN tabs (consument) */
+.rapport-tabs{display:flex;gap:8px;margin:36px 0 28px;flex-wrap:wrap}
+.rtab{padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--mist);font-family:var(--f-body);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.rtab.r-green.active{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.4);color:var(--okgreen)}
+.rtab.r-orange.active{background:rgba(245,158,11,.15);border-color:rgba(245,158,11,.3);color:var(--yellow)}
+.rtab.r-red.active{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.3);color:var(--red)}
+.rapport-panel{display:none;animation:fadeIn .3s ease}
+.rapport-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.rp-card{background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden}
+.rp-header{padding:22px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.rp-status{padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.b-green{background:rgba(34,197,94,.2);color:var(--okgreen);border:1px solid rgba(34,197,94,.3)}
+.b-yellow{background:rgba(245,158,11,.15);color:var(--yellow);border:1px solid rgba(245,158,11,.3)}
+.b-red{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.rp-title{font-family:var(--f-display);font-size:19px;font-weight:600}
+.rp-meta{font-size:12px;color:var(--mist);margin-top:2px}
+.rp-body{padding:22px 28px}
+.rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.rp-block{background:var(--card2);border-radius:10px;padding:14px;border:1px solid var(--border)}
+.rp-block-title{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
+.rp-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px}
+.rp-row:last-child{border-bottom:none}
+.rp-row-l{color:var(--mist)}
+.rp-row-v{font-family:var(--f-mono);font-size:11px}
+.v-ok{color:var(--okgreen)}.v-warn{color:var(--orange)}.v-bad{color:var(--red)}.v-info{color:var(--cyan)}
+.score-box{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,212,255,.04));border:1px solid rgba(0,255,136,.2);border-radius:12px;padding:18px;margin-bottom:16px}
+.score-big{font-family:var(--f-display);font-size:42px;font-weight:700;line-height:1}
+.score-big small{font-size:18px;color:var(--mist);font-weight:500}
+.score-txt{font-size:12px;color:var(--mist);line-height:1.6}
+.score-txt strong{color:var(--white)}
+.ai-verdict{background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.2);border-radius:10px;padding:16px}
+.av-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.av-icon{width:26px;height:26px;background:var(--green);color:#062013;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.av-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+.av-text{font-size:12px;color:var(--mist);line-height:1.65}
+.av-text strong{color:var(--white)}
+
+/* ANALYSES bestaand */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+.ac{background:var(--card);border-radius:16px;border:1px solid var(--border);padding:24px;transition:border-color .3s,transform .3s}
+.ac:hover{border-color:var(--green);transform:translateY(-3px)}
+.ac-hdr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ac-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ic-b{background:rgba(26,111,255,.2)}.ic-c{background:rgba(0,212,255,.15)}.ic-o{background:rgba(255,107,53,.15)}.ic-g{background:rgba(34,197,94,.15)}
+.ac-title{font-family:var(--f-display);font-size:17px;font-weight:600}
+.ac-dur{font-size:11px;color:var(--mist);margin-top:2px;font-family:var(--f-mono)}
+.ac-desc{font-size:13px;color:var(--mist);line-height:1.65}
+.ac-desc strong{color:var(--white)}
+
+/* CONTACT */
+.footer-cta{text-align:center;background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,212,255,.04));border-top:1px solid var(--border)}
+.footer-cta h2,.footer-cta .section-sub{margin-left:auto;margin-right:auto}
+.footer-cta .section-sub{margin-bottom:32px}
+.footer-mail{display:inline-block;font-family:var(--f-display);font-size:clamp(20px,3vw,30px);font-weight:600;color:var(--cyan);text-decoration:none;border-bottom:2px solid rgba(0,212,255,.3);padding-bottom:4px;transition:border-color .2s}
+.footer-mail:hover{border-color:var(--cyan)}
+.footer-sig{display:block;color:var(--mist);font-size:13px;margin-top:14px}
+.footer-bottom{padding:20px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--mist);gap:10px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+@media(max-width:960px){
+nav{padding:12px 20px}.nav-links{display:none}
+.hero{padding:100px 20px 60px;flex-direction:column}
+.hero-visual{justify-content:center;width:100%}
+section{padding:60px 20px}
+.flow,.points,.fears,.ag,.rp-grid{grid-template-columns:1fr}
+.points{grid-template-columns:1fr 1fr}
+.divider{margin:0 20px}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="index.html" class="nav-logo"><svg width="34" height="26" viewBox="0 0 220 180" style="flex-shrink:0" aria-hidden="true"><defs><linearGradient id="nlg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00FF88"/><stop offset="1" stop-color="#00D4FF"/></linearGradient><linearGradient id="nls" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9D8CFF"/><stop offset="1" stop-color="#00D4FF"/></linearGradient></defs><rect x="12" y="12" width="168" height="118" rx="26" fill="none" stroke="url(#nlg)" stroke-width="13"/><path d="M 36 71 L 66 71 L 80 47 L 100 99 L 116 59 L 126 71 L 158 71" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><line x1="96" y1="142" x2="96" y2="158" stroke="#00FF88" stroke-width="10" stroke-linecap="round"/><line x1="96" y1="168" x2="96" y2="178" stroke="#2A3645" stroke-width="9" stroke-linecap="round"/><path d="M 180 -2 C 183 13 188 18 204 22 C 188 26 183 31 180 46 C 177 31 172 26 156 22 C 172 18 177 13 180 -2 Z" fill="url(#nls)"/></svg> <span style="color:#fff">Pid</span><span style="color:#00FF88">Lane</span></a>
+<div class="nav-links">
+<a href="index.html">← Voor wie?</a>
+<a href="#aankoop">Aankoop-check</a>
+<a href="#hoe">Hoe het werkt</a>
+<a href="#rapporten">Voorbeeld</a>
+<a href="#analyses">Wat het nog meer kan</a>
+</div>
+<a href="#contact" class="nav-cta">Op de hoogte blijven</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div><div class="hero-grid"></div>
+<div class="hero-content">
+<div class="eyebrow">Voor wie een auto koopt</div>
+<h1>Koop je volgende auto<br><span>met zekerheid.</span></h1>
+<p class="hero-sub">Je staat bij een occasion en twijfelt. PidLane plugt in de OBD2-poort, combineert de meetdata met <strong>bekende problemen van dat merk en model bij die kilometerstand</strong>, en zegt in gewone taal of je moet toeslaan, onderhandelen of weglopen.</p>
+<div class="hero-actions">
+<a href="#aankoop" class="btn-p">Ontdek de aankoop-check →</a>
+<a href="#rapporten" class="btn-s">Bekijk een voorbeeld</a>
+</div>
+<div class="hero-proof">
+<div class="hp"><span class="hp-v">~2 min</span><span class="hp-l">vóór je beslist</span></div>
+<div class="hp"><span class="hp-v">€20–80</span><span class="hp-l">eenmalig een adapter</span></div>
+<div class="hp"><span class="hp-v">2001+</span><span class="hp-l">elke auto met OBD2</span></div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="check-card" aria-label="Voorbeeld aankoop-check">
+<div class="cc-top">
+<div class="cc-brand"><svg width="26" height="20" viewBox="0 0 220 180" aria-hidden="true"><rect x="12" y="12" width="168" height="118" rx="26" fill="none" stroke="#00FF88" stroke-width="13"/><path d="M 36 71 L 66 71 L 80 47 L 100 99 L 116 59 L 126 71 L 158 71" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg> Aankoop-check</div>
+<div class="cc-step">STAP 2/3 · ANALYSE</div>
+</div>
+<div class="cc-body">
+<div class="cc-q">Jouw invoer</div>
+<div class="cc-input"><span class="lab">Kenteken</span><span class="plate">G-123-XY</span></div>
+<div class="cc-input" style="margin-top:6px"><span class="lab">Vraagprijs · km-stand</span><span class="val">€ 12.950 · 96.000</span></div>
+<div class="cc-input" style="margin-top:6px"><span class="lab">Jouw indruk staat</span><span class="stars">★★★★★★★☆☆☆ 7/10</span></div>
+<div class="cc-divider"></div>
+<div class="cc-scan"><span class="dot"></span>PidLane zoekt online + leest de auto uit…</div>
+<div class="cc-find"><span class="ic">🔎</span><span>Bekend bij dit model rond 100.000 km: <b>distributieketting kan rekken</b></span></div>
+<div class="cc-find"><span class="ic">✅</span><span>Live gemeten: <b>geen kettingfout, timing in orde</b></span></div>
+<div class="cc-find"><span class="ic">⚠️</span><span>1 pending foutcode — <b>vraag ernaar bij verkoper</b></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AANKOOP-CHECK (de nieuwe functie) -->
+<section id="aankoop">
+<div class="section-eyebrow reveal">De aankoop-check <span class="new-pill">Nieuw</span></div>
+<h2 class="reveal">Jij vertelt wat je ziet.<br>PidLane checkt de rest.</h2>
+<p class="section-sub reveal">Je hoeft geen monteur te zijn. Je vult in wat je weet over de auto, PidLane doet het technische werk én zoekt online naar wat er bij dit specifieke model bekend is — en geeft daarna een eerlijk eindoordeel.</p>
+
+<div class="flow reveal">
+<div class="flow-steps">
+<div class="fs"><div class="fs-n">01</div><div><div class="fs-t">Vul de basis in</div><div class="fs-d">Kenteken, vraagprijs, kilometerstand en jouw eigen indruk van de staat (1 tot 10). Twijfelpunten die je opvielen? Typ ze erbij.</div></div></div>
+<div class="fs"><div class="fs-n">02</div><div><div class="fs-t">PidLane leest de auto uit</div><div class="fs-d">Plug de adapter in de OBD2-poort. Foutcodes, brandstoftrims, accuspanning, koude-startgedrag — alles wat een dashboard niet laat zien.</div></div></div>
+<div class="fs"><div class="fs-n">03</div><div><div class="fs-t">Online check op merk & model</div><div class="fs-d">De AI zoekt bekende problemen voor dit merk-type rond déze kilometerstand: distributie, DPF, koppakkingen, EGR — wat speelt, speelt hier mogelijk ook.</div></div></div>
+<div class="fs"><div class="fs-n">04</div><div><div class="fs-t">Eerlijk eindoordeel</div><div class="fs-d">Een rapportcijfer, de aandachtspunten, en of de gemeten data nog ándere problemen verraadt. Plus: is de prijs reëel voor deze staat?</div></div></div>
+</div>
+<div class="flow-aside">
+<span class="badge">KOMT IN DE VOLGENDE UPDATE</span>
+<h3>Van onderbuikgevoel naar een onderbouwd cijfer</h3>
+<p>De aankoop-check combineert drie dingen die je los nooit hebt: jouw observaties, de echte meetdata uit de auto, en de bekende zwakke plekken van dat model. Samen leveren ze een oordeel waar je een aankoop — of een onderhandeling — op kunt baseren.</p>
+</div>
+</div>
+
+<div class="points reveal">
+<div class="pt"><div class="pt-ic">🪪</div><div class="pt-t">Kenteken</div><div class="pt-d">Voertuiggegevens en historie via RDW automatisch aangevuld.</div></div>
+<div class="pt"><div class="pt-ic">💶</div><div class="pt-t">Vraagprijs</div><div class="pt-d">Afgezet tegen staat en bekende kosten — reëel of te duur?</div></div>
+<div class="pt"><div class="pt-ic">🛣️</div><div class="pt-t">Km-stand</div><div class="pt-d">Bepaalt welke modelproblemen op dit moment relevant zijn.</div></div>
+<div class="pt"><div class="pt-ic">⭐</div><div class="pt-t">Staat 1–10</div><div class="pt-d">Jouw indruk, die de AI naast de meetdata legt.</div></div>
+<div class="pt"><div class="pt-ic">📝</div><div class="pt-t">Aandachtspunten</div><div class="pt-d">Wat jou opviel — roest, geluid, optrekken — wordt meegewogen.</div></div>
+<div class="pt"><div class="pt-ic">🤖</div><div class="pt-t">Overige problemen</div><div class="pt-d">De AI meldt wat de data verraadt buiten wat jij al zag.</div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOE HET WERKT -->
+<section id="hoe">
+<div class="section-eyebrow reveal">Hoe het werkt</div>
+<h2 class="reveal">Geen kennis nodig.<br>Geen monteur nodig.</h2>
+<p class="section-sub reveal">Eén keer een goedkope Bluetooth OBD2-adapter kopen (€20–€80), de app op je Android-telefoon, en je bent klaar om elke auto te checken die je overweegt.</p>
+<div class="fears reveal">
+<div class="fc"><div class="fc-q">"Ik weet niks van auto's"</div><div class="fc-a">Precies daarvoor is dit gemaakt. PidLane vertaalt alles naar <strong>gewoon Nederlands</strong> met een advies dat je meteen begrijpt — geen codetaal.</div></div>
+<div class="fc"><div class="fc-q">"Is de teller teruggedraaid?"</div><div class="fc-a">De app leest het echte chassisnummer uit en checkt RDW-historie. Afwijkingen tussen wat de verkoper zegt en wat de auto zegt <strong>vallen direct op</strong>.</div></div>
+<div class="fc"><div class="fc-q">"Zijn er foutcodes gewist?"</div><div class="fc-a">PidLane ziet niet alleen actieve codes, maar ook <strong>pending codes en wisindicaties</strong> — het trucje van net vóór de bezichtiging codes wissen werkt hier niet.</div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RAPPORTEN -->
+<section id="rapporten">
+<div class="section-eyebrow reveal">Voorbeeld</div>
+<h2 class="reveal">Drie auto's, drie adviezen</h2>
+<p class="section-sub reveal">Zo ziet de uitkomst van een aankoop-check eruit. Een cijfer, de punten die ertoe doen, en een duidelijk advies.</p>
+<div class="rapport-tabs reveal">
+<button class="rtab r-green active" onclick="showRapport('r1',this)">✅ Koop gerust</button>
+<button class="rtab r-orange" onclick="showRapport('r2',this)">⚠️ Onderhandel eerst</button>
+<button class="rtab r-red" onclick="showRapport('r3',this)">🚫 Loop weg</button>
+</div>
+
+<!-- R1 -->
+<div class="rapport-panel active reveal" id="r1">
+<div class="rp-card">
+<div class="rp-header"><span class="rp-status b-green">✅ Koop gerust</span>
+<div><div class="rp-title">Aankoop-check</div><div class="rp-meta">Toyota Yaris 1.5 Hybrid 2018 · 84.000 km · vraagprijs €13.450</div></div></div>
+<div class="rp-body">
+<div class="score-box"><div class="score-big" style="color:var(--okgreen)">8.5<small>/10</small></div><div class="score-txt"><strong>Sterke koop.</strong> Jouw indruk (8/10) komt overeen met de meetdata. Prijs is marktconform voor deze staat en kilometerstand.</div></div>
+<div class="rp-grid">
+<div class="rp-block"><div class="rp-block-title">Online: bekend bij dit model</div>
+<div class="rp-row"><span class="rp-row-l">Hybride-accu degradatie</span><span class="rp-row-v v-ok">Niet relevant <100k</span></div>
+<div class="rp-row"><span class="rp-row-l">Roest achterscherm</span><span class="rp-row-v v-ok">Niet waargenomen</span></div>
+<div class="rp-row"><span class="rp-row-l">Bekende terugroep</span><span class="rp-row-v v-ok">Geen open acties</span></div></div>
+<div class="rp-block"><div class="rp-block-title">Live gemeten</div>
+<div class="rp-row"><span class="rp-row-l">Foutcodes</span><span class="rp-row-v v-ok">0 actief · 0 pending</span></div>
+<div class="rp-row"><span class="rp-row-l">Hybride-systeem</span><span class="rp-row-v v-ok">Stabiel ✓</span></div>
+<div class="rp-row"><span class="rp-row-l">Koude start</span><span class="rp-row-v v-ok">Normaal ✓</span></div></div>
+</div>
+<div class="ai-verdict"><div class="av-header"><div class="av-icon">🤖</div><div class="av-label">AI-eindoordeel</div></div><div class="av-text">Geen verborgen gebreken in de data, geen openstaande terugroepacties, en de bekende zwakke plekken van dit model spelen op deze kilometerstand nog niet. <strong>De prijs is reëel — dit is een veilige aankoop.</strong></div></div>
+</div></div></div>
+
+<!-- R2 -->
+<div class="rapport-panel" id="r2">
+<div class="rp-card">
+<div class="rp-header"><span class="rp-status b-yellow">⚠️ Onderhandel eerst</span>
+<div><div class="rp-title">Aankoop-check</div><div class="rp-meta">Volkswagen Golf 1.6 TDI 2016 · 142.000 km · vraagprijs €11.900</div></div></div>
+<div class="rp-body">
+<div class="score-box" style="background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(255,107,53,.04));border-color:rgba(245,158,11,.25)"><div class="score-big" style="color:var(--yellow)">6.0<small>/10</small></div><div class="score-txt"><strong>Te koop, mits prijs zakt.</strong> Rijveilig, maar er komt werk aan dat de prijs nu niet weerspiegelt.</div></div>
+<div class="rp-grid">
+<div class="rp-block"><div class="rp-block-title">Online: bekend bij dit model</div>
+<div class="rp-row"><span class="rp-row-l">DPF verstopt rond 140k</span><span class="rp-row-v v-warn">Risico — speelt nu</span></div>
+<div class="rp-row"><span class="rp-row-l">EGR-vervuiling</span><span class="rp-row-v v-warn">Bekend zwak punt</span></div>
+<div class="rp-row"><span class="rp-row-l">Distributie interval</span><span class="rp-row-v v-info">Bijna aan beurt</span></div></div>
+<div class="rp-block"><div class="rp-block-title">Live gemeten</div>
+<div class="rp-row"><span class="rp-row-l">DPF-tegendruk</span><span class="rp-row-v v-warn">92% vol</span></div>
+<div class="rp-row"><span class="rp-row-l">Pending codes</span><span class="rp-row-v v-warn">1 (P2002 — DPF)</span></div>
+<div class="rp-row"><span class="rp-row-l">Accuspanning</span><span class="rp-row-v v-warn">13.2V (laag)</span></div></div>
+</div>
+<div class="ai-verdict" style="background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.2)"><div class="av-header"><div class="av-icon" style="background:var(--yellow);color:#1a1200">⚠️</div><div class="av-label" style="color:var(--yellow)">AI-eindoordeel</div></div><div class="av-text">De bekende DPF-zwakte van dit model is hier <strong>geen theorie maar realiteit</strong> — de data bevestigt het. Reken op €280–€450 aan werk plus binnenkort distributie. <strong>Vraag minimaal €600–€800 van de prijs af</strong> of laat de verkoper de DPF eerst regenereren.</div></div>
+</div></div></div>
+
+<!-- R3 -->
+<div class="rapport-panel" id="r3">
+<div class="rp-card">
+<div class="rp-header"><span class="rp-status b-red">🚫 Loop weg</span>
+<div><div class="rp-title">Aankoop-check</div><div class="rp-meta">BMW 320d 2014 · 198.000 km · vraagprijs €9.750</div></div></div>
+<div class="rp-body">
+<div class="score-box" style="background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.3)"><div class="score-big" style="color:var(--red)">3.0<small>/10</small></div><div class="score-txt"><strong>Niet kopen.</strong> Jouw indruk was 6/10, maar de data vertelt een ander verhaal — en dat is precies waarom je meet.</div></div>
+<div class="rp-grid">
+<div class="rp-block"><div class="rp-block-title">Online: bekend bij dit model</div>
+<div class="rp-row"><span class="rp-row-l">Wervelkleppen inlaat</span><span class="rp-row-v v-bad">Berucht zwak punt</span></div>
+<div class="rp-row"><span class="rp-row-l">Koeling / thermostaat</span><span class="rp-row-v v-bad">Bekend probleem</span></div>
+<div class="rp-row"><span class="rp-row-l">Hoog verbruik olie</span><span class="rp-row-v v-warn">Bij hoge km</span></div></div>
+<div class="rp-block"><div class="rp-block-title">Live gemeten</div>
+<div class="rp-row"><span class="rp-row-l">Recent gewiste codes</span><span class="rp-row-v v-bad">Wisindicatie!</span></div>
+<div class="rp-row"><span class="rp-row-l">Koelwatertemp. na rit</span><span class="rp-row-v v-bad">104°C te hoog</span></div>
+<div class="rp-row"><span class="rp-row-l">Brandstoftrim</span><span class="rp-row-v v-bad">+14% (mager)</span></div></div>
+</div>
+<div class="ai-verdict" style="background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.3)"><div class="av-header"><div class="av-icon" style="background:var(--red)">🚫</div><div class="av-label" style="color:var(--red)">AI-eindoordeel</div></div><div class="av-text">Er zijn <strong>kort voor de bezichtiging foutcodes gewist</strong> — een rode vlag. De koelwatertemperatuur en brandstoftrim wijzen op problemen die de bekende zwakke plekken van dit model bevestigen. Reparatie loopt al snel op tot €2.000+. <strong>Bedank vriendelijk en zoek verder.</strong></div></div>
+</div></div></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ANALYSES BESTAAND -->
+<section id="analyses" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<div class="section-eyebrow reveal">Niet alleen bij aankoop</div>
+<h2 class="reveal">Ook ná de koop<br>blijft het je auto-expert</h2>
+<p class="section-sub reveal">PidLane blijft in je telefoon. Dashboardlampje aan? Vreemd geluid? Hoog verbruik? Je weet binnen minuten wat er speelt, vóór je naar de garage gaat.</p>
+<div class="ag reveal">
+<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-g">⚠️</div><div><div class="ac-title">Foutcode uitlezen</div><div class="ac-dur">Direct · uitleg in gewone taal</div></div></div>
+<p class="ac-desc">Lampje brandt? Lees de foutcode uit en krijg een <strong>begrijpelijke uitleg</strong> plus wat het waarschijnlijk gaat kosten — zodat je niet voor verrassingen staat bij de garage.</p></div>
+<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-o">🔍</div><div><div class="ac-title">Probleemanalyse</div><div class="ac-dur">Op klachtbasis · oorzaak via data</div></div></div>
+<p class="ac-desc">Beschrijf de klacht in je eigen woorden ("trekt slecht op", "stottert koud"). De AI stelt vragen en <strong>bevestigt de oorzaak via de meetdata</strong>.</p></div>
+<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-c">🚗</div><div><div class="ac-title">Rit-analyse & besparing</div><div class="ac-dur">10 min rijden · rijgedrag & verbruik</div></div></div>
+<p class="ac-desc">Tien minuten rijden levert concrete <strong>besparingstips op basis van jouw rijgedrag</strong> — gemiddeld 10–20% minder verbruik mogelijk.</p></div>
+<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-b">⚡</div><div><div class="ac-title">Voertuigcheck</div><div class="ac-dur">±20 seconden · stilstaand</div></div></div>
+<p class="ac-desc">Een snelle gezondheidscheck van alle systemen — handig <strong>voor een lange rit of na onderhoud</strong>, om gerust op weg te gaan.</p></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="footer-cta">
+<div class="section-eyebrow">Contact</div>
+<h2>Wil je dit gebruiken<br>bij je volgende auto?</h2>
+<p class="section-sub">PidLane is in actieve ontwikkeling en de aankoop-check komt in de volgende update. Laat van je horen als je als eerste wilt weten wanneer het beschikbaar is.</p>
+<a class="footer-mail" href="mailto:info@pidlane.nl?subject=Interesse%20PidLane%20Consument">info@pidlane.nl</a>
+<span class="footer-sig">PidLane — jouw auto praat, wij vertalen</span>
+</section>
+
+<div class="footer-bottom">
+<span>© 2026 PidLane</span>
+<span><a href="index.html" style="color:var(--mist);text-decoration:none">Ben je autobedrijf? → Voor handelaren</a></span>
+<span>⚡ <em>Your car talks. We translate.</em></span>
+</div>
+
+<script>
+function showRapport(id,btn){
+  document.querySelectorAll('.rapport-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.rtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.reveal').forEach(e=>e.classList.add('show'));return;
+  }
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+})();
+</script>
+</body>
+</html>
