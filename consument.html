@@ -3,407 +3,465 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PidLane — Koop je volgende auto met zekerheid</title>
-<meta name="description" content="PidLane checkt via OBD2 én online de auto die je wilt kopen: bekende merk-modelproblemen bij die kilometerstand, foutcodes, verborgen gebreken en een eerlijk eindoordeel. In gewoon Nederlands.">
+<title>PidLane voor particulieren — Koop je volgende auto met zekerheid</title>
+<meta name="description" content="Lees een auto uit via de OBD2-poort en krijg in gewone taal te horen wat de motor weet. Sta je bij een verkoper? Laat je eigen monteur live meekijken. Probeer het nu met je eigen kenteken.">
+<meta name="theme-color" content="#07090d">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://www.pidlane.nl/consument.html">
+<meta property="og:site_name" content="PidLane">
+<meta property="og:title" content="PidLane — Koop je volgende auto met zekerheid">
+<meta property="og:description" content="Lees een auto uit en laat je eigen monteur op afstand meekijken. Probeer het met je eigen kenteken.">
+<meta property="og:image" content="https://www.pidlane.nl/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.pidlane.nl/consument.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%231fd189'/%3E%3Cstop offset='1' stop-color='%234fd6f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Crect x='10' y='14' width='44' height='28' rx='9' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M16 28h9l4-8 6 15 4-7h9' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0A0E1A;--card:#111827;--card2:#161D2E;--blue:#1A6FFF;--cyan:#00D4FF;
---green:#00FF88;--okgreen:#22C55E;--orange:#FF6B35;--red:#EF4444;--yellow:#F59E0B;
---white:#FFFFFF;--mist:#8892A4;--border:#1E2A3E;
---f-display:'Space Grotesk',sans-serif;--f-body:'Inter',sans-serif;--f-mono:'JetBrains Mono',monospace;
-}
-html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-body{background:var(--bg);color:var(--white);font-family:var(--f-body);line-height:1.6;overflow-x:hidden}
-a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+/* ═══════════ Kentekenveld ═══════════ */
+.kform{margin:34px 0 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.kplate{display:flex;align-items:stretch;border-radius:12px;overflow:hidden;background:#f6c500;box-shadow:0 0 0 3px #111 inset,0 20px 50px -15px rgba(246,197,0,.35);height:64px}
+.kplate i{font-style:normal;width:38px;background:#1f4fbf;color:#ffd84d;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:8px;font:700 12px var(--fm);gap:4px}
+.kplate i::before{content:"";width:16px;height:16px;border-radius:50%;border:2px dotted #ffd84d}
+.kplate input{width:230px;border:0;background:transparent;font:700 30px/1 var(--fm);letter-spacing:3px;color:#111;text-transform:uppercase;padding:0 16px;outline:none}
+.kplate input::placeholder{color:rgba(0,0,0,.28)}
+.kplate:focus-within{box-shadow:0 0 0 3px #111 inset,0 0 0 4px var(--cy)}
+.kform .btn{height:64px}
+.knote{font-size:13.5px;color:var(--mu2);max-width:520px}
+.kstat{font:500 13px var(--fm);color:var(--cy);min-height:20px;margin-top:8px}
+@media (max-width:480px){.kplate{flex:1}.kplate input{width:100%;font-size:26px}.kform .btn{width:100%;justify-content:center}}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,14,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:var(--f-display);font-weight:700;font-size:20px;display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff}
-.nav-links{display:flex;gap:26px}
-.nav-links a{color:var(--mist);text-decoration:none;font-size:13px;transition:color .2s}
-.nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--green);color:#062013;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;transition:transform .2s}
-.nav-cta:hover{transform:translateY(-1px)}
+/* ═══════════ Speeltuin-telefoon ═══════════ */
+.pg{position:relative;max-width:390px;margin:0 auto;border-radius:48px;padding:12px;background:#05070b;box-shadow:inset 0 0 0 1px var(--line2),0 60px 120px -40px rgba(0,0,0,.9),0 0 0 10px rgba(255,255,255,.02)}
+.pg::before{content:"";position:absolute;top:22px;left:50%;width:90px;height:24px;margin-left:-45px;border-radius:20px;background:#000;z-index:2}
+.pg-in{position:relative;border-radius:38px;background:var(--sur);min-height:640px;padding:48px 20px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
+.pg-demo{padding:7px 8px;border-radius:9px;text-align:center;font:500 10.5px var(--fm);letter-spacing:1.4px;color:#04110c;background:repeating-linear-gradient(135deg,#ffb020 0 14px,#ffc34d 14px 28px)}
+.pg-car b{display:block;font:700 22px/1.15 var(--fd);letter-spacing:-.02em}
+.pg-car small{display:block;font:400 12.5px var(--fm);color:var(--mu);margin-top:4px}
+.pg-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:14px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.pg-tabs button{font:500 13.5px var(--fb);color:var(--mu);background:transparent;border:0;border-radius:10px;padding:9px 4px;cursor:pointer;transition:all .25s}
+.pg-tabs button.on{background:var(--sur2);color:var(--tx);box-shadow:inset 0 0 0 1px var(--line2)}
+.pg-body{flex:1;animation:lin .35s ease both}
+.lamp{display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.lamp i{flex:none;width:46px;height:46px;border-radius:50%;background:var(--c);box-shadow:0 0 30px var(--c),inset 0 -6px 12px rgba(0,0,0,.25)}
+.lamp b{display:block;font:700 18px/1.2 var(--fd)}
+.lamp small{font-size:12.5px;color:var(--mu)}
+.pg-l{list-style:none;margin:12px 0}
+.pg-l li{display:grid;grid-template-columns:12px 1fr;gap:10px;padding:10px 2px;border-bottom:1px solid var(--line);font-size:13.5px;color:#c3cad6}
+.pg-l li::before{content:"";width:8px;height:8px;border-radius:50%;margin-top:6px;background:var(--c)}
+.pg-nu{font-size:13px;color:var(--tx);padding:12px 14px;border-radius:14px;background:rgba(79,214,240,.07);box-shadow:inset 0 0 0 1px rgba(79,214,240,.25)}
+.pg-nu b{color:var(--cy);font-weight:500}
+.pg-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pg-g div{padding:14px;border-radius:16px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.pg-g small{font-size:12px;color:var(--mu)}
+.pg-g b{display:block;font:500 26px var(--fm);margin:4px 0 10px}
+.pg-g u{display:block;height:4px;border-radius:2px;background:var(--line);overflow:hidden;text-decoration:none}
+.pg-g u i{display:block;height:100%;background:var(--grad);transition:width .8s ease}
+.pg-mee{display:flex;flex-direction:column;gap:12px}
+.pg-code{display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
+.pg-code svg{flex:none;width:78px;height:78px;border-radius:8px;background:#fff;padding:5px}
+.pg-code small{display:block;font:500 11px var(--fm);letter-spacing:.8px;color:var(--mu)}
+.pg-code b{display:block;font:500 20px var(--fm);letter-spacing:1px;margin-top:4px}
+.pg-st{font:500 13px var(--fm);color:var(--am);display:flex;align-items:center;gap:8px}
+.pg-st.ok{color:var(--gn)}
+.pg-st::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;animation:blink 1.2s infinite}
+.pg-ev{display:flex;flex-direction:column;gap:7px}
+.pg-ev div{font-size:13px;color:#c3cad6;padding:10px 12px;border-radius:12px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line);animation:lin .4s ease both}
+.pg-ev b{color:var(--cy);font-weight:500}
+.pg-sc{border-top:1px solid var(--line);padding-top:12px}
+.pg-sc small{display:block;font:500 11px var(--fm);letter-spacing:.8px;color:var(--mu);margin-bottom:8px;text-transform:uppercase}
+.pg-sc div{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pg-sc button{font:500 12.5px var(--fb);color:var(--mu);background:transparent;border:0;border-radius:999px;padding:8px 4px;box-shadow:inset 0 0 0 1px var(--line2);cursor:pointer}
+.pg-sc button.on{color:var(--ink);background:var(--c);box-shadow:none}
+.pg-fine{margin-top:16px;text-align:center;font-size:12.5px;color:var(--mu2);max-width:390px;margin-inline:auto}
+.hero-c .hero-g{align-items:start}
+@media (max-width:980px){.pg-in{min-height:600px}}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:130px 48px 80px;position:relative;overflow:hidden;gap:50px}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 35%,rgba(0,255,136,.10) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 85% 65%,rgba(0,212,255,.06) 0%,transparent 60%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.28}
-.hero-content{position:relative;z-index:1;max-width:560px;flex-shrink:0}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.25);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px}
-.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-h1{font-family:var(--f-display);font-size:clamp(38px,4.6vw,62px);font-weight:700;line-height:1.08;margin-bottom:22px;letter-spacing:-.02em}
-h1 span{background:linear-gradient(135deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:17px;color:var(--mist);max-width:480px;margin-bottom:34px;line-height:1.7}
-.hero-sub strong{color:var(--white);font-weight:600}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
-.btn-p{background:var(--green);color:#062013;padding:14px 30px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;transition:transform .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-p:hover{transform:translateY(-1px)}
-.btn-s{background:transparent;color:var(--white);padding:14px 30px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--border);transition:all .2s}
-.btn-s:hover{border-color:var(--green);color:var(--green)}
-.hero-proof{display:flex;gap:24px;flex-wrap:wrap}
-.hp{display:flex;flex-direction:column;gap:2px}
-.hp-v{font-family:var(--f-mono);font-size:18px;color:var(--cyan)}
-.hp-l{font-size:11px;color:var(--mist)}
-
-/* HERO — aankoop-check kaart */
-.hero-visual{position:relative;z-index:1;flex:1;display:flex;justify-content:flex-end;min-width:0}
-.check-card{width:420px;max-width:100%;background:var(--card);border-radius:18px;border:1px solid var(--border);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,255,136,.08)}
-.cc-top{background:#0D1424;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
-.cc-brand{display:flex;align-items:center;gap:7px;font-family:var(--f-display);font-weight:700;font-size:14px}
-.cc-step{font-family:var(--f-mono);font-size:9px;color:var(--green)}
-.cc-body{padding:16px 18px}
-.cc-q{font-size:9px;color:var(--mist);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 5px}
-.cc-input{display:flex;align-items:center;justify-content:space-between;background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px}
-.cc-input .lab{color:var(--mist);font-size:11px}
-.cc-input .val{font-family:var(--f-mono);font-size:12px;color:var(--white)}
-.plate{display:inline-flex;align-items:center;background:#FFD200;color:#0b0b0b;font-family:var(--f-mono);font-weight:700;font-size:13px;letter-spacing:1px;border-radius:5px;padding:3px 9px;border:1px solid #c9a700}
-.stars{color:var(--green);font-size:13px;letter-spacing:1px}
-.cc-divider{height:1px;background:var(--border);margin:14px 0}
-.cc-scan{display:flex;align-items:center;gap:9px;font-size:11px;color:var(--cyan);margin-bottom:10px}
-.cc-scan .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:pulse 1.4s infinite;flex-shrink:0}
-.cc-find{font-size:11px;color:var(--mist);line-height:1.6;padding:4px 0;display:flex;gap:8px;align-items:flex-start}
-.cc-find b{color:var(--white);font-weight:600}
-.cc-find .ic{flex-shrink:0}
-
-/* SECTIONS */
-section{padding:90px 48px}
-.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
-h2{font-family:var(--f-display);font-size:clamp(28px,3.8vw,44px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
-.section-sub{font-size:16px;color:var(--mist);max-width:560px;line-height:1.7}
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 48px}
-
-/* AANKOOP-CHECK uitleg */
-.flow{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:52px}
-.flow-steps{display:flex;flex-direction:column;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.fs{background:var(--card);padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:background .2s}
-.fs:hover{background:var(--card2)}
-.fs-n{font-family:var(--f-mono);font-size:12px;color:var(--green);flex-shrink:0;width:24px;padding-top:1px}
-.fs-t{font-family:var(--f-display);font-size:15px;font-weight:600;margin-bottom:3px}
-.fs-d{font-size:12px;color:var(--mist);line-height:1.6}
-.flow-aside{background:linear-gradient(135deg,rgba(0,255,136,.06),rgba(0,212,255,.04));border:1px solid rgba(0,255,136,.2);border-radius:16px;padding:28px}
-.flow-aside h3{font-family:var(--f-display);font-size:19px;font-weight:600;margin-bottom:12px}
-.flow-aside p{font-size:14px;color:var(--mist);line-height:1.7}
-.flow-aside .badge{display:inline-block;font-family:var(--f-mono);font-size:10px;color:var(--green);background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.25);border-radius:6px;padding:4px 9px;margin-bottom:14px}
-.new-pill{display:inline-block;background:var(--green);color:#062013;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;padding:3px 8px;vertical-align:middle;margin-left:8px}
-
-/* INPUT POINTS */
-.points{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:32px}
-.pt{background:var(--card);padding:18px 16px}
-.pt-ic{font-size:20px;margin-bottom:8px}
-.pt-t{font-family:var(--f-display);font-size:14px;font-weight:600;margin-bottom:3px}
-.pt-d{font-size:11px;color:var(--mist);line-height:1.5}
-
-/* ANGST / GERUSTSTELLING */
-.fears{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:48px}
-.fc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
-.fc-q{font-family:var(--f-display);font-size:16px;font-weight:600;margin-bottom:10px;color:var(--white)}
-.fc-a{font-size:13px;color:var(--mist);line-height:1.65}
-.fc-a strong{color:var(--green)}
-
-/* RAPPORTEN tabs (consument) */
-.rapport-tabs{display:flex;gap:8px;margin:36px 0 28px;flex-wrap:wrap}
-.rtab{padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--mist);font-family:var(--f-body);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
-.rtab.r-green.active{background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.4);color:var(--okgreen)}
-.rtab.r-orange.active{background:rgba(245,158,11,.15);border-color:rgba(245,158,11,.3);color:var(--yellow)}
-.rtab.r-red.active{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.3);color:var(--red)}
-.rapport-panel{display:none;animation:fadeIn .3s ease}
-.rapport-panel.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.rp-card{background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden}
-.rp-header{padding:22px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.rp-status{padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.b-green{background:rgba(34,197,94,.2);color:var(--okgreen);border:1px solid rgba(34,197,94,.3)}
-.b-yellow{background:rgba(245,158,11,.15);color:var(--yellow);border:1px solid rgba(245,158,11,.3)}
-.b-red{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
-.rp-title{font-family:var(--f-display);font-size:19px;font-weight:600}
-.rp-meta{font-size:12px;color:var(--mist);margin-top:2px}
-.rp-body{padding:22px 28px}
-.rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
-.rp-block{background:var(--card2);border-radius:10px;padding:14px;border:1px solid var(--border)}
-.rp-block-title{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
-.rp-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px}
-.rp-row:last-child{border-bottom:none}
-.rp-row-l{color:var(--mist)}
-.rp-row-v{font-family:var(--f-mono);font-size:11px}
-.v-ok{color:var(--okgreen)}.v-warn{color:var(--orange)}.v-bad{color:var(--red)}.v-info{color:var(--cyan)}
-.score-box{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,212,255,.04));border:1px solid rgba(0,255,136,.2);border-radius:12px;padding:18px;margin-bottom:16px}
-.score-big{font-family:var(--f-display);font-size:42px;font-weight:700;line-height:1}
-.score-big small{font-size:18px;color:var(--mist);font-weight:500}
-.score-txt{font-size:12px;color:var(--mist);line-height:1.6}
-.score-txt strong{color:var(--white)}
-.ai-verdict{background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.2);border-radius:10px;padding:16px}
-.av-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.av-icon{width:26px;height:26px;background:var(--green);color:#062013;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
-.av-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
-.av-text{font-size:12px;color:var(--mist);line-height:1.65}
-.av-text strong{color:var(--white)}
-
-/* ANALYSES bestaand */
-.ag{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
-.ac{background:var(--card);border-radius:16px;border:1px solid var(--border);padding:24px;transition:border-color .3s,transform .3s}
-.ac:hover{border-color:var(--green);transform:translateY(-3px)}
-.ac-hdr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.ac-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.ic-b{background:rgba(26,111,255,.2)}.ic-c{background:rgba(0,212,255,.15)}.ic-o{background:rgba(255,107,53,.15)}.ic-g{background:rgba(34,197,94,.15)}
-.ac-title{font-family:var(--f-display);font-size:17px;font-weight:600}
-.ac-dur{font-size:11px;color:var(--mist);margin-top:2px;font-family:var(--f-mono)}
-.ac-desc{font-size:13px;color:var(--mist);line-height:1.65}
-.ac-desc strong{color:var(--white)}
-
-/* CONTACT */
-.footer-cta{text-align:center;background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,212,255,.04));border-top:1px solid var(--border)}
-.footer-cta h2,.footer-cta .section-sub{margin-left:auto;margin-right:auto}
-.footer-cta .section-sub{margin-bottom:32px}
-.footer-mail{display:inline-block;font-family:var(--f-display);font-size:clamp(20px,3vw,30px);font-weight:600;color:var(--cyan);text-decoration:none;border-bottom:2px solid rgba(0,212,255,.3);padding-bottom:4px;transition:border-color .2s}
-.footer-mail:hover{border-color:var(--cyan)}
-.footer-sig{display:block;color:var(--mist);font-size:13px;margin-top:14px}
-.footer-bottom{padding:20px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--mist);gap:10px;flex-wrap:wrap}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.reveal.show{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
-
-@media(max-width:960px){
-nav{padding:12px 20px}.nav-links{display:none}
-.hero{padding:100px 20px 60px;flex-direction:column}
-.hero-visual{justify-content:center;width:100%}
-section{padding:60px 20px}
-.flow,.points,.fears,.ag,.rp-grid{grid-template-columns:1fr}
-.points{grid-template-columns:1fr 1fr}
-.divider{margin:0 20px}
-.footer-bottom{flex-direction:column;text-align:center}
-}
+/* ═══════════ Wat je nodig hebt ═══════════ */
+.need{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px}
+.need div{padding:28px;border-radius:var(--r);background:var(--sur);box-shadow:inset 0 0 0 1px var(--line)}
+.need b{display:block;font:700 21px/1.2 var(--fd);letter-spacing:-.01em;margin:16px 0 8px}
+.need p{color:var(--mu);font-size:15px}
+.need .n{font:800 44px/1 var(--fd);letter-spacing:-.04em}
+@media (max-width:860px){.need{grid-template-columns:1fr}}
+.end{text-align:center;padding:clamp(50px,8vw,90px) var(--gut);border-radius:40px;background:radial-gradient(60% 90% at 50% 0,rgba(31,209,137,.18),transparent 70%),var(--sur);box-shadow:inset 0 0 0 1px var(--line2)}
+.end h2{font:800 clamp(36px,5vw,64px)/1 var(--fd);letter-spacing:-.04em;margin:18px auto 18px;max-width:800px}
+.end .lead{margin:0 auto 32px}
+.end .row2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-<a href="index.html" class="nav-logo"><svg width="34" height="26" viewBox="0 0 220 180" style="flex-shrink:0" aria-hidden="true"><defs><linearGradient id="nlg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00FF88"/><stop offset="1" stop-color="#00D4FF"/></linearGradient><linearGradient id="nls" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9D8CFF"/><stop offset="1" stop-color="#00D4FF"/></linearGradient></defs><rect x="12" y="12" width="168" height="118" rx="26" fill="none" stroke="url(#nlg)" stroke-width="13"/><path d="M 36 71 L 66 71 L 80 47 L 100 99 L 116 59 L 126 71 L 158 71" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><line x1="96" y1="142" x2="96" y2="158" stroke="#00FF88" stroke-width="10" stroke-linecap="round"/><line x1="96" y1="168" x2="96" y2="178" stroke="#2A3645" stroke-width="9" stroke-linecap="round"/><path d="M 180 -2 C 183 13 188 18 204 22 C 188 26 183 31 180 46 C 177 31 172 26 156 22 C 172 18 177 13 180 -2 Z" fill="url(#nls)"/></svg> <span style="color:#fff">Pid</span><span style="color:#00FF88">Lane</span></a>
-<div class="nav-links">
-<a href="index.html">← Voor wie?</a>
-<a href="#aankoop">Aankoop-check</a>
-<a href="#hoe">Hoe het werkt</a>
-<a href="#rapporten">Voorbeeld</a>
-<a href="#analyses">Wat het nog meer kan</a>
-</div>
-<a href="#contact" class="nav-cta">Op de hoogte blijven</a>
-</nav>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="PidLane, naar de voorpagina">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#1fd189"/><stop offset="1" stop-color="#4fd6f0"/></linearGradient></defs><rect x="6" y="12" width="52" height="34" rx="11" fill="none" stroke="url(#lg)" stroke-width="4.5"/><path d="M14 29h10l5-10 7 18 5-8h9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      PidLane
+    </a>
+    <nav class="nav-l" aria-label="Hoofdmenu">
+      <a href="#probeer">Probeer het</a>
+      <a href="#meekijken">Meekijken</a>
+      <a href="#zo-werkt-het">Zo werkt het</a>
+      <a href="#kan">Wat het kan</a>
+      <a href="#vragen">Vragen</a>
+    </nav>
+    <a class="nav-part" href="zakelijk.html">Autobedrijf?</a>
+    <a class="btn btn-p" href="https://app.pidlane.nl">Start in de app <span class="ar">→</span></a>
+  </div>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-bg"></div><div class="hero-grid"></div>
-<div class="hero-content">
-<div class="eyebrow">Voor wie een auto koopt</div>
-<h1>Koop je volgende auto<br><span>met zekerheid.</span></h1>
-<p class="hero-sub">Je staat bij een occasion en twijfelt. PidLane plugt in de OBD2-poort, combineert de meetdata met <strong>bekende problemen van dat merk en model bij die kilometerstand</strong>, en zegt in gewone taal of je moet toeslaan, onderhandelen of weglopen.</p>
-<div class="hero-actions">
-<a href="#aankoop" class="btn-p">Ontdek de aankoop-check →</a>
-<a href="#rapporten" class="btn-s">Bekijk een voorbeeld</a>
-</div>
-<div class="hero-proof">
-<div class="hp"><span class="hp-v">~2 min</span><span class="hp-l">vóór je beslist</span></div>
-<div class="hp"><span class="hp-v">€20–80</span><span class="hp-l">eenmalig een adapter</span></div>
-<div class="hp"><span class="hp-v">2001+</span><span class="hp-l">elke auto met OBD2</span></div>
-</div>
-</div>
-<div class="hero-visual">
-<div class="check-card" aria-label="Voorbeeld aankoop-check">
-<div class="cc-top">
-<div class="cc-brand"><svg width="26" height="20" viewBox="0 0 220 180" aria-hidden="true"><rect x="12" y="12" width="168" height="118" rx="26" fill="none" stroke="#00FF88" stroke-width="13"/><path d="M 36 71 L 66 71 L 80 47 L 100 99 L 116 59 L 126 71 L 158 71" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg> Aankoop-check</div>
-<div class="cc-step">STAP 2/3 · ANALYSE</div>
-</div>
-<div class="cc-body">
-<div class="cc-q">Jouw invoer</div>
-<div class="cc-input"><span class="lab">Kenteken</span><span class="plate">G-123-XY</span></div>
-<div class="cc-input" style="margin-top:6px"><span class="lab">Vraagprijs · km-stand</span><span class="val">€ 12.950 · 96.000</span></div>
-<div class="cc-input" style="margin-top:6px"><span class="lab">Jouw indruk staat</span><span class="stars">★★★★★★★☆☆☆ 7/10</span></div>
-<div class="cc-divider"></div>
-<div class="cc-scan"><span class="dot"></span>PidLane zoekt online + leest de auto uit…</div>
-<div class="cc-find"><span class="ic">🔎</span><span>Bekend bij dit model rond 100.000 km: <b>distributieketting kan rekken</b></span></div>
-<div class="cc-find"><span class="ic">✅</span><span>Live gemeten: <b>geen kettingfout, timing in orde</b></span></div>
-<div class="cc-find"><span class="ic">⚠️</span><span>1 pending foutcode — <b>vraag ernaar bij verkoper</b></span></div>
-</div>
-</div>
-</div>
+<main id="top">
+
+<!-- ═══════════ HERO + SPEELTUIN ═══════════ -->
+<section class="hero hero-c" id="probeer">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-g">
+    <div>
+      <span class="pill rv"><b>Particulier</b> Voor wie een auto koopt of heeft</span>
+      <h1 class="hk rv d1">Koop je volgende auto <em class="s gt">met zekerheid.</em></h1>
+      <p class="hero-p rv d2">Een adapter in de auto, en PidLane vertelt in <strong>gewone taal</strong> wat de motor weet. Sta je bij een verkoper? Dan <strong>kijkt je eigen monteur live mee</strong>, waar hij ook zit.</p>
+      <form class="kform rv d3" id="kform" autocomplete="off">
+        <label class="kplate" for="kent"><i>NL</i><input id="kent" name="kent" maxlength="8" placeholder="XX-000-X" aria-label="Je kenteken" spellcheck="false"></label>
+        <button class="btn btn-p" type="submit">Probeer met mijn auto <span class="ar">→</span></button>
+      </form>
+      <div class="kstat" id="kstat" aria-live="polite"></div>
+      <p class="knote rv d3">Je kenteken gaat alleen naar de open data van de RDW, voor merk, model en brandstof. We slaan niets op. <strong style="color:var(--tx);font-weight:500">Alle meetwaarden in deze proef zijn verzonnen</strong>: je auto wordt niet echt uitgelezen.</p>
+    </div>
+
+    <div class="rv d2">
+      <div class="pg" id="pg">
+        <div class="pg-in">
+          <div class="pg-demo">DEMO · FICTIEVE METING</div>
+          <div class="pg-car"><b id="pg-naam">Jouw auto</b><small id="pg-sub">vul hiernaast je kenteken in</small></div>
+          <div class="pg-tabs" role="tablist" aria-label="Onderdelen van de proef">
+            <button class="on" role="tab" aria-selected="true" data-t="check">Check</button>
+            <button role="tab" aria-selected="false" data-t="live">Live</button>
+            <button role="tab" aria-selected="false" data-t="mee">Meekijken</button>
+          </div>
+          <div class="pg-body" id="pg-body" role="tabpanel"></div>
+          <div class="pg-sc">
+            <small>Speel met de uitkomst</small>
+            <div id="pg-sc">
+              <button data-s="0" style="--c:var(--gn)">Gezond</button>
+              <button data-s="1" style="--c:var(--am)">Let op</button>
+              <button data-s="2" style="--c:var(--rd)">Niet kopen</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="pg-fine">Merk, model en brandstof komen van de RDW. De rest is een verzonnen voorbeeld van wat PidLane laat zien.</p>
+    </div>
+  </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- AANKOOP-CHECK (de nieuwe functie) -->
-<section id="aankoop">
-<div class="section-eyebrow reveal">De aankoop-check <span class="new-pill">Nieuw</span></div>
-<h2 class="reveal">Jij vertelt wat je ziet.<br>PidLane checkt de rest.</h2>
-<p class="section-sub reveal">Je hoeft geen monteur te zijn. Je vult in wat je weet over de auto, PidLane doet het technische werk én zoekt online naar wat er bij dit specifieke model bekend is — en geeft daarna een eerlijk eindoordeel.</p>
-
-<div class="flow reveal">
-<div class="flow-steps">
-<div class="fs"><div class="fs-n">01</div><div><div class="fs-t">Vul de basis in</div><div class="fs-d">Kenteken, vraagprijs, kilometerstand en jouw eigen indruk van de staat (1 tot 10). Twijfelpunten die je opvielen? Typ ze erbij.</div></div></div>
-<div class="fs"><div class="fs-n">02</div><div><div class="fs-t">PidLane leest de auto uit</div><div class="fs-d">Plug de adapter in de OBD2-poort. Foutcodes, brandstoftrims, accuspanning, koude-startgedrag — alles wat een dashboard niet laat zien.</div></div></div>
-<div class="fs"><div class="fs-n">03</div><div><div class="fs-t">Online check op merk & model</div><div class="fs-d">De AI zoekt bekende problemen voor dit merk-type rond déze kilometerstand: distributie, DPF, koppakkingen, EGR — wat speelt, speelt hier mogelijk ook.</div></div></div>
-<div class="fs"><div class="fs-n">04</div><div><div class="fs-t">Eerlijk eindoordeel</div><div class="fs-d">Een rapportcijfer, de aandachtspunten, en of de gemeten data nog ándere problemen verraadt. Plus: is de prijs reëel voor deze staat?</div></div></div>
-</div>
-<div class="flow-aside">
-<span class="badge">KOMT IN DE VOLGENDE UPDATE</span>
-<h3>Van onderbuikgevoel naar een onderbouwd cijfer</h3>
-<p>De aankoop-check combineert drie dingen die je los nooit hebt: jouw observaties, de echte meetdata uit de auto, en de bekende zwakke plekken van dat model. Samen leveren ze een oordeel waar je een aankoop — of een onderhandeling — op kunt baseren.</p>
-</div>
-</div>
-
-<div class="points reveal">
-<div class="pt"><div class="pt-ic">🪪</div><div class="pt-t">Kenteken</div><div class="pt-d">Voertuiggegevens en historie via RDW automatisch aangevuld.</div></div>
-<div class="pt"><div class="pt-ic">💶</div><div class="pt-t">Vraagprijs</div><div class="pt-d">Afgezet tegen staat en bekende kosten — reëel of te duur?</div></div>
-<div class="pt"><div class="pt-ic">🛣️</div><div class="pt-t">Km-stand</div><div class="pt-d">Bepaalt welke modelproblemen op dit moment relevant zijn.</div></div>
-<div class="pt"><div class="pt-ic">⭐</div><div class="pt-t">Staat 1–10</div><div class="pt-d">Jouw indruk, die de AI naast de meetdata legt.</div></div>
-<div class="pt"><div class="pt-ic">📝</div><div class="pt-t">Aandachtspunten</div><div class="pt-d">Wat jou opviel — roest, geluid, optrekken — wordt meegewogen.</div></div>
-<div class="pt"><div class="pt-ic">🤖</div><div class="pt-t">Overige problemen</div><div class="pt-d">De AI meldt wat de data verraadt buiten wat jij al zag.</div></div>
-</div>
+<!-- ═══════════ MEEKIJKEN ═══════════ -->
+<section class="sec" id="meekijken" style="padding-top:40px">
+  <div class="wrap">
+    <span class="eb rv" data-n="01">Meekijken op afstand</span>
+    <h2 class="hs rv">Jij staat bij de verkoper. <em class="s gt">Je monteur kijkt mee.</em></h2>
+    <p class="lead rv">Je hoeft zelf niets van auto's te weten. Steek de adapter erin, geef je vaste garage of die handige buurman een code, en hij ziet op zijn eigen telefoon of computer live wat de motor doet. Terwijl jij daar nog staat.</p>
+    <div class="rm rv" data-dtc="P0301" role="img" aria-label="Voorbeeld: jij · bij de verkoper deelt de uitlezing live, jouw garage · kijkt mee kijkt mee op een ander scherm">
+      <div class="rm-dev rm-phone"><div class="in">
+        <div class="rm-who">Jij · bij de verkoper</div>
+        <div class="rm-car">Jouw volgende auto<small>bij de verkoper · uitlezen loopt</small></div>
+        <div class="rm-m" data-rm-m>
+          <div data-k="rpm"><small>Toerental</small><b>—</b><u><i></i></u></div>
+          <div data-k="cool"><small>Koelvloeistof °C</small><b>—</b><u><i></i></u></div>
+          <div data-k="volt"><small>Accu V</small><b>—</b><u><i></i></u></div>
+        </div>
+        <div class="rm-share">Deelt live<b>715 204 9936</b></div>
+      </div></div>
+      <div class="rm-link" aria-hidden="true">
+        <svg viewBox="0 0 150 40"><path d="M4 20 H146" stroke="rgba(79,214,240,.35)" stroke-width="1.5" stroke-dasharray="3 5" fill="none"/><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-0.0s" repeatCount="indefinite" path="M4 20 H146"/></circle><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-0.6s" repeatCount="indefinite" path="M4 20 H146"/></circle><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-1.2s" repeatCount="indefinite" path="M4 20 H146"/></circle></svg>
+        <div class="code"><small>MEEKIJK-CODE</small>715 204 9936</div>
+      </div>
+      <div class="rm-dev rm-desk">
+        <div class="bar"><i></i><i></i><i></i><span>Jouw garage · kijkt mee</span><b>● live</b></div>
+        <div class="body">
+          <div>
+            <div class="rm-car">Jouw volgende auto<small>alleen meekijken · sessie 4 uur geldig</small></div>
+            <div class="rm-m" data-rm-m>
+              <div data-k="rpm"><small>Toerental</small><b>—</b><u><i></i></u></div>
+          <div data-k="cool"><small>Koelvloeistof °C</small><b>—</b><u><i></i></u></div>
+          <div data-k="volt"><small>Accu V</small><b>—</b><u><i></i></u></div>
+            </div>
+          </div>
+          <div class="rm-log" data-rm-log>
+            <h5>Wat de meekijker doet</h5>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;padding:0 16px 16px;flex-wrap:wrap">
+          <span class="rm-btn" data-rm-pid>+ Sensor volgen</span>
+          <span class="rm-btn" data-rm-dtc>Foutcodes opvragen</span>
+        </div>
+      </div>
+    </div>
+    <div class="rm-steps">
+      <div class="rv"><span>01</span><b>Adapter erin</b><p>Bij de verkoper, in de OBD2-poort onder het stuur. Contact aan, PidLane verbindt vanzelf.</p></div>
+      <div class="rv d1"><span>02</span><b>Deel de code</b><p>Tik op delen en stuur de 10-cijferige code, de link of de QR-code naar je monteur. Via WhatsApp, of lees hem voor aan de telefoon.</p></div>
+      <div class="rv d2"><span>03</span><b>Hij ziet wat jij ziet</b><p>Live meters, foutcodes, en de sensoren die hij extra wil zien. Hij heeft zelf geen adapter nodig.</p></div>
+      <div class="rv d3"><span>04</span><b>Jij beslist</b><p>Met een vakman aan de lijn die de meting heeft gezien. Hij kan alleen kijken, niets aan de auto veranderen.</p></div>
+    </div>
+  </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- HOE HET WERKT -->
-<section id="hoe">
-<div class="section-eyebrow reveal">Hoe het werkt</div>
-<h2 class="reveal">Geen kennis nodig.<br>Geen monteur nodig.</h2>
-<p class="section-sub reveal">Eén keer een goedkope Bluetooth OBD2-adapter kopen (€20–€80), de app op je Android-telefoon, en je bent klaar om elke auto te checken die je overweegt.</p>
-<div class="fears reveal">
-<div class="fc"><div class="fc-q">"Ik weet niks van auto's"</div><div class="fc-a">Precies daarvoor is dit gemaakt. PidLane vertaalt alles naar <strong>gewoon Nederlands</strong> met een advies dat je meteen begrijpt — geen codetaal.</div></div>
-<div class="fc"><div class="fc-q">"Is de teller teruggedraaid?"</div><div class="fc-a">De app leest het echte chassisnummer uit en checkt RDW-historie. Afwijkingen tussen wat de verkoper zegt en wat de auto zegt <strong>vallen direct op</strong>.</div></div>
-<div class="fc"><div class="fc-q">"Zijn er foutcodes gewist?"</div><div class="fc-a">PidLane ziet niet alleen actieve codes, maar ook <strong>pending codes en wisindicaties</strong> — het trucje van net vóór de bezichtiging codes wissen werkt hier niet.</div></div>
-</div>
+<!-- ═══════════ ZO WERKT HET ═══════════ -->
+<section class="sec" id="zo-werkt-het" style="padding-top:0">
+  <div class="wrap">
+    <span class="eb rv" data-n="02">Wat je nodig hebt</span>
+    <h2 class="hs rv">Drie dingen. <em class="s">Die je waarschijnlijk al bijna hebt.</em></h2>
+    <div class="need">
+      <div class="rv"><span class="n gt">1</span><b>Een OBD2-adapter</b><p>Een Bluetooth-adapter van een paar tientjes. Getest met de Vgate iCar Pro BT 3.0 en de OBDLink MX+; andere ELM327-adapters werken meestal ook.</p></div>
+      <div class="rv d1"><span class="n gt">2</span><b>Een Android-telefoon</b><p>Met de app, of gewoon in Chrome. Op een iPhone kan het uitlezen helaas niet; meekijken kan je monteur wél op elk toestel.</p></div>
+      <div class="rv d2"><span class="n gt">3</span><b>Een auto vanaf ± 2001</b><p>Vrijwel elke benzineauto vanaf 2001 en diesel vanaf 2004 heeft een OBD2-poort. Hybride en elektrisch hebben eigen controles.</p></div>
+    </div>
+  </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- RAPPORTEN -->
-<section id="rapporten">
-<div class="section-eyebrow reveal">Voorbeeld</div>
-<h2 class="reveal">Drie auto's, drie adviezen</h2>
-<p class="section-sub reveal">Zo ziet de uitkomst van een aankoop-check eruit. Een cijfer, de punten die ertoe doen, en een duidelijk advies.</p>
-<div class="rapport-tabs reveal">
-<button class="rtab r-green active" onclick="showRapport('r1',this)">✅ Koop gerust</button>
-<button class="rtab r-orange" onclick="showRapport('r2',this)">⚠️ Onderhandel eerst</button>
-<button class="rtab r-red" onclick="showRapport('r3',this)">🚫 Loop weg</button>
-</div>
-
-<!-- R1 -->
-<div class="rapport-panel active reveal" id="r1">
-<div class="rp-card">
-<div class="rp-header"><span class="rp-status b-green">✅ Koop gerust</span>
-<div><div class="rp-title">Aankoop-check</div><div class="rp-meta">Toyota Yaris 1.5 Hybrid 2018 · 84.000 km · vraagprijs €13.450</div></div></div>
-<div class="rp-body">
-<div class="score-box"><div class="score-big" style="color:var(--okgreen)">8.5<small>/10</small></div><div class="score-txt"><strong>Sterke koop.</strong> Jouw indruk (8/10) komt overeen met de meetdata. Prijs is marktconform voor deze staat en kilometerstand.</div></div>
-<div class="rp-grid">
-<div class="rp-block"><div class="rp-block-title">Online: bekend bij dit model</div>
-<div class="rp-row"><span class="rp-row-l">Hybride-accu degradatie</span><span class="rp-row-v v-ok">Niet relevant <100k</span></div>
-<div class="rp-row"><span class="rp-row-l">Roest achterscherm</span><span class="rp-row-v v-ok">Niet waargenomen</span></div>
-<div class="rp-row"><span class="rp-row-l">Bekende terugroep</span><span class="rp-row-v v-ok">Geen open acties</span></div></div>
-<div class="rp-block"><div class="rp-block-title">Live gemeten</div>
-<div class="rp-row"><span class="rp-row-l">Foutcodes</span><span class="rp-row-v v-ok">0 actief · 0 pending</span></div>
-<div class="rp-row"><span class="rp-row-l">Hybride-systeem</span><span class="rp-row-v v-ok">Stabiel ✓</span></div>
-<div class="rp-row"><span class="rp-row-l">Koude start</span><span class="rp-row-v v-ok">Normaal ✓</span></div></div>
-</div>
-<div class="ai-verdict"><div class="av-header"><div class="av-icon">🤖</div><div class="av-label">AI-eindoordeel</div></div><div class="av-text">Geen verborgen gebreken in de data, geen openstaande terugroepacties, en de bekende zwakke plekken van dit model spelen op deze kilometerstand nog niet. <strong>De prijs is reëel — dit is een veilige aankoop.</strong></div></div>
-</div></div></div>
-
-<!-- R2 -->
-<div class="rapport-panel" id="r2">
-<div class="rp-card">
-<div class="rp-header"><span class="rp-status b-yellow">⚠️ Onderhandel eerst</span>
-<div><div class="rp-title">Aankoop-check</div><div class="rp-meta">Volkswagen Golf 1.6 TDI 2016 · 142.000 km · vraagprijs €11.900</div></div></div>
-<div class="rp-body">
-<div class="score-box" style="background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(255,107,53,.04));border-color:rgba(245,158,11,.25)"><div class="score-big" style="color:var(--yellow)">6.0<small>/10</small></div><div class="score-txt"><strong>Te koop, mits prijs zakt.</strong> Rijveilig, maar er komt werk aan dat de prijs nu niet weerspiegelt.</div></div>
-<div class="rp-grid">
-<div class="rp-block"><div class="rp-block-title">Online: bekend bij dit model</div>
-<div class="rp-row"><span class="rp-row-l">DPF verstopt rond 140k</span><span class="rp-row-v v-warn">Risico — speelt nu</span></div>
-<div class="rp-row"><span class="rp-row-l">EGR-vervuiling</span><span class="rp-row-v v-warn">Bekend zwak punt</span></div>
-<div class="rp-row"><span class="rp-row-l">Distributie interval</span><span class="rp-row-v v-info">Bijna aan beurt</span></div></div>
-<div class="rp-block"><div class="rp-block-title">Live gemeten</div>
-<div class="rp-row"><span class="rp-row-l">DPF-tegendruk</span><span class="rp-row-v v-warn">92% vol</span></div>
-<div class="rp-row"><span class="rp-row-l">Pending codes</span><span class="rp-row-v v-warn">1 (P2002 — DPF)</span></div>
-<div class="rp-row"><span class="rp-row-l">Accuspanning</span><span class="rp-row-v v-warn">13.2V (laag)</span></div></div>
-</div>
-<div class="ai-verdict" style="background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.2)"><div class="av-header"><div class="av-icon" style="background:var(--yellow);color:#1a1200">⚠️</div><div class="av-label" style="color:var(--yellow)">AI-eindoordeel</div></div><div class="av-text">De bekende DPF-zwakte van dit model is hier <strong>geen theorie maar realiteit</strong> — de data bevestigt het. Reken op €280–€450 aan werk plus binnenkort distributie. <strong>Vraag minimaal €600–€800 van de prijs af</strong> of laat de verkoper de DPF eerst regenereren.</div></div>
-</div></div></div>
-
-<!-- R3 -->
-<div class="rapport-panel" id="r3">
-<div class="rp-card">
-<div class="rp-header"><span class="rp-status b-red">🚫 Loop weg</span>
-<div><div class="rp-title">Aankoop-check</div><div class="rp-meta">BMW 320d 2014 · 198.000 km · vraagprijs €9.750</div></div></div>
-<div class="rp-body">
-<div class="score-box" style="background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.3)"><div class="score-big" style="color:var(--red)">3.0<small>/10</small></div><div class="score-txt"><strong>Niet kopen.</strong> Jouw indruk was 6/10, maar de data vertelt een ander verhaal — en dat is precies waarom je meet.</div></div>
-<div class="rp-grid">
-<div class="rp-block"><div class="rp-block-title">Online: bekend bij dit model</div>
-<div class="rp-row"><span class="rp-row-l">Wervelkleppen inlaat</span><span class="rp-row-v v-bad">Berucht zwak punt</span></div>
-<div class="rp-row"><span class="rp-row-l">Koeling / thermostaat</span><span class="rp-row-v v-bad">Bekend probleem</span></div>
-<div class="rp-row"><span class="rp-row-l">Hoog verbruik olie</span><span class="rp-row-v v-warn">Bij hoge km</span></div></div>
-<div class="rp-block"><div class="rp-block-title">Live gemeten</div>
-<div class="rp-row"><span class="rp-row-l">Recent gewiste codes</span><span class="rp-row-v v-bad">Wisindicatie!</span></div>
-<div class="rp-row"><span class="rp-row-l">Koelwatertemp. na rit</span><span class="rp-row-v v-bad">104°C te hoog</span></div>
-<div class="rp-row"><span class="rp-row-l">Brandstoftrim</span><span class="rp-row-v v-bad">+14% (mager)</span></div></div>
-</div>
-<div class="ai-verdict" style="background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.3)"><div class="av-header"><div class="av-icon" style="background:var(--red)">🚫</div><div class="av-label" style="color:var(--red)">AI-eindoordeel</div></div><div class="av-text">Er zijn <strong>kort voor de bezichtiging foutcodes gewist</strong> — een rode vlag. De koelwatertemperatuur en brandstoftrim wijzen op problemen die de bekende zwakke plekken van dit model bevestigen. Reparatie loopt al snel op tot €2.000+. <strong>Bedank vriendelijk en zoek verder.</strong></div></div>
-</div></div></div>
+<!-- ═══════════ WAT HET KAN ═══════════ -->
+<section class="sec" id="kan" style="padding-top:0">
+  <div class="wrap">
+    <span class="eb rv" data-n="03">Wat het kan</span>
+    <h2 class="hs rv">Van <em class="s">"wat betekent dat lampje?"</em> tot een complete koopcheck.</h2>
+    <div class="bento" style="margin-top:50px">
+      <div class="bx w4 rv">
+        <span class="tg nw">Nieuw</span>
+        <h3>Check mijn auto</h3>
+        <p>Eén oordeel bovenaan, <strong>rood, oranje of groen</strong>, met drie duidelijke vervolgstappen. De volledige uitlezing staat eronder voor wie het wil zien: foutcodes, de momentopname van toen de fout ontstond, en de zelftests van de auto.</p>
+      </div>
+      <div class="bx rv d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 12h10"/></svg></div>
+        <h3>Kenteken-check</h3>
+        <p>Ook zonder adapter: <strong>APK, NAP-oordeel, terugroepacties</strong> en import, rechtstreeks van de RDW.</p>
+      </div>
+      <div class="bx rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div>
+        <h3>Koopcheck</h3>
+        <p>Een vaste doorloop voor een tweedehands auto, met de zelftests die verraden of er <strong>kort geleden fouten zijn gewist</strong>.</p>
+      </div>
+      <div class="bx hot rv d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Meekijken op afstand</h3>
+        <p>Je monteur kijkt live mee via een <strong>code of QR</strong>. <a href="#meekijken">Zo werkt het →</a></p>
+      </div>
+      <div class="bx rv d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><circle cx="12" cy="8" r="2"/></svg></div>
+        <h3>Ritmonitor</h3>
+        <p>Laat de app tijdens een proefrit meekijken: hij let op <strong>uitvallende sensoren en uitschieters</strong>.</p>
+      </div>
+      <div class="bx w3 rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Mijn voertuigen</h3>
+        <p>Bewaar tot drie auto's in je account, <strong>met hun rapporten, ritten en open punten</strong>, op elk toestel waarop je inlogt.</p>
+      </div>
+      <div class="bx w3 rv d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg></div>
+        <h3>Rapport in gewone taal</h3>
+        <p>Wat is er aan de hand, hoe zeker is dat, en welk onderdeel is de eerste verdachte. <strong>Op te slaan en te delen als PDF</strong>, bijvoorbeeld met je garage.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ANALYSES BESTAAND -->
-<section id="analyses" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-<div class="section-eyebrow reveal">Niet alleen bij aankoop</div>
-<h2 class="reveal">Ook ná de koop<br>blijft het je auto-expert</h2>
-<p class="section-sub reveal">PidLane blijft in je telefoon. Dashboardlampje aan? Vreemd geluid? Hoog verbruik? Je weet binnen minuten wat er speelt, vóór je naar de garage gaat.</p>
-<div class="ag reveal">
-<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-g">⚠️</div><div><div class="ac-title">Foutcode uitlezen</div><div class="ac-dur">Direct · uitleg in gewone taal</div></div></div>
-<p class="ac-desc">Lampje brandt? Lees de foutcode uit en krijg een <strong>begrijpelijke uitleg</strong> plus wat het waarschijnlijk gaat kosten — zodat je niet voor verrassingen staat bij de garage.</p></div>
-<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-o">🔍</div><div><div class="ac-title">Probleemanalyse</div><div class="ac-dur">Op klachtbasis · oorzaak via data</div></div></div>
-<p class="ac-desc">Beschrijf de klacht in je eigen woorden ("trekt slecht op", "stottert koud"). De AI stelt vragen en <strong>bevestigt de oorzaak via de meetdata</strong>.</p></div>
-<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-c">🚗</div><div><div class="ac-title">Rit-analyse & besparing</div><div class="ac-dur">10 min rijden · rijgedrag & verbruik</div></div></div>
-<p class="ac-desc">Tien minuten rijden levert concrete <strong>besparingstips op basis van jouw rijgedrag</strong> — gemiddeld 10–20% minder verbruik mogelijk.</p></div>
-<div class="ac"><div class="ac-hdr"><div class="ac-icon ic-b">⚡</div><div><div class="ac-title">Voertuigcheck</div><div class="ac-dur">±20 seconden · stilstaand</div></div></div>
-<p class="ac-desc">Een snelle gezondheidscheck van alle systemen — handig <strong>voor een lange rit of na onderhoud</strong>, om gerust op weg te gaan.</p></div>
-</div>
+<!-- ═══════════ EERLIJK ═══════════ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <span class="eb rv" data-n="04">Eerlijk is eerlijk</span>
+    <h2 class="hs rv">Geen monteur in je broekzak. <em class="s gt">Wel een goede eerste blik.</em></h2>
+    <div class="honest">
+      <div class="hn rv"><h3><span>01</span>Een monteur blijft de baas</h3><p>PidLane vertelt wat de elektronica weet en wat dat waarschijnlijk betekent. Een afwijking laat je altijd door een vakman bevestigen voor je gaat repareren. Daarom is meekijken er.</p></div>
+      <div class="hn rv d1"><h3><span>02</span>Wat de motor niet weet, zeggen we niet</h3><p>Roest, banden, schokdempers: dat zit niet in de elektronica. Daar maken we niets van, en de app zegt het er eerlijk bij.</p></div>
+      <div class="hn rv"><h3><span>03</span>Je chassisnummer blijft van jou</h3><p>Het VIN verlaat je telefoon nooit onbewerkt: het wordt eerst gepseudonimiseerd. Op deze website staan geen trackingcookies.</p></div>
+      <div class="hn rv d1"><h3><span>04</span>Eerst zien, dan pas beginnen</h3><p>De app heeft een demostand die een verbinding nabootst, net als de proef hierboven. Er wordt dan niets opgeslagen.</p></div>
+    </div>
+  </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact" class="footer-cta">
-<div class="section-eyebrow">Contact</div>
-<h2>Wil je dit gebruiken<br>bij je volgende auto?</h2>
-<p class="section-sub">PidLane is in actieve ontwikkeling en de aankoop-check komt in de volgende update. Laat van je horen als je als eerste wilt weten wanneer het beschikbaar is.</p>
-<a class="footer-mail" href="mailto:info@pidlane.nl?subject=Interesse%20PidLane%20Consument">info@pidlane.nl</a>
-<span class="footer-sig">PidLane — jouw auto praat, wij vertalen</span>
+<!-- ═══════════ VRAGEN ═══════════ -->
+<section class="sec" id="vragen" style="padding-top:0">
+  <div class="wrap">
+    <span class="eb rv" data-n="05">Vragen</span>
+    <h2 class="hs rv">Goede vragen.</h2>
+    <div class="faq">
+      <details class="rv"><summary>Moet ik verstand hebben van auto's?</summary><p>Nee. Je krijgt één oordeel in rood, oranje of groen, met in gewone taal wat er aan de hand is en wat je nu kunt doen. En twijfel je, dan laat je iemand met verstand van zaken op afstand meekijken.</p></details>
+      <details class="rv"><summary>Hoe kijkt mijn monteur mee?</summary><p>Jij tikt op delen en stuurt hem een 10-cijferige code, een link of een QR-code. Hij opent PidLane op zijn telefoon of computer en ziet live dezelfde meters. Hij kan zelf foutcodes opvragen en extra sensoren laten volgen. De sessie blijft vier uur geldig.</p></details>
+      <details class="rv"><summary>Kan mijn monteur iets aan de auto veranderen?</summary><p>Nee. Meekijken is alleen kijken. Foutcodes wissen kan nooit op afstand: dat kan alleen wie bij de auto staat.</p></details>
+      <details class="rv"><summary>Mag ik zomaar een adapter in de auto van een verkoper steken?</summary><p>Vraag het even; de meeste verkopers vinden het prima, en wie weigert vertelt je daarmee ook iets. Uitlezen verandert niets aan de auto.</p></details>
+      <details class="rv"><summary>Werkt het op een iPhone?</summary><p>Het uitlezen van de auto nog niet: daarvoor is een Android-telefoon nodig, met de app of met Chrome. Meekijken op afstand werkt wel op elk toestel met een browser.</p></details>
+      <details class="rv"><summary>Is de proef op deze pagina echt?</summary><p>Alleen merk, model en brandstof: die komen van de open data van de RDW. Alle meetwaarden, foutcodes en uitkomsten zijn verzonnen. Je auto wordt niet uitgelezen en we bewaren je kenteken niet.</p></details>
+      <details class="rv"><summary>Wat kost het?</summary><p>De kenteken-check en de demostand kosten niets. Wat een volledige analyse kost, zie je in de app vóór je iets betaalt.</p></details>
+    </div>
+  </div>
 </section>
 
-<div class="footer-bottom">
-<span>© 2026 PidLane</span>
-<span><a href="index.html" style="color:var(--mist);text-decoration:none">Ben je autobedrijf? → Voor handelaren</a></span>
-<span>⚡ <em>Your car talks. We translate.</em></span>
+<!-- ═══════════ AFSLUITER ═══════════ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="end rv">
+      <span class="eb" data-n="06">Klaar voor het echte werk?</span>
+      <h2>De volgende auto <em class="s gt">vertelt je alles.</em></h2>
+      <p class="lead">Maak een account, probeer de demostand of check alvast een kenteken. Een adapter heb je pas nodig als je echt gaat uitlezen.</p>
+      <div class="row2">
+        <a class="btn btn-p" href="https://app.pidlane.nl">Start in de app <span class="ar">→</span></a>
+        <a class="btn btn-g" href="https://wa.me/31619071392" target="_blank" rel="noopener">Vraag het via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-big" aria-hidden="true">PidLane</div>
+    <div class="ft">
+      <span>© 2026 PidLane · Dordrecht · <em class="s">Your car talks. We translate.</em></span>
+      <nav aria-label="Voettekst">
+        <a href="index.html">Voorpagina</a>
+        <a href="zakelijk.html">Voor autobedrijven</a>
+        <a href="https://app.pidlane.nl/privacy.html">Privacy</a>
+        <a href="mailto:info@pidlane.nl">info@pidlane.nl</a>
+      </nav>
+    </div>
+    <p class="ft-fine">Geen trackingcookies op deze pagina</p>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar" data-doel="probeer">
+  <a class="btn btn-g" href="#probeer">Probeer</a>
+  <a class="btn btn-p" href="https://app.pidlane.nl">Start in de app</a>
 </div>
 
+<script src="site.js"></script>
 <script>
-function showRapport(id,btn){
-  document.querySelectorAll('.rapport-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.rtab').forEach(t=>t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
+// ── De speeltuin: eigen kenteken, echte merk/model/brandstof van de RDW, verzonnen meting ──
 (function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('.reveal').forEach(e=>e.classList.add('show'));return;
+  const $=id=>document.getElementById(id);
+  const body=$('pg-body');
+  let auto={naam:'Voorbeeldauto',sub:'vul hiernaast je kenteken in',soort:'benzine',kent:'',seed:7}, sc=1, tab='check', timers=[];
+
+  // Uitkomsten per aandrijving. Alles hierin is verzonnen; de codes bestaan wel echt.
+  const S={
+    benzine:[
+      {t:'Ziet er gezond uit',s:'Geen foutcodes, alle zelftests doorlopen',l:[['g','Geen foutcodes opgeslagen'],['g','Alle zelftests van de auto doorlopen'],['g','Brandstofmengsel in balans: +2 %'],['g','Accu laadt goed: 14,2 V']],n:'<b>Kopen kan.</b> Vraag wel altijd naar de onderhoudshistorie.'},
+      {t:'Let op, vraag door',s:'Eén foutcode, verder in orde',l:[['w','P0420 · katalysator werkt onder de norm'],['g','Zelftests doorlopen'],['w','Accu zakt bij de start naar 9,8 V'],['g','Koelvloeistof normaal: 90 °C']],n:'<b>Onderhandel</b>, of laat je monteur even meekijken naar de katalysator.'},
+      {t:'Niet kopen zonder monteur',s:'Foutcodes kort geleden gewist',l:[['r','P0301 · cilinder 1 hapert'],['r','Foutcodes 34 km geleden gewist'],['r','3 zelftests nog niet klaar'],['w','Mengsel te arm: +13 %']],n:'<b>Iemand heeft net codes gewist.</b> Laat je monteur meekijken vóór je iets tekent.'}],
+    diesel:[
+      {t:'Ziet er gezond uit',s:'Geen foutcodes, alle zelftests doorlopen',l:[['g','Geen foutcodes opgeslagen'],['g','Roetfilter recent geregenereerd'],['g','Brandstofdruk binnen norm'],['g','Accu laadt goed: 14,1 V']],n:'<b>Kopen kan.</b> Vraag naar de onderhoudshistorie.'},
+      {t:'Let op, vraag door',s:'Roetfilter vraagt aandacht',l:[['w','P2002 · roetfilter werkt onder de norm'],['g','Zelftests doorlopen'],['w','Veel korte ritten gereden'],['g','Koelvloeistof normaal: 88 °C']],n:'<b>Vraag door</b> over het roetfilter, of laat je monteur meekijken.'},
+      {t:'Niet kopen zonder monteur',s:'Foutcodes kort geleden gewist',l:[['r','P0087 · brandstofdruk te laag'],['r','Foutcodes 21 km geleden gewist'],['r','2 zelftests nog niet klaar'],['w','Accu zakt bij de start naar 9,6 V']],n:'<b>Iemand heeft net codes gewist.</b> Laat je monteur meekijken vóór je iets tekent.'}],
+    elektrisch:[
+      {t:'Ziet er gezond uit',s:'Geen foutcodes',l:[['g','Geen foutcodes opgeslagen'],['g','12V-accu in orde: 12,8 V'],['g','Accutemperatuur normaal'],['g','Laadtoestand 78 %']],n:'<b>Kopen kan.</b> Vraag naar het laadgedrag van de vorige eigenaar.'},
+      {t:'Let op, vraag door',s:'Eén aandachtspunt',l:[['w','12V-accu zwak: 11,9 V'],['g','Geen foutcodes opgeslagen'],['g','Accutemperatuur normaal'],['g','Laadtoestand 64 %']],n:'<b>Kleine kosten:</b> een nieuwe 12V-accu kun je bedingen.'},
+      {t:'Niet kopen zonder monteur',s:'Hoogvoltaccu vraagt aandacht',l:[['r','P0AFA · spanning hoogvoltaccu te laag'],['r','Foutcodes kort geleden gewist'],['w','Accu wordt warm bij stilstand'],['g','12V-accu in orde']],n:'<b>Dit is duur als het klopt.</b> Laat een specialist meekijken.'}]
+  };
+  const G={
+    brandstof:[['Toerental','',780,860,0,6000,0],['Koelvloeistof','°C',86,92,0,130,0],['Accu','V',14.0,14.4,10,16,1],['Brandstoftrim','%',-2,3,-25,25,1]],
+    elektrisch:[['Laadtoestand','%',77,78,0,100,0],['Accutemp.','°C',22,24,-10,60,0],['12V-accu','V',12.7,12.9,10,15,1],['Vermogen','kW',0.4,1.6,0,150,1]]
+  };
+  const KL=['var(--gn)','var(--am)','var(--rd)'];
+
+  function wis(){ timers.forEach(clearInterval); timers.forEach(clearTimeout); timers=[]; }
+  function sets(){ return S[auto.soort]||S.benzine; }
+
+  function render(){
+    wis();
+    const x=sets()[sc];
+    document.querySelectorAll('#pg-sc button').forEach(b=>b.classList.toggle('on',+b.dataset.s===sc));
+    $('pg-naam').textContent=auto.naam; $('pg-sub').textContent=auto.sub;
+    body.style.animation='none'; void body.offsetWidth; body.style.animation='';
+    if(tab==='check'){
+      body.innerHTML='<div class="lamp" style="--c:'+KL[sc]+'"><i></i><div><b>'+x.t+'</b><small>'+x.s+'</small></div></div>'
+        +'<ul class="pg-l">'+x.l.map(l=>'<li style="--c:'+(l[0]==='g'?'var(--gn)':l[0]==='w'?'var(--am)':'var(--rd)')+'">'+l[1]+'</li>').join('')+'</ul>'
+        +'<div class="pg-nu">'+x.n+'</div>';
+    } else if(tab==='live'){
+      const g=G[auto.soort==='elektrisch'?'elektrisch':'brandstof'];
+      body.innerHTML='<div class="pg-g">'+g.map((m,i)=>'<div data-i="'+i+'"><small>'+m[0]+(m[1]?' '+m[1]:'')+'</small><b>—</b><u><i></i></u></div>').join('')+'</div>'
+        +'<div class="pg-nu" style="margin-top:12px">Stilstaand, motor stationair. <b>Verzonnen waarden</b>, zoals de app ze zou tonen.</div>';
+      const upd=()=>body.querySelectorAll('.pg-g div').forEach(d=>{ const m=g[+d.dataset.i], v=m[2]+Math.random()*(m[3]-m[2]);
+        d.querySelector('b').textContent=m[6]?(v>=0&&m[0]==='Brandstoftrim'?'+':'')+v.toFixed(1).replace('.',','):Math.round(v).toLocaleString('nl-NL');
+        d.querySelector('u i').style.width=Math.max(3,(v-m[4])/(m[5]-m[4])*100)+'%'; });
+      upd(); if(!RM) timers.push(setInterval(upd,1100));
+    } else {
+      const code=String(1000000000+((auto.seed%100000)*2654435761)%9000000000).replace(/(\d{3})(\d{3})(\d{4})/,'$1 $2 $3');
+      body.innerHTML='<div class="pg-mee"><div class="pg-code">'+qr(auto.seed)+'<div><small>MEEKIJK-CODE</small><b>'+code+'</b><small style="margin-top:6px;letter-spacing:0">Stuur deze naar je monteur</small></div></div>'
+        +'<div class="pg-st" id="pg-st">Wachten op je monteur…</div><div class="pg-ev" id="pg-ev"></div></div>';
+      const ev=[
+        ['👁 <b>Je monteur kijkt mee</b>',1600],
+        ['🔭 Hij volgt nu ook: <b>'+(auto.soort==='elektrisch'?'accutemperatuur':'brandstoftrim')+'</b>',3400],
+        ['📋 Hij vroeg de foutcodes op: <b>'+(x.l[0][0]==='g'?'geen':x.l[0][1].split(' · ')[0])+'</b>',5200]
+      ];
+      ev.forEach(e=>timers.push(setTimeout(()=>{
+        const st=$('pg-st'); if(st && e===ev[0]){ st.textContent='Live verbonden · alleen meekijken'; st.classList.add('ok'); }
+        const d=document.createElement('div'); d.innerHTML=e[0]; const box=$('pg-ev'); if(box) box.appendChild(d);
+      }, RM?0:e[1])));
+    }
   }
-  const io=new IntersectionObserver(es=>{
-    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+  // Nep-QR: een patroon dat op een QR-code lijkt maar nergens naartoe leidt.
+  function qr(seed){
+    let r=seed||1; const rnd=()=>(r=(r*16807)%2147483647)/2147483647; let c='';
+    for(let y=0;y<21;y++)for(let x=0;x<21;x++){
+      const oog=(a,b)=>x>=a&&x<a+7&&y>=b&&y<b+7, inOog=oog(0,0)||oog(14,0)||oog(0,14);
+      let on;
+      if(inOog){ const lx=x<7?x:x-14, ly=y<7?y:y-14; on=lx===0||ly===0||lx===6||ly===6||(lx>=2&&lx<=4&&ly>=2&&ly<=4); }
+      else on=rnd()>.52;
+      if(on) c+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>';
+    }
+    return '<svg viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges"><g fill="#07090d">'+c+'</g></svg>';
+  }
+  function hash(s){ let h=2166136261; for(const ch of s){ h^=ch.charCodeAt(0); h=Math.imul(h,16777619); } return Math.abs(h)||1; }
+  function netjes(w){ return String(w||'').trim().split(/\s+/).map(x=>/^[A-Z]{2,}$/.test(x)?x[0]+x.slice(1).toLowerCase():x).join(' '); }
+
+  async function rdw(k){
+    const q=u=>{ const c=new AbortController(); const t=setTimeout(()=>c.abort(),5000);
+      return fetch(u,{signal:c.signal}).then(r=>{ clearTimeout(t); if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }); };
+    const [a,b]=await Promise.all([
+      q('https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken='+encodeURIComponent(k)),
+      q('https://opendata.rdw.nl/resource/8ys7-d773.json?kenteken='+encodeURIComponent(k)).catch(e=>{ console.warn('RDW brandstof niet opgehaald:',e); return []; })
+    ]);
+    return {v:a&&a[0], bs:(b||[]).map(x=>String(x.brandstof_omschrijving||'')).filter(Boolean)};
+  }
+  function soort(bs){
+    const l=bs.join('+').toLowerCase();
+    if(/elektric/.test(l)) return 'elektrisch';   // hybride krijgt hier de EV-kant: de proef heeft geen aparte hybride-set
+    if(/diesel/.test(l)) return 'diesel';
+    return 'benzine';
+  }
+
+  $('kform').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const k=$('kent').value.replace(/[\s-]/g,'').toUpperCase(), st=$('kstat');
+    if(!/^[A-Z0-9]{6}$/.test(k)){ st.textContent='Een Nederlands kenteken heeft 6 letters en cijfers, bijvoorbeeld AB-123-C.'; return; }
+    st.textContent='RDW opzoeken…';
+    const seed=hash(k); sc=seed%3;
+    try{
+      const r=await rdw(k);
+      if(!r.v){ auto={naam:'Verzonnen auto',sub:'kenteken niet gevonden bij de RDW',soort:'benzine',kent:k,seed:seed}; st.textContent='Niet gevonden bij de RDW. We spelen verder met een verzonnen auto.'; }
+      else {
+        const jaar=String(r.v.datum_eerste_toelating||'').slice(0,4), bs=r.bs;
+        auto={naam:[netjes(r.v.merk),netjes(r.v.handelsbenaming)].filter(Boolean).join(' ')||'Jouw auto',
+              sub:[jaar,bs.length?bs.join(' + ').toLowerCase():'',k.replace(/^(..)(...)(.)$/,'$1-$2-$3')].filter(Boolean).join(' · '),
+              soort:soort(bs),kent:k,seed:seed};
+        st.textContent='Gevonden: dit is je auto. De meting in de proef is verzonnen.';
+      }
+    }catch(err){
+      console.warn('RDW niet bereikbaar:',err);
+      auto={naam:'Verzonnen auto',sub:'RDW niet bereikbaar · kenteken '+k,soort:'benzine',kent:k,seed:seed};
+      st.textContent='De RDW antwoordt nu niet. We spelen verder met een verzonnen auto.';
+    }
+    tab='check'; syncTabs(); render();
+    if(innerWidth<980) document.getElementById('pg').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});
+  });
+  // Kenteken netjes tonen tijdens het typen: streepjes zijn niet nodig, hoofdletters wel.
+  $('kent').addEventListener('input',e=>{ e.target.value=e.target.value.toUpperCase(); });
+
+  function syncTabs(){ document.querySelectorAll('.pg-tabs button').forEach(b=>{ const on=b.dataset.t===tab; b.classList.toggle('on',on); b.setAttribute('aria-selected',on); }); }
+  document.querySelectorAll('.pg-tabs button').forEach(b=>b.addEventListener('click',()=>{ tab=b.dataset.t; syncTabs(); render(); }));
+  document.querySelectorAll('#pg-sc button').forEach(b=>b.addEventListener('click',()=>{ sc=+b.dataset.s; render(); }));
+  render();
 })();
 </script>
 </body>
