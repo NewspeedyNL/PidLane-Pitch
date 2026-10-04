@@ -1,0 +1,4 @@
+User-agent: *
+Allo** /
+ 
+Sitemap: https://www.pidlane.nl/sitemap.xml
