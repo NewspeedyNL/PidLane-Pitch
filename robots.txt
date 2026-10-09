@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.pidlane.nl/sitemap.xml
+Sitemap: https://pidlane.nl/sitemap.xml
 
 # Optioneel: crawl-delay voor agressieve bots
 # Crawl-delay: 1
