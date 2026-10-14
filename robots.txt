@@ -1,10 +1,4 @@
-# robots.txt - PidLane
-
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://pidlane.nl/sitemap.xml
-
-# Optioneel: crawl-delay voor agressieve bots
-# Crawl-delay: 1

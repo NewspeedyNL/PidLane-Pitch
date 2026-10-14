@@ -429,3 +429,15 @@ footer{padding:80px 0 50px}
 /* Uitgelicht blok in de bento */
 .bx.hot{background:linear-gradient(135deg,rgba(79,214,240,.12),var(--sur) 60%);box-shadow:inset 0 0 0 1px rgba(79,214,240,.4)}
 .bx.hot a{color:var(--cy);font-weight:500;text-decoration:none}
+
+/* ═══════════ Google Play-knop + telefoonframes (okt 2026) ═══════════ */
+.gp{display:inline-flex;align-items:center;gap:12px;padding:10px 22px 10px 16px;border-radius:16px;background:#000;color:#fff;text-decoration:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 14px 40px -14px rgba(0,0,0,.9);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.gp:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),0 20px 50px -14px rgba(31,209,137,.45)}
+.gp svg{width:28px;height:28px;flex:none}
+.gp span{display:flex;flex-direction:column;line-height:1.05;font:500 11px var(--fb);letter-spacing:.3px;text-transform:uppercase;color:#cfd6e2}
+.gp b{font:600 20px/1.1 var(--fb);letter-spacing:-.2px;text-transform:none;color:#fff;margin-top:2px}
+.gp.sm{padding:7px 16px 7px 12px;border-radius:12px}.gp.sm svg{width:22px;height:22px}.gp.sm b{font-size:15.5px}.gp.sm span{font-size:9.5px}
+.nav .gp{padding:7px 16px 7px 12px;border-radius:999px}.nav .gp svg{width:20px;height:20px}.nav .gp b{font-size:14.5px;margin:0}.nav .gp span{display:contents}.nav .gp span i{display:none}
+.phone{position:relative;border-radius:38px;padding:9px;background:linear-gradient(160deg,#2a3242,#11161f 40%,#1c2330);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 50px 90px -40px rgba(0,0,0,.95)}
+.phone img{width:100%;height:auto;border-radius:30px;display:block;background:var(--ink2)}
+.mbar .gp{flex:1;justify-content:center;border-radius:999px;padding:9px 12px}.mbar .gp svg{width:20px;height:20px}.mbar .gp b{font-size:15px;margin:0}.mbar .gp span{display:contents}.mbar .gp span i{display:none}
