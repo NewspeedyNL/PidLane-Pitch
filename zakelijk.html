@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PidLane voor autobedrijven — Weet wat u koopt, vóór u tekent</title>
 <meta name="description" content="PidLane leest elke occasion uit via de OBD2-poort en maakt er in 4 minuten een koopadvies van: kopen, onderhandelen of afzien. Met RDW-kentekencheck, tellerplausibiliteit, PDF-rapport en live meekijken op afstand.">
-<meta name="theme-color" content="#07090d">
+<meta name="theme-color" content="#07080a">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:url" content="https://pidlane.nl/zakelijk.html">
@@ -21,10 +21,6 @@
 <meta name="twitter:image" content="https://pidlane.nl/og-image.png">
 <link rel="canonical" href="https://pidlane.nl/zakelijk.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%231fd189'/%3E%3Cstop offset='1' stop-color='%234fd6f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Crect x='10' y='14' width='44' height='28' rx='9' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M16 28h9l4-8 6 15 4-7h9' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -135,513 +131,308 @@
   ]
 }
 </script>
-
-<link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pl.css">
 </head>
 <body>
-
-<!-- ═══════════ NAVIGATIE ═══════════ -->
+<a class="sr" href="#main">Naar de inhoud</a>
 <header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="index.html" aria-label="PidLane, naar de voorpagina">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#1fd189"/><stop offset="1" stop-color="#4fd6f0"/></linearGradient></defs><rect x="6" y="12" width="52" height="34" rx="11" fill="none" stroke="url(#lg)" stroke-width="4.5"/><path d="M14 29h10l5-10 7 18 5-8h9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      PidLane
-    </a>
-    <nav class="nav-l" aria-label="Hoofdmenu">
-      <a href="#werkwijze">Zo werkt het</a>
-      <a href="#meekijken">Meekijken</a>
-      <a href="#controles">Controles</a>
-      <a href="#rapporten">Rapporten</a>
-      <a href="#rekensom">Rekensom</a>
-      <a href="#vragen">Vragen</a>
-    </nav>
-    <a class="nav-part" href="consument.html">Particulier?</a>
-    <a class="btn btn-p" href="#demo">Plan een demo <span class="ar">→</span></a>
+  <div class="wrap nav-in">
+    <a class="logo" href="/" aria-label="PidLane, naar de homepage"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="12" width="52" height="34" rx="10" fill="none" stroke="#1fd189" stroke-width="4.5"/><path d="M14 30h10l4.5-9 7 17 4.5-8h10" fill="none" stroke="#ecebe6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> PidLane</a>
+    <nav class="nav-l" aria-label="Hoofdmenu"><a href="/">Home</a><a href="/#hyperlane">Hyperlane</a><a href="consument.html">Particulier</a><a href="zakelijk.html" aria-current="page">Autobedrijf</a><a href="pidlane-help.html">Handleiding</a></nav>
+    <a class="btn btn-p" href="#demo">Plan een demo</a>
+    <button class="burg" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-<!-- ═══════════ HERO ═══════════ -->
-<section class="hero">
-  <div class="grid-bg" aria-hidden="true"></div>
-  <div class="wrap hero-g">
+<main id="main">
+<section class="sub">
+  <div class="wrap sub-g">
     <div>
-      <span class="pill rv"><b>OBD2</b> Inkoopcontrole voor autobedrijven</span>
-      <h1 class="hk rv d1">Weet wat u koopt, <em class="s gt">vóór</em> u tekent.</h1>
-      <p class="hero-p rv d2">PidLane leest een inruiler of inkoop in <strong>4 minuten</strong> uit via de OBD2-poort en maakt er een koopadvies van: <strong>kopen, onderhandelen of afzien</strong>. Gewiste foutcodes, een haperende cilinder, een teller die niet klopt: u ziet het vóór het bod. <strong>Staat u er niet zelf bij? Dan kijkt uw werkplaats live mee.</strong></p>
-      <div class="hero-cta rv d3">
+      <p class="kick rv"><b>OBD2</b> inkoopcontrole voor autobedrijven</p>
+      <h1 class="d1 rv" style="font-size:clamp(44px,6.6vw,100px)">Weet wat u koopt, <i>vóór u tekent.</i></h1>
+      <p class="lead rv">PidLane leest een inruiler of inkoop in <strong>4 minuten</strong> uit via de OBD2-poort en maakt er een koopadvies van: <strong>kopen, onderhandelen of afzien</strong>. Gewiste foutcodes, een haperende cilinder, een teller die niet klopt: u ziet het vóór het bod. Staat u er niet zelf bij? Dan kijkt uw werkplaats live mee.</p>
+      <div class="cta rv">
         <a class="btn btn-p" href="#demo">Plan een demo op uw terrein <span class="ar">→</span></a>
-        <a class="btn btn-g" href="https://wa.me/31619071392" target="_blank" rel="noopener">WhatsApp ons</a>
+        <a class="btn btn-l" href="https://wa.me/31619071392" target="_blank" rel="noopener">WhatsApp ons</a>
       </div>
-      <div class="checks rv d3">
-        <span>Live meekijken op afstand</span>
-        <span>Elke gangbare OBD2-adapter</span>
-        <span>Demo binnen 48 uur</span>
-      </div>
+      <div class="status rv"><span>Live meekijken op afstand</span><span>Elke gangbare OBD2-adapter</span><span>Demo binnen 48 uur</span></div>
     </div>
-
-    <div class="scan-w rv d2">
-      <div class="float f1"><b>●</b> RDW · kenteken herkend</div>
-      <div class="float f2">Werkplaats kijkt mee <b>● live</b></div>
-      <div class="scan" id="scan" role="img" aria-label="Voorbeeld van een uitlezing: VW Golf 1.5 TSI uit 2019, advies fors onderhandelen of afzien">
-        <div class="sc-top">
-          <span class="sc-dot"></span>
-          <div class="sc-t">Inkoopcontrole<small>VW Golf 1.5 TSI · 2019 · 88.412 km</small></div>
-          <div class="sc-tm"><span id="sc-time">0:00</span><small>UITLEZEN</small></div>
-        </div>
-        <div class="sc-bar"><i id="sc-bar"></i></div>
-        <div class="sc-log" id="sc-log"></div>
-        <div class="sc-rows">
-          <div class="row r" data-at="7"><i></i><span>Foutcodes &amp; readiness</span><b>P0303 · pas gewist</b></div>
-          <div class="row w" data-at="8"><i></i><span>Brandstoftrim lang B1</span><b>+14,8 %</b></div>
-          <div class="row w" data-at="9"><i></i><span>Koelvloeistof opwarmen</span><b>traag</b></div>
-          <div class="row g" data-at="10"><i></i><span>OBD-km · teller · RDW</span><b>klopt</b></div>
-          <div class="row w" data-at="11"><i></i><span>Accu bij start</span><b>11,9 V</b></div>
-        </div>
-        <div class="verdict" id="verdict">
-          <span class="stamp">ONDERHANDEL</span>
-          <strong>Fors onderhandelen of afzien</strong>
-          <p>Misfire cilinder 3 plus een arm mengsel: vacuümlek of injector. Herstel € 1.650 – € 2.300.</p>
-        </div>
+    <div class="scan rv" aria-label="Voorbeeld van een inkoopcontrole">
+      <div class="scan-h"><span><b>●</b> RDW · kenteken herkend</span><span>werkplaats kijkt mee · <b>live</b></span></div>
+      <div class="scan-t">
+        <div><b>Inkoopcontrole</b><small>VW Golf 1.5 TSI · 2019 · 88.412 km</small></div>
+        <div class="scan-tm"><span id="sc-time">0:00</span><small>UITLEZEN</small></div>
       </div>
+      <div class="scan-bar"><i id="sc-bar"></i></div>
+      <div class="scan-log" id="sc-log"></div>
+      <div class="scan-rows">
+        <div class="row r" data-at="7"><i></i><span>Foutcodes &amp; readiness</span><b>P0303 · pas gewist</b></div>
+        <div class="row w" data-at="8"><i></i><span>Brandstoftrim lang B1</span><b>+14,8 %</b></div>
+        <div class="row w" data-at="9"><i></i><span>Koelvloeistof opwarmen</span><b>traag</b></div>
+        <div class="row g" data-at="10"><i></i><span>OBD-km · teller · RDW</span><b>klopt</b></div>
+        <div class="row w" data-at="11"><i></i><span>Accu bij start</span><b>11,9 V</b></div>
+      </div>
+      <div class="verdict" id="verdict"><span class="st">ONDER&shy;HANDEL</span><div><b>Fors onderhandelen of afzien</b><p>Misfire cilinder 3 plus een arm mengsel: vacuümlek of injector. Herstel € 1.650 – € 2.300.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ CIJFERBAND ═══════════ -->
-<section class="band" aria-label="Kerncijfers">
-  <div class="band-g">
-    <div class="st rv"><b class="gt">1 op 5</b><span>geïmporteerde occasions had in 2023 een teruggedraaide teller</span></div>
-    <div class="st rv d1"><b>€ 1.900</b><span>gemiddelde schade per auto met tellerfraude, bovenop verborgen gebreken</span></div>
-    <div class="st rv d2"><b>4 min</b><span>van OBD-stekker tot volledig inkooprapport</span></div>
-    <div class="odo-c rv d3">
-      <small>Schade tellerfraude NL · sinds u hier bent</small>
-      <div class="odo mono" id="odo"></div>
-      <p>€ 161 mln per jaar volgens de branche: ruim € 5 per seconde.</p>
-    </div>
+<section class="facts" aria-label="Cijfers">
+  <div class="wrap">
+    <div class="fact"><b>1 op 5</b><span>geïmporteerde occasions had in 2023 een teruggedraaide teller</span></div>
+    <div class="fact"><b>€ 1.900</b><span>gemiddelde schade per auto met tellerfraude, bovenop verborgen gebreken</span></div>
+    <div class="fact"><b>4 min</b><span>van OBD-stekker tot volledig inkooprapport</span></div>
+    <div class="fact"><b id="odo" class="odo">€ 0</b><span>schade door tellerfraude in Nederland sinds u hier bent: € 161 mln per jaar, ruim € 5 per seconde</span></div>
   </div>
-  <div class="bron">Bronnen: BOVAG &amp; Vereniging Aanpak Tellerfraude (cijfers 2023) · RDW.</div>
 </section>
+<div class="wrap"><p class="bron">Bronnen: BOVAG &amp; Vereniging Aanpak Tellerfraude (cijfers 2023) · RDW.</p></div>
 
-<!-- ═══════════ ZO WERKT HET ═══════════ -->
 <section class="sec" id="werkwijze">
   <div class="wrap">
-    <span class="eb rv" data-n="01">Zo werkt het</span>
-    <h2 class="hs rv">Drie stappen. <em class="s">Geen</em> installatie, geen cursus.</h2>
-    <p class="lead rv">Een app op een gewone Android-telefoon of -tablet, plus een OBD2-adapter van een paar tientjes. Iedereen op de zaak kan het na één keer voordoen.</p>
-
-    <div class="steps">
-      <div class="stp rv"><span class="big" aria-hidden="true">1</span>
-        <div class="tm">0:00 <span>± 30 sec</span></div>
-        <h3>Stekker erin</h3>
-        <p>Adapter in de OBD2-poort, contact aan. De app verbindt zelf en <strong>herkent de auto</strong>; merk, model en APK komen erbij via de RDW.</p>
-      </div>
-      <div class="stp rv d1"><span class="big" aria-hidden="true">2</span>
-        <div class="tm">0:30 <span>± 3 min</span></div>
-        <h3>App leest en toetst</h3>
-        <p>Foutcodes en <strong>sporen van gewiste codes</strong>, brandstoftrims, drukken, temperaturen, en de kilometerstand uit de ECU naast teller en RDW-historie.</p>
-      </div>
-      <div class="stp rv d2"><span class="big" aria-hidden="true">3</span>
-        <div class="tm">4:00 <span>direct</span></div>
-        <h3>Advies op papier</h3>
-        <p>Een stoplicht-oordeel met de gemeten waarden als onderbouwing en een <strong>geschat herstelbedrag als onderhandelmarge</strong>. Als PDF bij het dossier.</p>
-      </div>
+    <p class="kick rv"><b>01</b> Zo werkt het</p>
+    <div class="sec-h">
+      <h2 class="d2 rv">Drie stappen. <i>Geen installatie, geen cursus.</i></h2>
+      <p class="lead rv">Een app op een gewone Android-telefoon of -tablet, plus een OBD2-adapter van een paar tientjes. Iedereen op de zaak kan het na één keer voordoen.</p>
     </div>
-    <div class="timeline rv" id="tl"><span>0:00</span><div class="tl"><i></i></div><span>4:12 · rapport klaar</span></div>
+    <ol class="stappen" style="border-color:var(--rule2)">
+      <li class="rv" style="border-color:var(--rule)"><span>0:00</span><h3>Stekker erin</h3><p style="color:var(--mu)">Adapter in de OBD2-poort, contact aan. De app verbindt zelf en herkent de auto; merk, model en APK komen erbij via de RDW.</p></li>
+      <li class="rv" style="border-color:var(--rule)"><span>0:30</span><h3>App leest en toetst</h3><p style="color:var(--mu)">Foutcodes en sporen van gewiste codes, brandstoftrims, drukken, temperaturen, en de kilometerstand uit de ECU naast teller en RDW-historie.</p></li>
+      <li class="rv" style="border-color:var(--rule)"><span>4:00</span><h3>Advies op papier</h3><p style="color:var(--mu)">Een stoplicht-oordeel met de gemeten waarden als onderbouwing en een geschat herstelbedrag als onderhandelmarge. Als PDF bij het dossier.</p></li>
+    </ol>
   </div>
 </section>
 
-<!-- ═══════════ MEEKIJKEN OP AFSTAND ═══════════ -->
-<section class="sec" id="meekijken" style="padding-top:0">
+<section class="sec ink2" id="meekijken">
   <div class="wrap">
-    <span class="eb rv" data-n="02">Meekijken op afstand</span>
-    <h2 class="hs rv">Uw inkoper staat bij de auto. <em class="s gt">Uw beste monteur kijkt mee.</em></h2>
-    <p class="lead rv">De auto staat bij een particulier in Breda, uw specialist zit in de werkplaats. Met één code ziet hij live dezelfde meters, vraagt hij zelf de foutcodes op en zet hij de sensoren aan die hij wil zien. Het oordeel valt samen, vóór er een bod ligt.</p>
-    <div class="rm rv" data-dtc="P0303" role="img" aria-label="Voorbeeld: bij de auto · inkoper deelt de uitlezing live, werkplaats · meekijken kijkt mee op een ander scherm">
-      <div class="rm-dev rm-phone"><div class="in">
-        <div class="rm-who">Bij de auto · inkoper</div>
-        <div class="rm-car">VW Golf 1.5 TSI<small>op locatie · uitlezen loopt</small></div>
-        <div class="rm-m" data-rm-m>
-          <div data-k="rpm"><small>Toerental</small><b>—</b><u><i></i></u></div>
-          <div data-k="cool"><small>Koelvloeistof °C</small><b>—</b><u><i></i></u></div>
-          <div data-k="volt"><small>Accu V</small><b>—</b><u><i></i></u></div>
-        </div>
-        <div class="rm-share">Deelt live<b>482 913 0275</b></div>
-      </div></div>
-      <div class="rm-link" aria-hidden="true">
-        <svg viewBox="0 0 150 40"><path d="M4 20 H146" stroke="rgba(79,214,240,.35)" stroke-width="1.5" stroke-dasharray="3 5" fill="none"/><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-0.0s" repeatCount="indefinite" path="M4 20 H146"/></circle><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-0.6s" repeatCount="indefinite" path="M4 20 H146"/></circle><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-1.2s" repeatCount="indefinite" path="M4 20 H146"/></circle></svg>
-        <div class="code"><small>MEEKIJK-CODE</small>482 913 0275</div>
-      </div>
-      <div class="rm-dev rm-desk">
-        <div class="bar"><i></i><i></i><i></i><span>Werkplaats · meekijken</span><b>● live</b></div>
-        <div class="body">
-          <div>
-            <div class="rm-car">VW Golf 1.5 TSI<small>alleen meekijken · sessie 4 uur geldig</small></div>
-            <div class="rm-m" data-rm-m>
-              <div data-k="rpm"><small>Toerental</small><b>—</b><u><i></i></u></div>
-          <div data-k="cool"><small>Koelvloeistof °C</small><b>—</b><u><i></i></u></div>
-          <div data-k="volt"><small>Accu V</small><b>—</b><u><i></i></u></div>
-            </div>
-          </div>
-          <div class="rm-log" data-rm-log>
-            <h5>Wat de meekijker doet</h5>
-          </div>
-        </div>
-        <div style="display:flex;gap:8px;padding:0 16px 16px;flex-wrap:wrap">
-          <span class="rm-btn" data-rm-pid>+ Sensor volgen</span>
-          <span class="rm-btn" data-rm-dtc>Foutcodes opvragen</span>
+    <p class="kick rv"><b>02</b> Meekijken op afstand</p>
+    <div class="sec-h">
+      <h2 class="d2 rv">Uw inkoper staat bij de auto. <i>Uw beste monteur kijkt mee.</i></h2>
+      <p class="lead rv">De auto staat bij een particulier in Breda, uw specialist zit in de werkplaats. Met één code ziet hij live dezelfde meters, vraagt hij zelf de foutcodes op en zet hij de sensoren aan die hij wil zien. Het oordeel valt samen, vóór er een bod ligt.</p>
+    </div>
+    <div class="rm rv">
+      <div class="scr">
+        <div class="scr-h"><span><b>Inkoper</b> · op locatie</span><span class="live">● deelt live</span></div>
+        <div class="scr-v" data-rm-m>
+          <div data-k="rpm"><small>Toeren</small><b>—</b></div>
+          <div data-k="koel"><small>Koelwater °C</small><b>—</b></div>
+          <div data-k="volt"><small>Accu V</small><b>—</b></div>
+          <div><small>Code</small><b style="font-size:20px">482 913 0275</b></div>
         </div>
       </div>
+      <div class="link"><svg viewBox="0 0 120 24" aria-hidden="true"><line x1="4" y1="12" x2="116" y2="12" stroke="rgba(236,235,230,.3)" stroke-dasharray="2 6"/><circle cx="60" cy="12" r="4" fill="#00ffd7"/></svg><span>alleen lezen<br><b>beveiligd</b></span></div>
+      <div class="scr">
+        <div class="scr-h"><span><b>Werkplaats</b> · meekijken</span><span>sessie 4 uur</span></div>
+        <div class="scr-v" data-rm-m>
+          <div data-k="rpm"><small>Toeren</small><b>—</b></div>
+          <div data-k="koel"><small>Koelwater °C</small><b>—</b></div>
+          <div data-k="volt"><small>Accu V</small><b>—</b></div>
+        </div>
+        <div class="scr-log" data-rm-log aria-live="off"></div>
+      </div>
     </div>
-    <div class="rm-steps">
-      <div class="rv"><span>01</span><b>Code of QR delen</b><p>De inkoper start het delen. Een 10-cijferige code, een link of een QR-code: de meekijker is binnen seconden verbonden.</p></div>
-      <div class="rv d1"><span>02</span><b>Live dezelfde meters</b><p>Toerental, temperaturen, trims: de meekijker ziet wat de auto nú doet, op zijn eigen scherm. Zonder eigen adapter.</p></div>
-      <div class="rv d2"><span>03</span><b>De meekijker stuurt mee</b><p>Hij vraagt zelf de foutcodes op en zet extra sensoren aan. Die verschijnen meteen ook bij de auto.</p></div>
-      <div class="rv d3"><span>04</span><b>Veilig by design</b><p>Meekijken is alleen kijken. Foutcodes wissen kan nooit op afstand, alleen door wie bij de auto staat.</p></div>
+    <div class="vier">
+      <div class="rv"><span class="mono">01</span><h4>Code of QR delen</h4><p>De inkoper start het delen. Binnen seconden is de meekijker verbonden.</p></div>
+      <div class="rv"><span class="mono">02</span><h4>Live dezelfde meters</h4><p>Toerental, temperaturen, trims: wat de auto nú doet, op het eigen scherm. Zonder eigen adapter.</p></div>
+      <div class="rv"><span class="mono">03</span><h4>De meekijker stuurt mee</h4><p>Hij vraagt zelf de foutcodes op en zet extra sensoren aan. Die verschijnen meteen ook bij de auto.</p></div>
+      <div class="rv"><span class="mono">04</span><h4>Veilig by design</h4><p>Alleen kijken. Foutcodes wissen kan nooit op afstand, alleen door wie bij de auto staat.</p></div>
     </div>
-    <div class="uses rv">
-      <span>Inkoop bij een particulier</span><span>Inruil aan de balie, specialist in de werkplaats</span><span>Tweede mening van een collega-vestiging</span><span>Meerdere mensen tegelijk</span><span>Import en veilingauto's</span>
-    </div>
+    <div class="status rv"><span>Inkoop bij een particulier</span><span>Inruil aan de balie</span><span>Tweede mening van een collega-vestiging</span><span>Meerdere mensen tegelijk</span><span>Import en veilingauto's</span></div>
   </div>
 </section>
 
-<!-- ═══════════ WAT DE BUITENKANT VERZWIJGT ═══════════ -->
-<section class="sec xr" id="verzwijgt" style="padding-top:0">
+<section class="sec paper" id="verzwijgt">
   <div class="wrap">
-    <span class="eb rv" data-n="03">Waarom</span>
-    <h2 class="hs rv">Strak in de lak. <em class="s gt">Maar van binnen?</em></h2>
-    <p class="lead rv">Een occasion kan van alles verzwijgen: een misfire die alleen onder last optreedt, codes die vlak voor de verkoop zijn gewist, een teller die 60.000 km jonger doet. Aan de buitenkant ziet u het niet. De motorelektronica heeft het wél opgeslagen.</p>
-
-    <div class="xr-g">
-      <div class="car rv" id="car">
-        <svg viewBox="0 0 800 320" role="img" aria-label="Zijaanzicht van een auto met vijf meetpunten">
-          <defs>
-            <linearGradient id="carStroke" x1="0" x2="1"><stop offset="0" stop-color="#1fd189" stop-opacity=".7"/><stop offset="1" stop-color="#4fd6f0" stop-opacity=".9"/></linearGradient>
-            <linearGradient id="carFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fd6f0" stop-opacity=".06"/><stop offset="1" stop-color="#1fd189" stop-opacity=".01"/></linearGradient>
-            <linearGradient id="sw" x1="0" x2="1"><stop offset="0" stop-color="#4fd6f0" stop-opacity="0"/><stop offset=".5" stop-color="#4fd6f0" stop-opacity=".35"/><stop offset="1" stop-color="#4fd6f0" stop-opacity="0"/></linearGradient>
-            <clipPath id="carClip"><path d="M48 232V196c0-22 18-36 50-41l118-18c40-36 88-58 150-61l130-2c62 2 104 30 146 62l62 8c32 5 48 22 48 50v38H688a58 58 0 0 0-116 0H254a58 58 0 0 0-116 0z"/></clipPath>
-          </defs>
-          <ellipse cx="400" cy="292" rx="360" ry="10" fill="#000" opacity=".5"/>
-          <path class="body" d="M48 232V196c0-22 18-36 50-41l118-18c40-36 88-58 150-61l130-2c62 2 104 30 146 62l62 8c32 5 48 22 48 50v38H688a58 58 0 0 0-116 0H254a58 58 0 0 0-116 0z"/>
-          <path class="win" d="M236 138c36-30 76-46 128-48l66-1v49z"/>
-          <path class="win" d="M446 89l50 1c50 2 84 22 116 48H446z"/>
-          <path d="M438 90v140M236 140h376" stroke="rgba(255,255,255,.08)" fill="none"/>
-          <path d="M60 200h30M700 176h40" stroke="rgba(79,214,240,.5)" stroke-width="3" stroke-linecap="round"/>
-          <g clip-path="url(#carClip)"><rect class="sweep" x="0" y="60" width="90" height="200" fill="url(#sw)"/></g>
-          <circle class="whl" cx="196" cy="236" r="46"/><circle class="rim" cx="196" cy="236" r="28"/><circle cx="196" cy="236" r="6" fill="rgba(255,255,255,.2)"/>
-          <circle class="whl" cx="630" cy="236" r="46"/><circle class="rim" cx="630" cy="236" r="28"/><circle cx="630" cy="236" r="6" fill="rgba(255,255,255,.2)"/>
-          <g class="hs-pt" data-i="0" style="--k:#ff5a5a"><circle class="p" cx="668" cy="170" r="8"/><circle class="c" cx="668" cy="170" r="8"/></g>
-          <g class="hs-pt" data-i="1" style="--k:#ffb020"><circle class="p" cx="560" cy="190" r="8"/><circle class="c" cx="560" cy="190" r="8"/></g>
-          <g class="hs-pt" data-i="2" style="--k:#ffb020"><circle class="p" cx="728" cy="200" r="8"/><circle class="c" cx="728" cy="200" r="8"/></g>
-          <g class="hs-pt" data-i="3" style="--k:#1fd189"><circle class="p" cx="480" cy="160" r="8"/><circle class="c" cx="480" cy="160" r="8"/></g>
-          <g class="hs-pt" data-i="4" style="--k:#4fd6f0"><circle class="p" cx="92" cy="214" r="8"/><circle class="c" cx="92" cy="214" r="8"/></g>
-        </svg>
-      </div>
-      <div class="xr-list" id="xr-list">
-        <button class="xi" style="--k:#ff5a5a" data-i="0"><span class="n">01</span><b>Motor</b><span>Misfire op cilinder 3, alleen onder last. De code is pas gewist, maar de readiness-monitors verraden het. <em>P0303 · pending</em></span></button>
-        <button class="xi" style="--k:#ffb020" data-i="1"><span class="n">02</span><b>Brandstofsysteem</b><span>De lange trim compenseert structureel: het mengsel is te arm. Denk aan een vacuümlek of een injector. <em>+14,8 % · norm ±10</em></span></button>
-        <button class="xi" style="--k:#ffb020" data-i="2"><span class="n">03</span><b>Koeling</b><span>De motor komt traag op temperatuur. De thermostaat is verdacht, en dat is werk voor de werkplaats. <em>50 °C na 6 min</em></span></button>
-        <button class="xi" style="--k:#1fd189" data-i="3"><span class="n">04</span><b>Kilometerstand</b><span>De stand in de ECU naast de teller en de RDW-historie. Een onlogische sprong valt op vóór u betaalt. <em>88.427 · 88.412 · RDW ✓</em></span></button>
-        <button class="xi" style="--k:#4fd6f0" data-i="4"><span class="n">05</span><b>Uitlaat &amp; katalysator</b><span>Lambdasondes en katalysator-monitor: wat de APK-meting niet vertelt, ziet u in de sondewaarden. <em>monitor gereed ✓</em></span></button>
-      </div>
+    <p class="kick rv"><b>03</b> Waarom</p>
+    <div class="sec-h">
+      <h2 class="d2 rv">Strak in de lak. <i>Maar van binnen?</i></h2>
+      <p class="lead rv">Een occasion kan van alles verzwijgen: een misfire die alleen onder last optreedt, codes die vlak voor de verkoop zijn gewist, een teller die 60.000 km jonger doet. Aan de buitenkant ziet u het niet. De motorelektronica heeft het wél opgeslagen.</p>
     </div>
+    <ol class="pijl">
+      <li class="rv"><span>01</span><h3>Motor</h3><p>Misfire op cilinder 3, alleen onder last. De code is pas gewist, maar de readiness-monitors verraden het.</p><code>P0303 · pending</code></li>
+      <li class="rv"><span>02</span><h3>Brandstofsysteem</h3><p>De lange trim compenseert structureel: het mengsel is te arm. Denk aan een vacuümlek of een injector.</p><code>+14,8 % · norm ±10</code></li>
+      <li class="rv"><span>03</span><h3>Koeling</h3><p>De motor komt traag op temperatuur. De thermostaat is verdacht, en dat is werk voor de werkplaats.</p><code>50 °C na 6 min</code></li>
+      <li class="rv"><span>04</span><h3>Kilometerstand</h3><p>De stand in de ECU naast de teller en de RDW-historie. Een onlogische sprong valt op vóór u betaalt.</p><code>88.427 · 88.412 · RDW ✓</code></li>
+      <li class="rv"><span>05</span><h3>Uitlaat &amp; katalysator</h3><p>Lambdasondes en katalysator-monitor: wat de APK-meting niet vertelt, ziet u in de sondewaarden.</p><code>monitor gereed ✓</code></li>
+    </ol>
   </div>
 </section>
 
-<!-- ═══════════ CONTROLES ═══════════ -->
-<section class="sec" id="controles" style="padding-top:40px">
+<section class="sec" id="controles">
   <div class="wrap">
-    <span class="eb rv" data-n="04">Eén stekker, het hele bedrijf</span>
-    <h2 class="hs rv">Voor inkoop, werkplaats <em class="s">én</em> verkoop.</h2>
-    <p class="lead rv">Geen losse gadget, maar een vaste stap in uw werkproces. Elke fase heeft eigen controles, allemaal via dezelfde adapter en app.</p>
-
+    <p class="kick rv"><b>04</b> Eén stekker, het hele bedrijf</p>
+    <div class="sec-h">
+      <h2 class="d2 rv">Voor inkoop, werkplaats <i>én verkoop.</i></h2>
+      <p class="lead rv">Geen losse gadget, maar een vaste stap in uw werkproces. Elke fase heeft eigen controles, allemaal via dezelfde adapter en app.</p>
+    </div>
     <div class="lanes rv" id="lanes" role="group" aria-label="Filter op afdeling">
-      <button class="on" data-l="*">Alles</button>
-      <button data-l="in">Inkoop &amp; taxatie</button>
-      <button data-l="ws">Werkplaats</button>
-      <button data-l="vk">Verkoop &amp; aflevering</button>
+      <button class="on" data-l="*">Alles</button><button data-l="in">Inkoop &amp; taxatie</button><button data-l="ws">Werkplaats</button><button data-l="vk">Verkoop &amp; aflevering</button>
     </div>
-
-    <div class="bento">
-      <div class="bx w4 rv" data-l="in">
-        <span class="tg nw">Nieuw</span>
-        <h3>Kenteken-check, ook zonder auto erbij</h3>
-        <p>Kenteken intypen en u weet het vóór de klant voor de deur staat: <strong>APK met de resterende dagen, NAP-oordeel, terugroepacties, import</strong>, trekgewicht en verbruik volgens de typekeuring.</p>
-        <div class="plate" aria-hidden="true"><i>NL</i><span>XX-000-X</span></div>
-        <div class="rdw">
-          <div><span>APK geldig</span><b>nog 214 dagen</b></div>
-          <div><span>NAP-oordeel</span><b>logisch</b></div>
-          <div><span>Terugroepacties</span><b class="w">1 open</b></div>
-          <div><span>WAM-verzekerd</span><b>ja</b></div>
-        </div>
-      </div>
-      <div class="bx rv d1" data-l="in">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Tellerplausibiliteit</h3>
-        <p>Kilometerstand uit de ECU naast de teller en de RDW-historie. <strong>Gemarkeerd vóór u betaalt.</strong></p>
-        <div class="km" aria-hidden="true"><div><span>ECU</span>88.427</div><div><span>Teller</span>88.412</div><div><span>Oordeel</span>logisch ✓</div></div>
-      </div>
-      <div class="bx rv" data-l="in">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div>
-        <h3>Inkoopcontrole</h3>
-        <p>Volledige scan vóór het bod, met een <strong>maximaal inkoopadvies</strong> en onderhandelmarge.</p>
-      </div>
-      <div class="bx rv d1" data-l="in vk">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
-        <h3>Koopcheck aan de balie</h3>
-        <p>Stoplicht-oordeel voor de inruil. <strong>Onderbouwing die de klant snapt</strong> als u het bod toelicht.</p>
-      </div>
-      <div class="bx rv d2" data-l="ws in">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><circle cx="12" cy="8" r="2"/></svg></div>
-        <h3>Ritmonitor op de proefrit</h3>
-        <p>Let tijdens het rijden op sensoruitval, bevroren waarden en uitschieters, en <strong>test verdachte signalen gericht opnieuw</strong>.</p>
-      </div>
-      <div class="bx w3 rv" data-l="ws">
-        <span class="tg">Werkplaats</span>
-        <h3>Live meten, zonder meetruis</h3>
-        <p>Meters en grafieken onder de proefrit. Onbetrouwbare waarden worden <strong>tegengehouden vóór ze in een rapport belanden</strong>, en berekende waarden zoals verbruik en vermogen komen er gratis bij.</p>
-        <div class="gauge" aria-hidden="true">
-          <div><small>Toerental</small><b>2.140</b><u><i style="width:36%"></i></u></div>
-          <div><small>Laaddruk</small><b>0,8 bar</b><u><i style="width:58%"></i></u></div>
-          <div><small>Verbruik</small><b>6,2 l</b><u><i style="width:44%"></i></u></div>
-        </div>
-      </div>
-      <div class="bx w3 rv d1" data-l="ws">
-        <span class="tg">Werkplaats</span>
-        <h3>Van klacht naar oorzaak</h3>
-        <p>Beschrijf de klacht in gewone taal. De app combineert die met live data en foutcodes tot <strong>waarschijnlijke oorzaken, geordend op kans en kosten</strong>, en toetst elke oorzaak tegen de bijbehorende sensorwaarden.</p>
-        <svg class="spark" viewBox="0 0 400 56" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="spg" x1="0" x2="1"><stop offset="0" stop-color="#1fd189"/><stop offset="1" stop-color="#4fd6f0"/></linearGradient></defs><polyline fill="none" stroke="url(#spg)" stroke-width="2.5" stroke-linejoin="round" points="0,40 30,38 60,41 90,36 120,39 150,30 170,12 185,44 200,34 230,37 260,35 290,38 320,33 350,36 380,34 400,35"/><circle cx="170" cy="12" r="4" fill="#ff5a5a"/></svg>
-      </div>
-      <div class="bx rv" data-l="ws">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg></div>
-        <h3>EV &amp; hybride</h3>
-        <p>Eigen profielen: geen verzonnen turbodruk op een EV, wél <strong>de controles die er voor stekkers toe doen</strong>.</p>
-      </div>
-      <div class="bx hot rv d1" data-l="in ws vk">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3>Meekijken op afstand</h3>
-        <p>Een collega of specialist kijkt live mee via een <strong>code of QR</strong>, zonder zelf een adapter. <a href="#meekijken">Zo werkt het →</a></p>
-      </div>
-      <div class="bx rv d2" data-l="ws">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></div>
-        <h3>Seizoenschecks</h3>
-        <p>Airco- en wintercheck als kant-en-klare werkplaatsactie: <strong>gemeten waar het kan</strong>, een eerlijk lijstje waar het moet.</p>
-      </div>
-      <div class="bx rv" data-l="vk">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Verkoopcheck</h3>
-        <p>Laat de koper zwart-op-wit zien dat de auto gezond is. <strong>Een groen rapport verkort de onderhandeling.</strong></p>
-      </div>
-      <div class="bx rv d1" data-l="vk">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <h3>Lease-teruggave</h3>
-        <p>Een objectief technisch dossier op het moment van inname, <strong>vóór de schade-expert langskomt</strong>.</p>
-      </div>
-      <div class="bx rv d2" data-l="vk in">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg></div>
-        <h3>PDF met uw logo</h3>
-        <p>Bij het voertuigdossier, naar de klant geappt of <strong>als bijlage bij de koopovereenkomst</strong>.</p>
-      </div>
+    <div class="fl">
+      <div class="bx rv" data-l="in"><span class="tag">inkoop</span><h4>Kenteken-check, zonder auto erbij</h4><p>APK met de resterende dagen, NAP-oordeel, terugroepacties, import, trekgewicht en verbruik volgens de typekeuring.</p><div class="mini"><div>APK geldig<b>nog 214 dagen</b></div><div>NAP-oordeel<b>logisch</b></div><div>Terugroepacties<b>1 open</b></div></div></div>
+      <div class="bx rv" data-l="in"><span class="tag">inkoop</span><h4>Tellerplausibiliteit</h4><p>Kilometerstand uit de ECU naast de teller en de RDW-historie. Gemarkeerd vóór u betaalt.</p><div class="mini"><div>ECU<b>88.427</b></div><div>Teller<b>88.412</b></div><div>Oordeel<b>logisch ✓</b></div></div></div>
+      <div class="bx rv" data-l="in"><span class="tag">inkoop</span><h4>Inkoopcontrole</h4><p>Volledige scan vóór het bod, met een maximaal inkoopadvies en onderhandelmarge.</p></div>
+      <div class="bx rv" data-l="in vk"><span class="tag">balie</span><h4>Koopcheck aan de balie</h4><p>Stoplicht-oordeel voor de inruil. Onderbouwing die de klant snapt als u het bod toelicht.</p></div>
+      <div class="bx rv" data-l="ws in"><span class="tag">proefrit</span><h4>Ritmonitor</h4><p>Let tijdens het rijden op sensoruitval, bevroren waarden en uitschieters, en test verdachte signalen gericht opnieuw.</p></div>
+      <div class="bx rv" data-l="ws"><span class="tag">werkplaats</span><h4>Live meten, zonder meetruis</h4><p>Onbetrouwbare waarden worden tegengehouden vóór ze in een rapport belanden; verbruik en vermogen komen er berekend bij.</p><div class="mini"><div>Toerental<b>2.140</b></div><div>Laaddruk<b>0,8 bar</b></div><div>Verbruik<b>6,2 l/100</b></div></div></div>
+      <div class="bx rv" data-l="ws"><span class="tag">werkplaats</span><h4>Van klacht naar oorzaak</h4><p>De klacht in gewone taal, gecombineerd met live data en foutcodes tot waarschijnlijke oorzaken, geordend op kans en kosten.</p></div>
+      <div class="bx rv" data-l="ws"><span class="tag">werkplaats</span><h4>EV &amp; hybride</h4><p>Eigen profielen: geen verzonnen turbodruk op een EV, wél de controles die er voor stekkers toe doen.</p></div>
+      <div class="bx rv" data-l="in ws vk"><span class="tag">overal</span><h4>Meekijken op afstand</h4><p>Een collega of specialist kijkt live mee via een code of QR, zonder zelf een adapter. <a href="#meekijken">Zo werkt het →</a></p></div>
+      <div class="bx rv" data-l="ws"><span class="tag">seizoen</span><h4>Seizoenschecks</h4><p>Airco- en wintercheck als kant-en-klare werkplaatsactie: gemeten waar het kan, een eerlijk lijstje waar het moet.</p></div>
+      <div class="bx rv" data-l="vk"><span class="tag">verkoop</span><h4>Verkoopcheck</h4><p>Laat de koper zwart-op-wit zien dat de auto gezond is. Een groen rapport verkort de onderhandeling.</p></div>
+      <div class="bx rv" data-l="vk in"><span class="tag">lease</span><h4>Lease-teruggave</h4><p>Een objectief technisch dossier op het moment van inname, vóór de schade-expert langskomt.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ RAPPORTEN ═══════════ -->
 <section class="sec paper" id="rapporten">
   <div class="wrap">
-    <span class="eb rv" data-n="05">Voorbeeldrapporten</span>
-    <h2 class="hs rv">Zo ziet <em class="s">vier minuten</em> werk eruit.</h2>
-    <p class="lead rv">Het oordeel bovenaan, de bevindingen in gewone taal, het geld eronder. Drie voorbeelden uit de praktijk.</p>
-
-    <div class="rp-g">
+    <p class="kick rv"><b>05</b> Voorbeeldrapporten</p>
+    <div class="sec-h">
+      <h2 class="d2 rv">Zo ziet vier minuten werk <i>eruit.</i></h2>
+      <p class="lead rv">Het oordeel bovenaan, de bevindingen in gewone taal, het geld eronder. Als PDF bij het dossier, naar de klant geappt of als bijlage bij de koopovereenkomst.</p>
+    </div>
+    <div class="rp">
       <div class="rp-tabs rv" role="tablist" aria-label="Kies een voorbeeldrapport">
         <button class="rp-tab on" role="tab" aria-selected="true" data-r="0"><small>INKOOPCONTROLE</small><b>VW Golf 1.5 TSI</b><span>Afzien of fors onderhandelen</span></button>
         <button class="rp-tab" role="tab" aria-selected="false" data-r="1"><small>KOOPCHECK</small><b>Mazda CX-5 2.0</b><span>Kopen, met een afspraak</span></button>
         <button class="rp-tab" role="tab" aria-selected="false" data-r="2"><small>VERKOOPCHECK</small><b>Kia Sportage 1.6 T-GDI</b><span>Technisch gezond, verkoopklaar</span></button>
       </div>
-      <div class="doc-w rv d1"><div class="doc" id="doc" role="tabpanel" aria-live="polite"></div></div>
+      <div class="rv"><div class="doc" id="doc" role="tabpanel" aria-live="polite"></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ REKENSOM ═══════════ -->
-<section class="calc-s" id="rekensom">
+<section class="sec" id="rekensom">
   <div class="wrap">
+    <p class="kick rv"><b>06</b> Rekensom</p>
+    <h2 class="d2 rv" style="margin:34px 0 clamp(40px,5vw,64px)">Wat kost níet controleren <i>u per jaar?</i></h2>
     <div class="calc rv">
-      <div class="calc-in">
-        <span class="eb" data-n="06">Rekensom</span>
-        <h3>Wat kost níet controleren u per jaar?</h3>
-        <div class="sl"><label for="r-n">Occasions ingekocht of ingeruild per maand <output id="o-n">15</output></label><input type="range" id="r-n" min="2" max="80" step="1" value="15"></div>
-        <div class="sl"><label for="r-p">Gemiddelde inkoopprijs <output id="o-p">€ 12.500</output></label><input type="range" id="r-p" min="2000" max="50000" step="500" value="12500"></div>
-        <div class="sl"><label for="r-m">Miskopen met een verborgen gebrek <output id="o-m">6%</output></label><input type="range" id="r-m" min="1" max="20" step="1" value="6"></div>
-        <div class="sl" style="margin-bottom:0"><label for="r-s">Gemiddelde schade per miskoop <output id="o-s">€ 1.900</output></label><input type="range" id="r-s" min="300" max="6000" step="100" value="1900"></div>
+      <div>
+        <div class="sl"><label for="r-n">Occasions ingekocht of ingeruild per maand <b id="o-n">15</b></label><input type="range" id="r-n" min="2" max="80" step="1" value="15"></div>
+        <div class="sl"><label for="r-p">Gemiddelde inkoopprijs <b id="o-p">€ 12.500</b></label><input type="range" id="r-p" min="2000" max="50000" step="500" value="12500"></div>
+        <div class="sl"><label for="r-m">Miskopen met een verborgen gebrek <b id="o-m">6%</b></label><input type="range" id="r-m" min="1" max="20" step="1" value="6"></div>
+        <div class="sl"><label for="r-s">Gemiddelde schade per miskoop <b id="o-s">€ 1.900</b></label><input type="range" id="r-s" min="300" max="6000" step="100" value="1900"></div>
       </div>
-      <div class="calc-out">
-        <div class="co"><span>Miskopen per jaar (schatting)</span><b id="c-mis">—</b></div>
-        <div class="co"><span>Schade per jaar zonder controle</span><b id="c-schade">—</b></div>
-        <div class="co-big">
-          <small>Wat vroeg uitlezen kan schelen, per jaar</small>
-          <b class="gt" id="c-besp">—</b>
-          <p>Aanname: vroeg uitlezen voorkomt of verrekent ± 70% van de schade, via afzien of onderhandelen. Indicatief, geen garantie.</p>
-          <a class="btn btn-p" href="#demo" data-plan="" data-context="calculator">Reken dit door in een demo <span class="ar">→</span></a>
-        </div>
+      <div>
+        <div class="uit"><span>Miskopen per jaar (schatting)</span><b id="c-mis">—</b></div>
+        <div class="uit"><span>Schade per jaar zonder controle</span><b id="c-schade">—</b></div>
+        <div class="uit groot"><span>Wat vroeg uitlezen kan schelen, per jaar</span><b id="c-besp">—</b></div>
+        <p class="fine">Aanname: vroeg uitlezen voorkomt of verrekent ± 70% van de schade, via afzien of onderhandelen. Indicatief, geen garantie.</p>
+        <a class="btn btn-p" href="#demo" data-plan="" data-context="calculator">Reken dit door in een demo <span class="ar">→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ EERLIJK ═══════════ -->
-<section class="sec" id="eerlijk">
+<section class="sec paper" id="eerlijk">
   <div class="wrap">
-    <span class="eb rv" data-n="07">Eerlijk is eerlijk</span>
-    <h2 class="hs rv">Liever <em class="s gt">geen</em> oordeel dan een verzonnen oordeel.</h2>
-    <div class="honest">
-      <div class="hn rv"><h3><span>01</span>Geen vervanging van uw merkcomputer</h3><p>PidLane is de snelle poortwachter bij in- en verkoop. Na 4 minuten weet u of dieper, merkspecifiek onderzoek nodig is. We claimen bewust niet dat we dat vervangen.</p></div>
-      <div class="hn rv d1"><h3><span>02</span>Elke uitspraak met de meting erbij</h3><p>U ziet altijd wáárom het rapport iets zegt. Meetfouten en uitschieters worden eruit gefilterd vóór de analyse, en afwijkingen laat u door een monteur bevestigen vóór reparatie.</p></div>
-      <div class="hn rv"><h3><span>03</span>Wat OBD2 niet ziet, staat op een lijstje</h3><p>Banden, lak en schokdempers zitten niet in de elektronica. Die komen in een handmatige checklist, in plaats van dat we er iets over verzinnen.</p></div>
-      <div class="hn rv d1"><h3><span>04</span>Eerst zien, zonder adapter</h3><p>De app heeft een demostand die een verbinding simuleert. U ziet elk scherm en een voorbeeldrapport, en er wordt niets opgeslagen.</p></div>
-      <div class="quote rv"><p>“Het is gereedschap voor uw vakmanschap, geen vervanging ervan.”</p><small>Zo is PidLane gebouwd, in Dordrecht, samen met Nederlandse autobedrijven.</small></div>
+    <p class="kick rv"><b>07</b> Eerlijk is eerlijk</p>
+    <h2 class="d2 rv" style="margin-top:34px">Liever geen oordeel <i>dan een verzonnen oordeel.</i></h2>
+    <div class="vier">
+      <div class="rv"><span class="mono">01</span><h4>Geen vervanging van uw merkcomputer</h4><p>PidLane is de snelle poortwachter bij in- en verkoop. Na 4 minuten weet u of dieper, merkspecifiek onderzoek nodig is.</p></div>
+      <div class="rv"><span class="mono">02</span><h4>Elke uitspraak met de meting erbij</h4><p>U ziet altijd wáárom het rapport iets zegt. Meetfouten en uitschieters worden eruit gefilterd vóór de analyse.</p></div>
+      <div class="rv"><span class="mono">03</span><h4>Wat OBD2 niet ziet, staat op een lijstje</h4><p>Banden, lak en schokdempers zitten niet in de elektronica. Die komen in een handmatige checklist.</p></div>
+      <div class="rv"><span class="mono">04</span><h4>Eerst zien, zonder adapter</h4><p>De demostand simuleert een verbinding. U ziet elk scherm en een voorbeeldrapport, en er wordt niets opgeslagen.</p></div>
     </div>
+    <p class="quote rv">"Het is gereedschap voor uw vakmanschap, geen vervanging ervan."<small>Zo is PidLane gebouwd, in Dordrecht, samen met Nederlandse autobedrijven.</small></p>
   </div>
 </section>
 
-<!-- ═══════════ REGIO ═══════════ -->
-<section class="sec" style="padding-top:0">
-  <div class="wrap reg">
+<section class="sec" id="regio">
+  <div class="wrap twee">
     <div>
-      <span class="eb rv" data-n="08">Regionaal · persoonlijk</span>
-      <h2 class="hs rv">Gebouwd in de <em class="s">Drechtsteden.</em></h2>
+      <p class="kick rv"><b>08</b> Regionaal · persoonlijk</p>
+      <h2 class="d2 rv" style="margin-top:34px">Gebouwd in de <i>Drechtsteden.</i></h2>
+      <div class="status rv"><span>Pilot actief</span><span>Onboarding Q4</span><span>Wachtlijst</span></div>
+    </div>
+    <div>
       <p class="lead rv">Geen anonieme buitenlandse tool. Ontwikkeld in Dordrecht, mét Nederlandse autobedrijven, op RDW-data en Nederlandse occasions. We rollen bewust regio voor regio uit, zodat iedereen onboarding op de eigen werkvloer krijgt.</p>
-      <ul>
-        <li class="rv"><span><b>Demo op uw locatie</b> in de Drechtsteden, Rijnmond en West-Brabant, of online voor de rest van Nederland</span></li>
-        <li class="rv"><span><b>RDW-koppeling ingebouwd:</b> merk, model, APK en tellerhistorie automatisch in elk rapport</span></li>
-        <li class="rv"><span><b>Nederlandstalige rapporten</b>, geschreven voor de balie en de brug, niet vertaald uit het Engels</span></li>
-      </ul>
-    </div>
-    <div class="map rv d1">
-      <svg viewBox="0 0 500 425" role="img" aria-label="Kaart van de pilotregio rond Dordrecht">
-        <defs>
-          <radialGradient id="glow"><stop offset="0" stop-color="#1fd189" stop-opacity=".35"/><stop offset="1" stop-color="#1fd189" stop-opacity="0"/></radialGradient>
-          <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="rgba(255,255,255,.1)"/></pattern>
-        </defs>
-        <rect width="500" height="425" fill="url(#dots)"/>
-        <path d="M0 150 C80 160 120 175 170 195 S260 215 330 200 S430 180 500 190" stroke="rgba(79,214,240,.22)" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <path d="M150 190 C170 215 200 225 245 222" stroke="rgba(79,214,240,.16)" stroke-width="6" fill="none"/>
-        <circle cx="245" cy="222" r="120" fill="url(#glow)"/>
-        <g stroke="rgba(31,209,137,.35)" stroke-dasharray="3 5" fill="none">
-          <path d="M245 222 L188 175"/><path d="M245 222 L330 212"/><path d="M245 222 L270 325"/><path d="M245 222 L128 110"/><path d="M245 222 L372 95"/>
-        </g>
-        <g font-family="Geist Mono, monospace" font-size="13" fill="#8d97a8">
-          <circle cx="245" cy="222" r="9" fill="#1fd189"><animate attributeName="r" values="9;11;9" dur="2s" repeatCount="indefinite"/></circle>
-          <text x="262" y="241" fill="#eef2f8" font-weight="500">Dordrecht · HQ</text>
-          <circle cx="188" cy="175" r="6" fill="#4fd6f0"/><text x="104" y="163">Rotterdam</text>
-          <circle cx="330" cy="212" r="6" fill="#4fd6f0"/><text x="342" y="208">Gorinchem</text>
-          <circle cx="270" cy="325" r="6" fill="#4fd6f0"/><text x="284" y="330">Breda</text>
-          <circle cx="128" cy="110" r="6" fill="#5f6879"/><text x="58" y="96">Den Haag</text>
-          <circle cx="372" cy="95" r="6" fill="#5f6879"/><text x="386" y="99">Utrecht</text>
-        </g>
-      </svg>
-      <div class="lg2"><span><i style="background:#1fd189"></i>Pilot actief</span><span><i style="background:#4fd6f0"></i>Onboarding Q4</span><span><i style="background:#5f6879"></i>Wachtlijst</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ VRAGEN ═══════════ -->
-<section class="sec" id="vragen" style="padding-top:0">
-  <div class="wrap">
-    <span class="eb rv" data-n="09">Veelgestelde vragen</span>
-    <h2 class="hs rv">Goede vragen.</h2>
-    <div class="faq">
-      <details class="rv"><summary>Op welke auto's werkt PidLane?</summary><p>Op elke auto met een OBD2-poort: benzine vanaf ± 2001, diesel vanaf ± 2004. Er zijn aparte controleprofielen voor hybride en elektrisch. De app herkent het brandstoftype en past de controles daarop aan, zodat u nooit een rapport krijgt over sensoren die de auto niet heeft.</p></details>
-      <details class="rv"><summary>Heb ik speciale hardware nodig?</summary><p>Nee. Elke gangbare Bluetooth OBD2-adapter werkt (ELM327-compatibel; wij adviseren de OBDLink MX+ voor het snelste uitlezen). Eén adapter van een paar tientjes bedient uw hele voorraad. De app draait op een gewone Android-telefoon of -tablet.</p></details>
-      <details class="rv"><summary>Hoe werkt meekijken op afstand?</summary><p>Wie bij de auto staat, start het delen en geeft een 10-cijferige code, een link of een QR-code door. De meekijker opent PidLane, typt de code en ziet live dezelfde meters. Hij kan zelf foutcodes opvragen en extra sensoren laten volgen. Er kunnen meerdere mensen tegelijk meekijken, en een sessie blijft vier uur geldig.</p></details>
-      <details class="rv"><summary>Kan de meekijker iets aan de auto veranderen?</summary><p>Nee. Meekijken is alleen kijken. Foutcodes wissen kan nooit op afstand: dat kan alleen wie bij de auto staat, met de motor uit en na een verse uitlezing.</p></details>
-      <details class="rv"><summary>Kan ik het eerst zien zonder adapter?</summary><p>Ja. De app heeft een demostand die een verbinding simuleert: u doorloopt elk scherm en krijgt een voorbeeldrapport, en er wordt niets opgeslagen. De kenteken-check bij de RDW werkt helemaal zonder auto. In een demo op locatie meten we natuurlijk gewoon aan een auto uit uw eigen voorraad.</p></details>
-      <details class="rv"><summary>Vervangt dit mijn merkspecifieke diagnosecomputer?</summary><p>Nee, en dat claimen we bewust niet. PidLane is uw eerste, snelle poortwachter bij in- en verkoop: na 4 minuten weet u of dieper onderzoek nodig is. Wat OBD2 niet kan meten, komt in een handmatige checklist in plaats van dat we het verzinnen.</p></details>
-      <details class="rv"><summary>Hoe betrouwbaar is het advies?</summary><p>Elk oordeel is onderbouwd met de gemeten waarden zelf, dus u ziet altijd wáárom het rapport iets zegt. Meetfouten en uitschieters worden vóór de analyse uit de data gefilterd, en elk rapport adviseert afwijkingen door een monteur te laten bevestigen vóór reparatie.</p></details>
-      <details class="rv"><summary>Wat gebeurt er met de voertuiggegevens?</summary><p>Het chassisnummer (VIN) verlaat de telefoon nooit onbewerkt: het wordt eerst gepseudonimiseerd. Rapporten staan in uw eigen account. Op deze website staan geen trackingcookies.</p></details>
-      <details class="rv"><summary>Zit ik ergens aan vast?</summary><p>Nee. Maandelijks opzegbaar en geen setupkosten. We beginnen met een proefperiode met onboarding op uw eigen werkvloer; wat dat voor uw bedrijf kost, bespreken we in de demo.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ DEMO ═══════════ -->
-<section class="sec" id="demo" style="padding-top:0">
-  <div class="wrap">
-    <div class="demo rv">
-      <div class="demo-l">
-        <span class="eb" data-n="10">Demo aanvragen</span>
-        <h2>De volgende miskoop staat <em class="s gt">al op uw terrein.</em></h2>
-        <p class="lead">Plan 30 minuten. Wij nemen een adapter mee, u wijst een auto uit de voorraad aan, en u ziet live wat die auto u te vertellen heeft.</p>
-        <div class="nxt">
-          <div>Uw aanvraag komt direct bij ons terecht, niet bij een callcenter.</div>
-          <div>Reactie binnen 1 werkdag, meestal dezelfde dag.</div>
-          <div>Demo op uw terrein of online, met uw eigen auto's. Meekijken op afstand laten we live zien.</div>
-        </div>
-        <div class="alt">
-          <a class="btn btn-g" href="https://wa.me/31619071392" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn-g" href="mailto:support@pidlane.nl">support@pidlane.nl</a>
-        </div>
-        <p class="fine" style="text-align:left;margin-top:22px">We rollen regio voor regio uit, met een beperkt aantal pilotplekken per regio.</p>
+      <div class="pts rv" style="grid-template-columns:1fr;margin-top:32px">
+        <p><b>Demo op uw locatie</b>in de Drechtsteden, Rijnmond en West-Brabant, of online voor de rest van Nederland.</p>
+        <p style="padding-left:0;border-left:0;border-top:1px solid var(--rule);margin-top:22px"><b>RDW-koppeling ingebouwd</b>Merk, model, APK en tellerhistorie automatisch in elk rapport.</p>
+        <p style="padding-left:0;border-left:0;border-top:1px solid var(--rule);margin-top:22px"><b>Nederlandstalige rapporten</b>Geschreven voor de balie en de brug, niet vertaald uit het Engels.</p>
       </div>
-      <form class="df" id="demo-form" novalidate>
-        <div class="hp" aria-hidden="true"><label for="d-web">Laat dit veld leeg</label><input id="d-web" tabindex="-1" autocomplete="off"></div>
-        <div class="fr">
-          <div class="fl"><label for="d-bedrijf">Bedrijfsnaam *</label><input id="d-bedrijf" required autocomplete="organization"></div>
-          <div class="fl"><label for="d-naam">Contactpersoon *</label><input id="d-naam" required autocomplete="name"></div>
-        </div>
-        <div class="fr">
-          <div class="fl"><label for="d-email">E-mailadres *</label><input id="d-email" type="email" required autocomplete="email"></div>
-          <div class="fl"><label for="d-tel">Telefoon (optioneel)</label><input id="d-tel" type="tel" autocomplete="tel"></div>
-        </div>
-        <div class="fr">
-          <div class="fl"><label for="d-plaats">Plaats</label><input id="d-plaats" autocomplete="address-level2"></div>
-          <div class="fl"><label for="d-plan">Uw bedrijf</label>
-            <select id="d-plan">
-              <option value="">Kies wat past</option>
-              <option value="Eén vestiging">Eén vestiging</option>
-              <option value="Meerdere vestigingen">Meerdere vestigingen</option>
-              <option value="Dealergroep of wagenpark">Dealergroep of wagenpark</option>
-            </select>
-          </div>
-        </div>
-        <div class="fl"><label for="d-bericht">Toelichting (optioneel)</label><textarea id="d-bericht" placeholder="Bijvoorbeeld: hoeveel auto's u per maand inkoopt"></textarea></div>
-        <button class="btn btn-p" type="submit">Demo aanvragen <span class="ar">→</span></button>
-        <div class="ok" id="d-ok" hidden>✓ Bedankt! Uw e-mailprogramma opent zo met de aanvraag. Verstuur die en u hoort deze week van ons.</div>
-        <p class="fine">Uw gegevens gaan alleen naar PidLane.</p>
-      </form>
     </div>
   </div>
 </section>
 
+<section class="sec paper" id="vragen">
+  <div class="wrap twee">
+    <div><p class="kick rv"><b>Vragen</b></p><h2 class="d2 rv" style="margin-top:34px">Goede <i>vragen.</i></h2></div>
+    <div class="faq rv">
+      <details><summary>Op welke auto's werkt PidLane?</summary><p>Op elke auto met een OBD2-poort: benzine vanaf ± 2001, diesel vanaf ± 2004. Er zijn aparte controleprofielen voor hybride en elektrisch. De app herkent het brandstoftype en past de controles daarop aan, zodat u nooit een rapport krijgt over sensoren die de auto niet heeft.</p></details>
+      <details><summary>Heb ik speciale hardware nodig?</summary><p>Nee. Elke gangbare Bluetooth OBD2-adapter werkt (ELM327-compatibel; wij adviseren de OBDLink MX+ voor het snelste uitlezen). Eén adapter van een paar tientjes bedient uw hele voorraad. De app draait op een gewone Android-telefoon of -tablet.</p></details>
+      <details><summary>Hoe werkt meekijken op afstand?</summary><p>Wie bij de auto staat, start het delen en geeft een 10-cijferige code, een link of een QR-code door. De meekijker opent PidLane, typt de code en ziet live dezelfde meters. Hij kan zelf foutcodes opvragen en extra sensoren laten volgen. Er kunnen meerdere mensen tegelijk meekijken, en een sessie blijft vier uur geldig.</p></details>
+      <details><summary>Kan de meekijker iets aan de auto veranderen?</summary><p>Nee. Meekijken is alleen kijken. Foutcodes wissen kan nooit op afstand: dat kan alleen wie bij de auto staat, met de motor uit en na een verse uitlezing.</p></details>
+      <details><summary>Kan ik het eerst zien zonder adapter?</summary><p>Ja. De app heeft een demostand die een verbinding simuleert: u doorloopt elk scherm en krijgt een voorbeeldrapport, en er wordt niets opgeslagen. De kenteken-check bij de RDW werkt helemaal zonder auto. In een demo op locatie meten we gewoon aan een auto uit uw eigen voorraad.</p></details>
+      <details><summary>Vervangt dit mijn merkspecifieke diagnosecomputer?</summary><p>Nee, en dat claimen we bewust niet. PidLane is uw eerste, snelle poortwachter bij in- en verkoop: na 4 minuten weet u of dieper onderzoek nodig is. Wat OBD2 niet kan meten, komt in een handmatige checklist in plaats van dat we het verzinnen.</p></details>
+      <details><summary>Hoe betrouwbaar is het advies?</summary><p>Elk oordeel is onderbouwd met de gemeten waarden zelf, dus u ziet altijd wáárom het rapport iets zegt. Meetfouten en uitschieters worden vóór de analyse uit de data gefilterd, en elk rapport adviseert afwijkingen door een monteur te laten bevestigen vóór reparatie.</p></details>
+      <details><summary>Wat gebeurt er met de voertuiggegevens?</summary><p>Het chassisnummer (VIN) verlaat de telefoon nooit onbewerkt: het wordt eerst gepseudonimiseerd. Rapporten staan in uw eigen account. Op deze website staan geen trackingcookies.</p></details>
+      <details><summary>Zit ik ergens aan vast?</summary><p>Nee. Maandelijks opzegbaar en geen setupkosten. We beginnen met een proefperiode met onboarding op uw eigen werkvloer; wat dat voor uw bedrijf kost, bespreken we in de demo.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" id="demo" style="padding-top:0">
+  <div class="wrap twee">
+    <div>
+      <p class="kick rv"><b>Demo aanvragen</b></p>
+      <h2 class="d2 rv" style="margin-top:34px">De volgende miskoop staat al <i>op uw terrein.</i></h2>
+      <p class="lead rv" style="margin-top:24px">Plan 30 minuten. Wij nemen een adapter mee, u wijst een auto uit de voorraad aan, en u ziet live wat die auto u te vertellen heeft.</p>
+      <ul class="check rv">
+        <li>Uw aanvraag komt direct bij ons terecht, niet bij een callcenter.</li>
+        <li>Reactie binnen 1 werkdag, meestal dezelfde dag.</li>
+        <li>Demo op uw terrein of online, met uw eigen auto's. Meekijken op afstand laten we live zien.</li>
+      </ul>
+      <div class="cta rv"><a class="btn btn-l" href="https://wa.me/31619071392" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-l" href="mailto:support@pidlane.nl">support@pidlane.nl</a></div>
+      <p class="rv" style="margin-top:18px;font-size:14px;color:var(--pmu)">We rollen regio voor regio uit, met een beperkt aantal pilotplekken per regio.</p>
+    </div>
+    <form class="df rv" id="demo-form" novalidate>
+      <div class="hp" aria-hidden="true"><label for="d-web">Laat dit veld leeg</label><input id="d-web" tabindex="-1" autocomplete="off"></div>
+      <div class="fr">
+        <div class="veld"><label for="d-bedrijf">Bedrijfsnaam *</label><input id="d-bedrijf" required autocomplete="organization"></div>
+        <div class="veld"><label for="d-naam">Contactpersoon *</label><input id="d-naam" required autocomplete="name"></div>
+      </div>
+      <div class="fr">
+        <div class="veld"><label for="d-email">E-mailadres *</label><input id="d-email" type="email" required autocomplete="email"></div>
+        <div class="veld"><label for="d-tel">Telefoon (optioneel)</label><input id="d-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="fr">
+        <div class="veld"><label for="d-plaats">Plaats</label><input id="d-plaats" autocomplete="address-level2"></div>
+        <div class="veld"><label for="d-plan">Uw bedrijf</label>
+          <select id="d-plan"><option value="">Kies wat past</option><option value="Eén vestiging">Eén vestiging</option><option value="Meerdere vestigingen">Meerdere vestigingen</option><option value="Dealergroep of wagenpark">Dealergroep of wagenpark</option></select>
+        </div>
+      </div>
+      <div class="veld"><label for="d-bericht">Toelichting (optioneel)</label><textarea id="d-bericht" placeholder="Bijvoorbeeld: hoeveel auto's u per maand inkoopt"></textarea></div>
+      <div><button class="btn btn-p" type="submit">Demo aanvragen <span class="ar">→</span></button></div>
+      <div class="ok" id="d-ok" hidden>Bedankt. Uw e-mailprogramma opent zo met de aanvraag. Verstuur die en u hoort deze week van ons.</div>
+      <p class="fine">Uw gegevens gaan alleen naar PidLane.</p>
+    </form>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="ft-big" aria-hidden="true">PidLane</div>
     <div class="ft">
-      <span>© 2026 PidLane · Dordrecht · <em class="s">Your car talks. We translate.</em></span>
-      <nav aria-label="Voettekst">
-        <a href="consument.html">Voor particulieren</a>
-        <a href="index.html">Voorpagina</a>
-<a href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Google Play</a>
-        <a href="https://app.pidlane.nl/privacy.html">Privacy</a>
-        <a href="mailto:support@pidlane.nl">support@pidlane.nl</a>
-        <a href="https://www.facebook.com/profile.php?id=61594544542011" rel="noopener" target="_blank">Facebook</a>
-        <a href="https://www.tiktok.com/@pidlane" rel="noopener" target="_blank">TikTok</a>
-      </nav>
+      <div><a class="logo" href="/"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="12" width="52" height="34" rx="10" fill="none" stroke="#1fd189" stroke-width="4.5"/><path d="M14 30h10l4.5-9 7 17 4.5-8h10" fill="none" stroke="#ecebe6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> PidLane</a><p>Your car talks. We translate. Gebouwd in Dordrecht, op RDW-data en Nederlandse auto's.</p></div>
+      <div><h5>App</h5><a href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Google Play</a><a href="https://app.pidlane.nl">Web-app</a><a href="pidlane-help.html">Handleiding</a></div>
+      <div><h5>Voor wie</h5><a href="consument.html">Particulieren</a><a href="zakelijk.html">Autobedrijven</a></div>
+      <div><h5>Contact</h5><a href="mailto:support@pidlane.nl">support@pidlane.nl</a><a href="https://wa.me/31619071392" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.facebook.com/profile.php?id=61594544542011" rel="noopener" target="_blank">Facebook</a><a href="https://www.tiktok.com/@pidlane" rel="noopener" target="_blank">TikTok</a></div>
     </div>
-    <p class="ft-fine">Geen trackingcookies op deze pagina · formuliergegevens gaan uitsluitend naar PidLane</p>
+    <div class="ft-fine"><span>© 2026 PidLane · <a href="https://app.pidlane.nl/privacy.html">Privacy</a> · geen trackingcookies</span><span>Google Play is een handelsmerk van Google LLC.</span></div>
   </div>
 </footer>
 
-<div class="mbar" id="mbar">
-  <a class="btn btn-g" href="https://wa.me/31619071392" target="_blank" rel="noopener">WhatsApp</a>
+<div class="mbar" id="mbar" data-doel="demo">
+  <a class="btn btn-l" style="background:var(--ink)" href="https://wa.me/31619071392">WhatsApp</a>
   <a class="btn btn-p" href="#demo">Plan een demo</a>
 </div>
 
-<script src="site.js"></script>
+<script src="/pl.js"></script>
 <script>
 // ── Live uitlezing in de hero ──
 // Echte OBD2-verzoeken met antwoorden die bij het voorbeeld passen:
@@ -661,7 +452,7 @@
     ['01A6','41 A6 00 0D 7E 2C','ECU 88.427 km'],
     ['0142','41 42 2E 7C','11,9 V','w']
   ];
-  const rows=[...document.querySelectorAll('.sc-rows .row')];
+  const rows=[...document.querySelectorAll('.scan-rows .row')];
   const verdict=document.getElementById('verdict'), bar=document.getElementById('sc-bar'), tm=document.getElementById('sc-time');
   const END=252; // 4:12
   const fmt=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
@@ -702,27 +493,6 @@
     box.innerHTML=('€ '+val.toLocaleString('nl-NL')).split('').map(c=>/[0-9]/.test(c)?'<span class="d">'+c+'</span>':'<span class="sep">'+c+'</span>').join('');
   }
   render(); setInterval(render,1000);
-})();
-
-// ── Tijdlijn onder de stappen ──
-(function(){
-  const tl=document.getElementById('tl'); if(!tl) return;
-  new IntersectionObserver((es,o)=>{ if(es[0].isIntersecting){ tl.classList.add('on'); o.disconnect(); } },{threshold:.6}).observe(tl);
-})();
-
-// ── Auto met meetpunten: loopt vanzelf rond, een klik zet hem vast ──
-(function(){
-  const pts=[...document.querySelectorAll('.hs-pt')], its=[...document.querySelectorAll('.xi')];
-  if(!pts.length) return;
-  let cur=0, auto=!RM;
-  function set(i){
-    cur=i;
-    pts.forEach(p=>p.classList.toggle('on', +p.dataset.i===i));
-    its.forEach(p=>{ p.classList.toggle('on', +p.dataset.i===i); p.setAttribute('aria-expanded', +p.dataset.i===i); });
-  }
-  [...pts,...its].forEach(el=>el.addEventListener('click',()=>{ auto=false; set(+el.dataset.i); }));
-  set(0);
-  setInterval(()=>{ if(auto) set((cur+1)%pts.length); },3400);
 })();
 
 // ── Filter op afdeling ──

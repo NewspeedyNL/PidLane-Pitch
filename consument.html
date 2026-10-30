@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PidLane voor particulieren — Koop je volgende auto met zekerheid</title>
 <meta name="description" content="Lees een auto uit via de OBD2-poort en krijg in gewone taal te horen wat de motor weet. Sta je bij een verkoper? Laat je eigen monteur live meekijken. Probeer het nu met je eigen kenteken.">
-<meta name="theme-color" content="#07090d">
+<meta name="theme-color" content="#07080a">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:url" content="https://pidlane.nl/consument.html">
@@ -17,138 +17,52 @@
 <link rel="canonical" href="https://pidlane.nl/consument.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%231fd189'/%3E%3Cstop offset='1' stop-color='%234fd6f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Crect x='10' y='14' width='44' height='28' rx='9' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M16 28h9l4-8 6 15 4-7h9' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-/* ═══════════ Kentekenveld ═══════════ */
-.kform{margin:34px 0 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
-.kplate{display:flex;align-items:stretch;border-radius:12px;overflow:hidden;background:#f6c500;box-shadow:0 0 0 3px #111 inset,0 20px 50px -15px rgba(246,197,0,.35);height:64px}
-.kplate i{font-style:normal;width:38px;background:#1f4fbf;color:#ffd84d;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:8px;font:700 12px var(--fm);gap:4px}
-.kplate i::before{content:"";width:16px;height:16px;border-radius:50%;border:2px dotted #ffd84d}
-.kplate input{width:230px;border:0;background:transparent;font:700 30px/1 var(--fm);letter-spacing:3px;color:#111;text-transform:uppercase;padding:0 16px;outline:none}
-.kplate input::placeholder{color:rgba(0,0,0,.28)}
-.kplate:focus-within{box-shadow:0 0 0 3px #111 inset,0 0 0 4px var(--cy)}
-.kform .btn{height:64px}
-.knote{font-size:13.5px;color:var(--mu2);max-width:520px}
-.kstat{font:500 13px var(--fm);color:var(--cy);min-height:20px;margin-top:8px}
-@media (max-width:480px){.kplate{flex:1}.kplate input{width:100%;font-size:26px}.kform .btn{width:100%;justify-content:center}}
-
-/* ═══════════ Speeltuin-telefoon ═══════════ */
-.pg{position:relative;max-width:390px;margin:0 auto;border-radius:48px;padding:12px;background:#05070b;box-shadow:inset 0 0 0 1px var(--line2),0 60px 120px -40px rgba(0,0,0,.9),0 0 0 10px rgba(255,255,255,.02)}
-.pg::before{content:"";position:absolute;top:22px;left:50%;width:90px;height:24px;margin-left:-45px;border-radius:20px;background:#000;z-index:2}
-.pg-in{position:relative;border-radius:38px;background:var(--sur);min-height:640px;padding:48px 20px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
-.pg-demo{padding:7px 8px;border-radius:9px;text-align:center;font:500 10.5px var(--fm);letter-spacing:1.4px;color:#04110c;background:repeating-linear-gradient(135deg,#ffb020 0 14px,#ffc34d 14px 28px)}
-.pg-car b{display:block;font:700 22px/1.15 var(--fd);letter-spacing:-.02em}
-.pg-car small{display:block;font:400 12.5px var(--fm);color:var(--mu);margin-top:4px}
-.pg-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:14px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
-.pg-tabs button{font:500 13.5px var(--fb);color:var(--mu);background:transparent;border:0;border-radius:10px;padding:9px 4px;cursor:pointer;transition:all .25s}
-.pg-tabs button.on{background:var(--sur2);color:var(--tx);box-shadow:inset 0 0 0 1px var(--line2)}
-.pg-body{flex:1;animation:lin .35s ease both}
-.lamp{display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
-.lamp i{flex:none;width:46px;height:46px;border-radius:50%;background:var(--c);box-shadow:0 0 30px var(--c),inset 0 -6px 12px rgba(0,0,0,.25)}
-.lamp b{display:block;font:700 18px/1.2 var(--fd)}
-.lamp small{font-size:12.5px;color:var(--mu)}
-.pg-l{list-style:none;margin:12px 0}
-.pg-l li{display:grid;grid-template-columns:12px 1fr;gap:10px;padding:10px 2px;border-bottom:1px solid var(--line);font-size:13.5px;color:#c3cad6}
-.pg-l li::before{content:"";width:8px;height:8px;border-radius:50%;margin-top:6px;background:var(--c)}
-.pg-nu{font-size:13px;color:var(--tx);padding:12px 14px;border-radius:14px;background:rgba(79,214,240,.07);box-shadow:inset 0 0 0 1px rgba(79,214,240,.25)}
-.pg-nu b{color:var(--cy);font-weight:500}
-.pg-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pg-g div{padding:14px;border-radius:16px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
-.pg-g small{font-size:12px;color:var(--mu)}
-.pg-g b{display:block;font:500 26px var(--fm);margin:4px 0 10px}
-.pg-g u{display:block;height:4px;border-radius:2px;background:var(--line);overflow:hidden;text-decoration:none}
-.pg-g u i{display:block;height:100%;background:var(--grad);transition:width .8s ease}
-.pg-mee{display:flex;flex-direction:column;gap:12px}
-.pg-code{display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line)}
-.pg-code svg{flex:none;width:78px;height:78px;border-radius:8px;background:#fff;padding:5px}
-.pg-code small{display:block;font:500 11px var(--fm);letter-spacing:.8px;color:var(--mu)}
-.pg-code b{display:block;font:500 20px var(--fm);letter-spacing:1px;margin-top:4px}
-.pg-st{font:500 13px var(--fm);color:var(--am);display:flex;align-items:center;gap:8px}
-.pg-st.ok{color:var(--gn)}
-.pg-st::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;animation:blink 1.2s infinite}
-.pg-ev{display:flex;flex-direction:column;gap:7px}
-.pg-ev div{font-size:13px;color:#c3cad6;padding:10px 12px;border-radius:12px;background:var(--ink2);box-shadow:inset 0 0 0 1px var(--line);animation:lin .4s ease both}
-.pg-ev b{color:var(--cy);font-weight:500}
-.pg-sc{border-top:1px solid var(--line);padding-top:12px}
-.pg-sc small{display:block;font:500 11px var(--fm);letter-spacing:.8px;color:var(--mu);margin-bottom:8px;text-transform:uppercase}
-.pg-sc div{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.pg-sc button{font:500 12.5px var(--fb);color:var(--mu);background:transparent;border:0;border-radius:999px;padding:8px 4px;box-shadow:inset 0 0 0 1px var(--line2);cursor:pointer}
-.pg-sc button.on{color:var(--ink);background:var(--c);box-shadow:none}
-.pg-fine{margin-top:16px;text-align:center;font-size:12.5px;color:var(--mu2);max-width:390px;margin-inline:auto}
-.hero-c .hero-g{align-items:start}
-@media (max-width:980px){.pg-in{min-height:600px}}
-
-/* ═══════════ Wat je nodig hebt ═══════════ */
-.need{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px}
-.need div{padding:28px;border-radius:var(--r);background:var(--sur);box-shadow:inset 0 0 0 1px var(--line)}
-.need b{display:block;font:700 21px/1.2 var(--fd);letter-spacing:-.01em;margin:16px 0 8px}
-.need p{color:var(--mu);font-size:15px}
-.need .n{font:800 44px/1 var(--fd);letter-spacing:-.04em}
-@media (max-width:860px){.need{grid-template-columns:1fr}}
-.end{text-align:center;padding:clamp(50px,8vw,90px) var(--gut);border-radius:40px;background:radial-gradient(60% 90% at 50% 0,rgba(31,209,137,.18),transparent 70%),var(--sur);box-shadow:inset 0 0 0 1px var(--line2)}
-.end h2{font:800 clamp(36px,5vw,64px)/1 var(--fd);letter-spacing:-.04em;margin:18px auto 18px;max-width:800px}
-.end .lead{margin:0 auto 32px}
-.end .row2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pl.css">
 </head>
 <body>
-
+<a class="sr" href="#main">Naar de inhoud</a>
 <header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="index.html" aria-label="PidLane, naar de voorpagina">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#1fd189"/><stop offset="1" stop-color="#4fd6f0"/></linearGradient></defs><rect x="6" y="12" width="52" height="34" rx="11" fill="none" stroke="url(#lg)" stroke-width="4.5"/><path d="M14 29h10l5-10 7 18 5-8h9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      PidLane
-    </a>
-    <nav class="nav-l" aria-label="Hoofdmenu">
-      <a href="#probeer">Probeer het</a>
-      <a href="#meekijken">Meekijken</a>
-      <a href="#zo-werkt-het">Zo werkt het</a>
-      <a href="#kan">Wat het kan</a>
-      <a href="#vragen">Vragen</a>
-    </nav>
-    <a class="nav-part" href="zakelijk.html">Autobedrijf?</a>
-    <a class="gp" href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener" aria-label="Download PidLane op Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.8 8.6 3.6 2.1c1 .6 1 2 0 2.6l-3.6 2.1-3.4-3.4z"/><path fill="#00f076" d="M3.6 1.8c.4-.2.9-.2 1.4.1l11.8 6.7-3.4 3.4z"/><path fill="#ff3a44" d="m13.4 12 3.4 3.4L5 22.1c-.5.3-1 .3-1.4.1z"/></svg><span><i>Ontdek het op</i><b>Download</b></span></a>
+  <div class="wrap nav-in">
+    <a class="logo" href="/" aria-label="PidLane, naar de homepage"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="12" width="52" height="34" rx="10" fill="none" stroke="#1fd189" stroke-width="4.5"/><path d="M14 30h10l4.5-9 7 17 4.5-8h10" fill="none" stroke="#ecebe6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> PidLane</a>
+    <nav class="nav-l" aria-label="Hoofdmenu"><a href="/">Home</a><a href="/#hyperlane">Hyperlane</a><a href="consument.html" aria-current="page">Particulier</a><a href="zakelijk.html">Autobedrijf</a><a href="pidlane-help.html">Handleiding</a></nav>
+    <a class="btn btn-p" href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Download</a>
+    <button class="burg" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-<!-- ═══════════ HERO + SPEELTUIN ═══════════ -->
-<section class="hero hero-c" id="probeer">
-  <div class="grid-bg" aria-hidden="true"></div>
-  <div class="wrap hero-g">
+<main id="main">
+<section class="sub" id="probeer">
+  <div class="wrap sub-g">
     <div>
-      <span class="pill rv"><b>Particulier</b> Voor wie een auto koopt of heeft</span>
-      <h1 class="hk rv d1">Koop je volgende auto <em class="s gt">met zekerheid.</em></h1>
-      <p class="hero-p rv d2">Een adapter in de auto, en PidLane vertelt in <strong>gewone taal</strong> wat de motor weet. Sta je bij een verkoper? Dan <strong>kijkt je eigen monteur live mee</strong>, waar hij ook zit.</p>
-      <form class="kform rv d3" id="kform" autocomplete="off">
+      <p class="kick rv"><b>Particulier</b> voor wie een auto koopt of heeft</p>
+      <h1 class="d1 rv" style="font-size:clamp(44px,6.6vw,100px)">Koop je volgende auto <i>met zekerheid.</i></h1>
+      <p class="lead rv">Een adapter in de auto, en PidLane vertelt in <strong>gewone taal</strong> wat de motor weet. Sta je bij een verkoper? Dan <strong>kijkt je eigen monteur live mee</strong>, waar hij ook zit.</p>
+      <form class="kform rv" id="kform" autocomplete="off">
         <label class="kplate" for="kent"><i>NL</i><input id="kent" name="kent" maxlength="8" placeholder="XX-000-X" aria-label="Je kenteken" spellcheck="false"></label>
         <button class="btn btn-p" type="submit">Probeer met mijn auto <span class="ar">→</span></button>
       </form>
       <div class="kstat" id="kstat" aria-live="polite"></div>
-      <p class="knote rv d3">Je kenteken gaat alleen naar de open data van de RDW, voor merk, model en brandstof. We slaan niets op. <strong style="color:var(--tx);font-weight:500">Alle meetwaarden in deze proef zijn verzonnen</strong>: je auto wordt niet echt uitgelezen.</p>
+      <p class="sub-fine rv">Je kenteken gaat alleen naar de open data van de RDW, voor merk, model en brandstof. We slaan niets op. <b>Alle meetwaarden in deze proef zijn verzonnen</b>: je auto wordt niet echt uitgelezen.</p>
     </div>
-
-    <div class="rv d2">
+    <div class="rv">
       <div class="pg" id="pg">
-        <div class="pg-in">
-          <div class="pg-demo">DEMO · FICTIEVE METING</div>
-          <div class="pg-car"><b id="pg-naam">Jouw auto</b><small id="pg-sub">vul hiernaast je kenteken in</small></div>
-          <div class="pg-tabs" role="tablist" aria-label="Onderdelen van de proef">
-            <button class="on" role="tab" aria-selected="true" data-t="check">Check</button>
-            <button role="tab" aria-selected="false" data-t="live">Live</button>
-            <button role="tab" aria-selected="false" data-t="mee">Meekijken</button>
-          </div>
-          <div class="pg-body" id="pg-body" role="tabpanel"></div>
-          <div class="pg-sc">
-            <small>Speel met de uitkomst</small>
-            <div id="pg-sc">
-              <button data-s="0" style="--c:var(--gn)">Gezond</button>
-              <button data-s="1" style="--c:var(--am)">Let op</button>
-              <button data-s="2" style="--c:var(--rd)">Niet kopen</button>
-            </div>
+        <div class="pg-demo"><span>DEMO · FICTIEVE METING</span><span>PIDLANE</span></div>
+        <div class="pg-car"><b id="pg-naam">Jouw auto</b><small id="pg-sub">vul hiernaast je kenteken in</small></div>
+        <div class="pg-tabs" role="tablist" aria-label="Onderdelen van de proef">
+          <button class="on" role="tab" aria-selected="true" data-t="check">Check</button>
+          <button role="tab" aria-selected="false" data-t="live">Live</button>
+          <button role="tab" aria-selected="false" data-t="mee">Meekijken</button>
+        </div>
+        <div class="pg-body" id="pg-body" role="tabpanel"></div>
+        <div class="pg-sc">
+          <small>Speel met de uitkomst</small>
+          <div id="pg-sc">
+            <button data-s="0" style="--c:var(--ok)">Gezond</button>
+            <button data-s="1" style="--c:var(--s3)">Let op</button>
+            <button data-s="2" style="--c:var(--s4)">Niet kopen</button>
           </div>
         </div>
       </div>
@@ -157,199 +71,151 @@
   </div>
 </section>
 
-<!-- ═══════════ MEEKIJKEN ═══════════ -->
-<section class="sec" id="meekijken" style="padding-top:40px">
+<section class="sec" id="meekijken">
   <div class="wrap">
-    <span class="eb rv" data-n="01">Meekijken op afstand</span>
-    <h2 class="hs rv">Jij staat bij de verkoper. <em class="s gt">Je monteur kijkt mee.</em></h2>
-    <p class="lead rv">Je hoeft zelf niets van auto's te weten. Steek de adapter erin, geef je vaste garage of die handige buurman een code, en hij ziet op zijn eigen telefoon of computer live wat de motor doet. Terwijl jij daar nog staat.</p>
-    <div class="rm rv" data-dtc="P0301" role="img" aria-label="Voorbeeld: jij · bij de verkoper deelt de uitlezing live, jouw garage · kijkt mee kijkt mee op een ander scherm">
-      <div class="rm-dev rm-phone"><div class="in">
-        <div class="rm-who">Jij · bij de verkoper</div>
-        <div class="rm-car">Jouw volgende auto<small>bij de verkoper · uitlezen loopt</small></div>
-        <div class="rm-m" data-rm-m>
-          <div data-k="rpm"><small>Toerental</small><b>—</b><u><i></i></u></div>
-          <div data-k="cool"><small>Koelvloeistof °C</small><b>—</b><u><i></i></u></div>
-          <div data-k="volt"><small>Accu V</small><b>—</b><u><i></i></u></div>
+    <p class="kick rv"><b>01</b> Meekijken op afstand</p>
+    <div class="sec-h">
+      <h2 class="d2 rv">Jij staat bij de verkoper. <i>Je monteur kijkt mee.</i></h2>
+      <p class="lead rv">Je hoeft zelf niets van auto's te weten. Steek de adapter erin, geef je vaste garage of die handige buurman een code, en hij ziet op zijn eigen telefoon of computer live wat de motor doet. Terwijl jij daar nog staat.</p>
+    </div>
+    <div class="rm rv">
+      <div class="scr">
+        <div class="scr-h"><span><b>Jij</b> · bij de verkoper</span><span class="live">● deelt live</span></div>
+        <div class="scr-v" data-rm-m>
+          <div data-k="rpm"><small>Toeren</small><b>—</b></div>
+          <div data-k="koel"><small>Koelwater °C</small><b>—</b></div>
+          <div data-k="volt"><small>Accu V</small><b>—</b></div>
+          <div><small>Code</small><b style="font-size:20px">715 204 9936</b></div>
         </div>
-        <div class="rm-share">Deelt live<b>715 204 9936</b></div>
-      </div></div>
-      <div class="rm-link" aria-hidden="true">
-        <svg viewBox="0 0 150 40"><path d="M4 20 H146" stroke="rgba(79,214,240,.35)" stroke-width="1.5" stroke-dasharray="3 5" fill="none"/><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-0.0s" repeatCount="indefinite" path="M4 20 H146"/></circle><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-0.6s" repeatCount="indefinite" path="M4 20 H146"/></circle><circle r="3.5" fill="#4fd6f0"><animateMotion dur="1.8s" begin="-1.2s" repeatCount="indefinite" path="M4 20 H146"/></circle></svg>
-        <div class="code"><small>MEEKIJK-CODE</small>715 204 9936</div>
       </div>
-      <div class="rm-dev rm-desk">
-        <div class="bar"><i></i><i></i><i></i><span>Jouw garage · kijkt mee</span><b>● live</b></div>
-        <div class="body">
-          <div>
-            <div class="rm-car">Jouw volgende auto<small>alleen meekijken · sessie 4 uur geldig</small></div>
-            <div class="rm-m" data-rm-m>
-              <div data-k="rpm"><small>Toerental</small><b>—</b><u><i></i></u></div>
-          <div data-k="cool"><small>Koelvloeistof °C</small><b>—</b><u><i></i></u></div>
-          <div data-k="volt"><small>Accu V</small><b>—</b><u><i></i></u></div>
-            </div>
-          </div>
-          <div class="rm-log" data-rm-log>
-            <h5>Wat de meekijker doet</h5>
-          </div>
+      <div class="link"><svg viewBox="0 0 120 24" aria-hidden="true"><line x1="4" y1="12" x2="116" y2="12" stroke="rgba(236,235,230,.3)" stroke-dasharray="2 6"/><circle cx="60" cy="12" r="4" fill="#00ffd7"/></svg><span>alleen lezen<br><b>beveiligd</b></span></div>
+      <div class="scr">
+        <div class="scr-h"><span><b>Jouw garage</b> · kijkt mee</span><span>sessie 4 uur</span></div>
+        <div class="scr-v" data-rm-m>
+          <div data-k="rpm"><small>Toeren</small><b>—</b></div>
+          <div data-k="koel"><small>Koelwater °C</small><b>—</b></div>
+          <div data-k="volt"><small>Accu V</small><b>—</b></div>
         </div>
-        <div style="display:flex;gap:8px;padding:0 16px 16px;flex-wrap:wrap">
-          <span class="rm-btn" data-rm-pid>+ Sensor volgen</span>
-          <span class="rm-btn" data-rm-dtc>Foutcodes opvragen</span>
-        </div>
+        <div class="scr-log" data-rm-log aria-live="off"></div>
       </div>
     </div>
-    <div class="rm-steps">
-      <div class="rv"><span>01</span><b>Adapter erin</b><p>Bij de verkoper, in de OBD2-poort onder het stuur. Contact aan, PidLane verbindt vanzelf.</p></div>
-      <div class="rv d1"><span>02</span><b>Deel de code</b><p>Tik op delen en stuur de 10-cijferige code, de link of de QR-code naar je monteur. Via WhatsApp, of lees hem voor aan de telefoon.</p></div>
-      <div class="rv d2"><span>03</span><b>Hij ziet wat jij ziet</b><p>Live meters, foutcodes, en de sensoren die hij extra wil zien. Hij heeft zelf geen adapter nodig.</p></div>
-      <div class="rv d3"><span>04</span><b>Jij beslist</b><p>Met een vakman aan de lijn die de meting heeft gezien. Hij kan alleen kijken, niets aan de auto veranderen.</p></div>
+    <div class="vier">
+      <div class="rv"><span class="mono">01</span><h4>Adapter erin</h4><p>Bij de verkoper, in de OBD2-poort onder het stuur. Contact aan, PidLane verbindt vanzelf.</p></div>
+      <div class="rv"><span class="mono">02</span><h4>Deel de code</h4><p>Stuur de 10-cijferige code, de link of de QR-code naar je monteur. Via WhatsApp, of lees hem voor aan de telefoon.</p></div>
+      <div class="rv"><span class="mono">03</span><h4>Hij ziet wat jij ziet</h4><p>Live meters, foutcodes en de sensoren die hij extra wil zien. Zelf heeft hij geen adapter nodig.</p></div>
+      <div class="rv"><span class="mono">04</span><h4>Jij beslist</h4><p>Met een vakman aan de lijn die de meting heeft gezien. Hij kan alleen kijken, niets veranderen.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ ZO WERKT HET ═══════════ -->
-<section class="sec" id="zo-werkt-het" style="padding-top:0">
+<section class="sec paper" id="zo-werkt-het">
   <div class="wrap">
-    <span class="eb rv" data-n="02">Wat je nodig hebt</span>
-    <h2 class="hs rv">Drie dingen. <em class="s">Die je waarschijnlijk al bijna hebt.</em></h2>
-    <div class="need">
-      <div class="rv"><span class="n gt">1</span><b>Een OBD2-adapter</b><p>Een Bluetooth-adapter van een paar tientjes. Getest met de Vgate iCar Pro BT 3.0 en de OBDLink MX+; andere ELM327-adapters werken meestal ook.</p></div>
-      <div class="rv d1"><span class="n gt">2</span><b>Een Android-telefoon</b><p>Met de app, of gewoon in Chrome. Op een iPhone kan het uitlezen helaas niet; meekijken kan je monteur wél op elk toestel.</p></div>
-      <div class="rv d2"><span class="n gt">3</span><b>Een auto vanaf ± 2001</b><p>Vrijwel elke benzineauto vanaf 2001 en diesel vanaf 2004 heeft een OBD2-poort. Hybride en elektrisch hebben eigen controles.</p></div>
+    <p class="kick rv"><b>02</b> Wat je nodig hebt</p>
+    <h2 class="d2 rv" style="margin:34px 0 clamp(40px,5vw,64px)">Drie dingen. <i>Die je waarschijnlijk al bijna hebt.</i></h2>
+    <div class="start">
+      <div class="rv"><span class="mono"><span>01</span><span>± € 30</span></span><h3>Een OBD2-adapter</h3><p>Een Bluetooth-adapter van een paar tientjes. Getest met de Vgate iCar Pro BT 3.0 en de OBDLink MX+; andere ELM327-adapters werken meestal ook.</p></div>
+      <div class="rv"><span class="mono"><span>02</span><span>app of Chrome</span></span><h3>Een Android-telefoon</h3><p>Met de app, of gewoon in Chrome. Op een iPhone kan het uitlezen helaas niet; meekijken kan je monteur wél op elk toestel.</p></div>
+      <div class="rv"><span class="mono"><span>03</span><span>vanaf ± 2001</span></span><h3>Een auto met OBD2</h3><p>Vrijwel elke benzineauto vanaf 2001 en diesel vanaf 2004. Hybride en elektrisch hebben eigen controles.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ WAT HET KAN ═══════════ -->
+<section class="sec" id="nieuw">
+  <div class="wrap">
+    <p class="kick rv"><b>03</b> Nieuw in de app</p>
+    <div class="sec-h">
+      <h2 class="d2 rv">Ook na de aankoop <i>blijft hij meekijken.</i></h2>
+      <p class="lead rv">Hyperlane op het dashboard, de vier banden in één venster, een winterkaart die het weer naast je auto legt, en een conditiescore die zakt als je onderhoud uitstelt, met de reden erbij.</p>
+    </div>
+    <figure class="rv">
+      <div class="film"><img src="img/hl/launch.webp" width="1280" height="547" alt="Hyperlane tijdens een launch van 0 naar 100" loading="lazy"></div>
+      <figcaption class="film-cap"><span><b>Hyperlane</b> · launch 0–100, de tijd telt live mee</span><a href="/#hyperlane">Alle elf scènes →</a></figcaption>
+    </figure>
+    <div class="vier">
+      <div class="rv"><span class="mono">HYPERLANE</span><h4>Een dashboard dat meerijdt</h4><p>Neon-tunnel, ringen die meekantelen en een kleur die je rijstijl leest.</p></div>
+      <div class="rv"><span class="mono">BANDEN</span><h4>Vier banden in één venster</h4><p>Druk en temperatuur, en welke band achterloopt op de rest. Op auto's die het via OBD geven.</p></div>
+      <div class="rv"><span class="mono">WINTER</span><h4>Weer vooruit</h4><p>"Vannacht −4 °C en je hebt zomervloeistof." Plaats uit een lijst, geen locatie.</p></div>
+      <div class="rv"><span class="mono">CONDITIE</span><h4>Score met een reden</h4><p>Je auto vergeleken met zichzelf, rit na rit. Te weinig ritten? Dan zegt hij dat.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="kan" style="padding-top:0">
   <div class="wrap">
-    <span class="eb rv" data-n="03">Wat het kan</span>
-    <h2 class="hs rv">Van <em class="s">"wat betekent dat lampje?"</em> tot een complete koopcheck.</h2>
-    <div class="bento" style="margin-top:50px">
-      <div class="bx w4 rv">
-        <span class="tg nw">Nieuw</span>
-        <h3>Check mijn auto</h3>
-        <p>Eén oordeel bovenaan, <strong>rood, oranje of groen</strong>, met drie duidelijke vervolgstappen. De volledige uitlezing staat eronder voor wie het wil zien: foutcodes, de momentopname van toen de fout ontstond, en de zelftests van de auto.</p>
-      </div>
-      <div class="bx rv d1">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 12h10"/></svg></div>
-        <h3>Kenteken-check</h3>
-        <p>Ook zonder adapter: <strong>APK, NAP-oordeel, terugroepacties</strong> en import, rechtstreeks van de RDW.</p>
-      </div>
-      <div class="bx rv">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div>
-        <h3>Koopcheck</h3>
-        <p>Een vaste doorloop voor een tweedehands auto, met de zelftests die verraden of er <strong>kort geleden fouten zijn gewist</strong>. Nu ook als aankooprapport in PDF.</p>
-      </div>
-      <div class="bx hot rv d1">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3>Meekijken op afstand</h3>
-        <p>Je monteur kijkt live mee via een <strong>code of QR</strong>. <a href="#meekijken">Zo werkt het →</a></p>
-      </div>
-      <div class="bx rv d2">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><circle cx="12" cy="8" r="2"/></svg></div>
-        <h3>Ritmonitor</h3>
-        <p>Laat de app tijdens een proefrit meekijken: hij let op <strong>uitvallende sensoren en uitschieters</strong>.</p>
-      </div>
-      <div class="bx w3 rv">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div>
-        <h3>Mijn voertuigen</h3>
-        <p>Bewaar tot drie auto's in je account, <strong>met hun rapporten, ritten en open punten</strong>, op elk toestel waarop je inlogt.</p>
-      </div>
-      <div class="bx w3 rv d1">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg></div>
-        <h3>Rapport in gewone taal</h3>
-        <p>Wat is er aan de hand, hoe zeker is dat, en welk onderdeel is de eerste verdachte. <strong>Op te slaan en te delen als PDF</strong>, bijvoorbeeld met je garage.</p>
-      </div>
-      <div class="bx w3 rv">
-        <span class="tg nw">Nieuw</span>
-        <h3>Wintercheck</h3>
-        <p>Banden, ruitensproeier en het weer voor je woonplaats. <strong>Plaats uit een lijst, geen locatie.</strong></p>
-      </div>
-      <div class="bx w3 rv d1">
-        <span class="tg nw">Nieuw</span>
-        <h3>Klokje boven je navigatie</h3>
-        <p>Beeld-in-beeld met naald en stopknop, zodat je <strong>blijft zien wat de auto doet</strong> terwijl je navigeert.</p>
-      </div>
+    <p class="kick rv"><b>04</b> Wat het kan</p>
+    <div class="sec-h"><h2 class="d2 rv">Van "wat betekent dat lampje?" <i>tot een complete koopcheck.</i></h2></div>
+    <div class="fl">
+      <div class="rv"><span class="tag">oordeel</span><h4>Check mijn auto</h4><p>Eén oordeel bovenaan, rood, oranje of groen, met drie vervolgstappen. De volledige uitlezing staat eronder voor wie het wil zien.</p></div>
+      <div class="rv"><span class="tag">zonder adapter</span><h4>Kenteken-check</h4><p>APK, NAP-oordeel, terugroepacties en import, rechtstreeks van de RDW.</p></div>
+      <div class="rv"><span class="tag">koopcheck</span><h4>Aankooprapport</h4><p>Een vaste doorloop voor een tweedehands auto, met de zelftests die verraden of er kort geleden fouten zijn gewist. Als PDF.</p></div>
+      <div class="rv"><span class="tag">proefrit</span><h4>Ritmonitor</h4><p>Let tijdens de proefrit op uitvallende sensoren en uitschieters.</p></div>
+      <div class="rv"><span class="tag">account</span><h4>Mijn voertuigen</h4><p>Tot drie auto's met hun rapporten, ritten en open punten, op elk toestel waarop je inlogt.</p></div>
+      <div class="rv"><span class="tag">rapport</span><h4>In gewone taal</h4><p>Wat er aan de hand is, hoe zeker dat is en welk onderdeel de eerste verdachte is. Te delen als PDF.</p></div>
+      <div class="rv"><span class="tag">seizoen</span><h4>Wintercheck</h4><p>Banden, ruitensproeier en het weer voor je woonplaats.</p></div>
+      <div class="rv"><span class="tag">onderweg</span><h4>Klokje boven je navigatie</h4><p>Beeld-in-beeld met naald en stopknop, zodat je blijft zien wat de auto doet terwijl je navigeert.</p></div>
+      <div class="rv"><span class="tag">meekijken</span><h4>Je monteur op afstand</h4><p>Live via een code of QR, alleen lezen. <a href="#meekijken">Zo werkt het →</a></p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ EERLIJK ═══════════ -->
-<section class="sec" style="padding-top:0">
+<section class="sec paper" id="eerlijk">
   <div class="wrap">
-    <span class="eb rv" data-n="04">Eerlijk is eerlijk</span>
-    <h2 class="hs rv">Geen monteur in je broekzak. <em class="s gt">Wel een goede eerste blik.</em></h2>
-    <div class="honest">
-      <div class="hn rv"><h3><span>01</span>Een monteur blijft de baas</h3><p>PidLane vertelt wat de elektronica weet en wat dat waarschijnlijk betekent. Een afwijking laat je altijd door een vakman bevestigen voor je gaat repareren. Daarom is meekijken er.</p></div>
-      <div class="hn rv d1"><h3><span>02</span>Wat de motor niet weet, zeggen we niet</h3><p>Roest, banden, schokdempers: dat zit niet in de elektronica. Daar maken we niets van, en de app zegt het er eerlijk bij.</p></div>
-      <div class="hn rv"><h3><span>03</span>Je chassisnummer blijft van jou</h3><p>Het VIN verlaat je telefoon nooit onbewerkt: het wordt eerst gepseudonimiseerd. Op deze website staan geen trackingcookies.</p></div>
-      <div class="hn rv d1"><h3><span>04</span>Eerst zien, dan pas beginnen</h3><p>De app heeft een demostand die een verbinding nabootst, net als de proef hierboven. Er wordt dan niets opgeslagen.</p></div>
+    <p class="kick rv"><b>05</b> Eerlijk is eerlijk</p>
+    <h2 class="d2 rv" style="margin-top:34px">Geen monteur in je broekzak. <i>Wel een goede eerste blik.</i></h2>
+    <div class="vier">
+      <div class="rv"><span class="mono">01</span><h4>Een monteur blijft de baas</h4><p>PidLane vertelt wat de elektronica weet en wat dat waarschijnlijk betekent. Een afwijking laat je door een vakman bevestigen voor je gaat repareren.</p></div>
+      <div class="rv"><span class="mono">02</span><h4>Wat de motor niet weet, zeggen we niet</h4><p>Roest en schokdempers zitten niet in de elektronica. Daar maken we niets van, en de app zegt het er eerlijk bij.</p></div>
+      <div class="rv"><span class="mono">03</span><h4>Je chassisnummer blijft van jou</h4><p>Het VIN verlaat je telefoon nooit onbewerkt: het wordt eerst gepseudonimiseerd. Op deze website staan geen trackingcookies.</p></div>
+      <div class="rv"><span class="mono">04</span><h4>Eerst zien, dan beginnen</h4><p>De app heeft een demostand die een verbinding nabootst, net als de proef hierboven. Er wordt dan niets opgeslagen.</p></div>
     </div>
-  </div>
-</section>
 
-<!-- ═══════════ VRAGEN ═══════════ -->
-<section class="sec" id="vragen" style="padding-top:0">
-  <div class="wrap">
-    <span class="eb rv" data-n="05">Vragen</span>
-    <h2 class="hs rv">Goede vragen.</h2>
-    <div class="faq">
-      <details class="rv"><summary>Moet ik verstand hebben van auto's?</summary><p>Nee. Je krijgt één oordeel in rood, oranje of groen, met in gewone taal wat er aan de hand is en wat je nu kunt doen. En twijfel je, dan laat je iemand met verstand van zaken op afstand meekijken.</p></details>
-      <details class="rv"><summary>Hoe kijkt mijn monteur mee?</summary><p>Jij tikt op delen en stuurt hem een 10-cijferige code, een link of een QR-code. Hij opent PidLane op zijn telefoon of computer en ziet live dezelfde meters. Hij kan zelf foutcodes opvragen en extra sensoren laten volgen. De sessie blijft vier uur geldig.</p></details>
-      <details class="rv"><summary>Kan mijn monteur iets aan de auto veranderen?</summary><p>Nee. Meekijken is alleen kijken. Foutcodes wissen kan nooit op afstand: dat kan alleen wie bij de auto staat.</p></details>
-      <details class="rv"><summary>Mag ik zomaar een adapter in de auto van een verkoper steken?</summary><p>Vraag het even; de meeste verkopers vinden het prima, en wie weigert vertelt je daarmee ook iets. Uitlezen verandert niets aan de auto.</p></details>
-      <details class="rv"><summary>Werkt het op een iPhone?</summary><p>Het uitlezen van de auto nog niet: daarvoor is een Android-telefoon nodig, met de app of met Chrome. Meekijken op afstand werkt wel op elk toestel met een browser.</p></details>
-      <details class="rv"><summary>Is de proef op deze pagina echt?</summary><p>Alleen merk, model en brandstof: die komen van de open data van de RDW. Alle meetwaarden, foutcodes en uitkomsten zijn verzonnen. Je auto wordt niet uitgelezen en we bewaren je kenteken niet.</p></details>
-      <details class="rv"><summary>Wat kost het?</summary><p>De kenteken-check en de demostand kosten niets. Wat een volledige analyse kost, zie je in de app vóór je iets betaalt.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ AFSLUITER ═══════════ -->
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="end rv">
-      <span class="eb" data-n="06">Klaar voor het echte werk?</span>
-      <h2>De volgende auto <em class="s gt">vertelt je alles.</em></h2>
-      <p class="lead">Maak een account, probeer de demostand of check alvast een kenteken. Een adapter heb je pas nodig als je echt gaat uitlezen.</p>
-      <div class="row2">
-        <a class="gp" href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener" aria-label="Download PidLane op Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.8 8.6 3.6 2.1c1 .6 1 2 0 2.6l-3.6 2.1-3.4-3.4z"/><path fill="#00f076" d="M3.6 1.8c.4-.2.9-.2 1.4.1l11.8 6.7-3.4 3.4z"/><path fill="#ff3a44" d="m13.4 12 3.4 3.4L5 22.1c-.5.3-1 .3-1.4.1z"/></svg><span><i>Ontdek het op</i><b>Google Play</b></span></a>
-        <a class="btn btn-g" href="https://app.pidlane.nl">Of open de web-app <span class="ar">→</span></a>
-        <a class="btn btn-g" href="https://wa.me/31619071392" target="_blank" rel="noopener">Vraag het via WhatsApp</a>
+    <div class="twee" style="margin-top:clamp(80px,10vw,130px)" id="vragen">
+      <div><p class="kick rv"><b>Vragen</b></p><h2 class="d2 rv" style="margin-top:34px">Goede <i>vragen.</i></h2></div>
+      <div class="faq rv">
+        <details><summary>Moet ik verstand hebben van auto's?</summary><p>Nee. Je krijgt één oordeel in rood, oranje of groen, met in gewone taal wat er aan de hand is en wat je nu kunt doen. En twijfel je, dan laat je iemand met verstand van zaken op afstand meekijken.</p></details>
+        <details><summary>Hoe kijkt mijn monteur mee?</summary><p>Jij tikt op delen en stuurt hem een 10-cijferige code, een link of een QR-code. Hij opent PidLane op zijn telefoon of computer en ziet live dezelfde meters. Hij kan zelf foutcodes opvragen en extra sensoren laten volgen. De sessie blijft vier uur geldig.</p></details>
+        <details><summary>Kan mijn monteur iets aan de auto veranderen?</summary><p>Nee. Meekijken is alleen kijken. Foutcodes wissen kan nooit op afstand: dat kan alleen wie bij de auto staat.</p></details>
+        <details><summary>Mag ik zomaar een adapter in de auto van een verkoper steken?</summary><p>Vraag het even; de meeste verkopers vinden het prima, en wie weigert vertelt je daarmee ook iets. Uitlezen verandert niets aan de auto.</p></details>
+        <details><summary>Werkt het op een iPhone?</summary><p>Het uitlezen van de auto nog niet: daarvoor is een Android-telefoon nodig, met de app of met Chrome. Meekijken op afstand werkt wel op elk toestel met een browser.</p></details>
+        <details><summary>Is de proef op deze pagina echt?</summary><p>Alleen merk, model en brandstof: die komen van de open data van de RDW. Alle meetwaarden, foutcodes en uitkomsten zijn verzonnen. Je auto wordt niet uitgelezen en we bewaren je kenteken niet.</p></details>
+        <details><summary>Wat kost het?</summary><p>De kenteken-check en de demostand kosten niets. Wat een volledige analyse kost, zie je in de app vóór je iets betaalt.</p></details>
       </div>
     </div>
   </div>
 </section>
 
+<section class="slot" id="download">
+  <img src="img/hl/cruise.webp" alt="" loading="lazy" width="1280" height="547">
+  <div class="wrap">
+    <h2 class="d1 rv">De volgende auto <i>vertelt je alles.</i></h2>
+    <p class="lead rv">Maak een account, probeer de demostand of check alvast een kenteken. Een adapter heb je pas nodig als je echt gaat uitlezen.</p>
+    <div class="cta rv">
+      <a class="btn btn-p" href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Download op Google Play</a>
+      <a class="btn btn-l" href="https://app.pidlane.nl">Open de web-app <span class="ar">→</span></a>
+      <a class="btn btn-l" href="https://wa.me/31619071392" target="_blank" rel="noopener">Vraag het via WhatsApp</a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="ft-big" aria-hidden="true">PidLane</div>
     <div class="ft">
-      <span>© 2026 PidLane · Dordrecht · <em class="s">Your car talks. We translate.</em></span>
-      <nav aria-label="Voettekst">
-        <a href="index.html">Voorpagina</a>
-        <a href="zakelijk.html">Voor autobedrijven</a>
-<a href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Google Play</a>
-        <a href="https://app.pidlane.nl/privacy.html">Privacy</a>
-        <a href="mailto:support@pidlane.nl">support@pidlane.nl</a>
-        <a href="https://www.facebook.com/profile.php?id=61594544542011" rel="noopener" target="_blank">Facebook</a>
-        <a href="https://www.tiktok.com/@pidlane" rel="noopener" target="_blank">TikTok</a>
-      </nav>
+      <div><a class="logo" href="/"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="12" width="52" height="34" rx="10" fill="none" stroke="#1fd189" stroke-width="4.5"/><path d="M14 30h10l4.5-9 7 17 4.5-8h10" fill="none" stroke="#ecebe6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> PidLane</a><p>Your car talks. We translate. Gebouwd in Dordrecht, op RDW-data en Nederlandse auto's.</p></div>
+      <div><h5>App</h5><a href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Google Play</a><a href="https://app.pidlane.nl">Web-app</a><a href="pidlane-help.html">Handleiding</a></div>
+      <div><h5>Voor wie</h5><a href="consument.html">Particulieren</a><a href="zakelijk.html">Autobedrijven</a></div>
+      <div><h5>Contact</h5><a href="mailto:support@pidlane.nl">support@pidlane.nl</a><a href="https://wa.me/31619071392" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.facebook.com/profile.php?id=61594544542011" rel="noopener" target="_blank">Facebook</a><a href="https://www.tiktok.com/@pidlane" rel="noopener" target="_blank">TikTok</a></div>
     </div>
-    <p class="ft-fine">Geen trackingcookies op deze pagina</p>
+    <div class="ft-fine"><span>© 2026 PidLane · <a href="https://app.pidlane.nl/privacy.html">Privacy</a> · geen trackingcookies</span><span>Google Play is een handelsmerk van Google LLC.</span></div>
   </div>
 </footer>
 
-<div class="mbar" id="mbar" data-doel="probeer">
-  <a class="btn btn-g" href="https://app.pidlane.nl">Web-app</a>
-  <a class="gp" href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener" aria-label="Download PidLane op Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d7fe" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#ffce00" d="m16.8 8.6 3.6 2.1c1 .6 1 2 0 2.6l-3.6 2.1-3.4-3.4z"/><path fill="#00f076" d="M3.6 1.8c.4-.2.9-.2 1.4.1l11.8 6.7-3.4 3.4z"/><path fill="#ff3a44" d="m13.4 12 3.4 3.4L5 22.1c-.5.3-1 .3-1.4.1z"/></svg><span><i>Ontdek het op</i><b>Google Play</b></span></a>
+<div class="mbar" id="mbar" data-doel="download">
+  <a class="btn btn-l" style="background:var(--ink)" href="https://app.pidlane.nl">Web-app</a>
+  <a class="btn btn-p" href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Google Play</a>
 </div>
 
-<script src="site.js"></script>
+<script src="/pl.js"></script>
 <script>
 // ── De speeltuin: eigen kenteken, echte merk/model/brandstof van de RDW, verzonnen meting ──
 (function(){
@@ -376,7 +242,7 @@
     brandstof:[['Toerental','',780,860,0,6000,0],['Koelvloeistof','°C',86,92,0,130,0],['Accu','V',14.0,14.4,10,16,1],['Brandstoftrim','%',-2,3,-25,25,1]],
     elektrisch:[['Laadtoestand','%',77,78,0,100,0],['Accutemp.','°C',22,24,-10,60,0],['12V-accu','V',12.7,12.9,10,15,1],['Vermogen','kW',0.4,1.6,0,150,1]]
   };
-  const KL=['var(--gn)','var(--am)','var(--rd)'];
+  const KL=['var(--ok)','var(--s3)','var(--s4)'];
 
   function wis(){ timers.forEach(clearInterval); timers.forEach(clearTimeout); timers=[]; }
   function sets(){ return S[auto.soort]||S.benzine; }
@@ -389,7 +255,7 @@
     body.style.animation='none'; void body.offsetWidth; body.style.animation='';
     if(tab==='check'){
       body.innerHTML='<div class="lamp" style="--c:'+KL[sc]+'"><i></i><div><b>'+x.t+'</b><small>'+x.s+'</small></div></div>'
-        +'<ul class="pg-l">'+x.l.map(l=>'<li style="--c:'+(l[0]==='g'?'var(--gn)':l[0]==='w'?'var(--am)':'var(--rd)')+'">'+l[1]+'</li>').join('')+'</ul>'
+        +'<ul class="pg-l">'+x.l.map(l=>'<li style="--c:'+(l[0]==='g'?'var(--ok)':l[0]==='w'?'var(--s3)':'var(--s4)')+'">'+l[1]+'</li>').join('')+'</ul>'
         +'<div class="pg-nu">'+x.n+'</div>';
     } else if(tab==='live'){
       const g=G[auto.soort==='elektrisch'?'elektrisch':'brandstof'];
@@ -404,9 +270,9 @@
       body.innerHTML='<div class="pg-mee"><div class="pg-code">'+qr(auto.seed)+'<div><small>MEEKIJK-CODE</small><b>'+code+'</b><small style="margin-top:6px;letter-spacing:0">Stuur deze naar je monteur</small></div></div>'
         +'<div class="pg-st" id="pg-st">Wachten op je monteur…</div><div class="pg-ev" id="pg-ev"></div></div>';
       const ev=[
-        ['👁 <b>Je monteur kijkt mee</b>',1600],
-        ['🔭 Hij volgt nu ook: <b>'+(auto.soort==='elektrisch'?'accutemperatuur':'brandstoftrim')+'</b>',3400],
-        ['📋 Hij vroeg de foutcodes op: <b>'+(x.l[0][0]==='g'?'geen':x.l[0][1].split(' · ')[0])+'</b>',5200]
+        ['<b>Je monteur kijkt mee</b>',1600],
+        ['Hij volgt nu ook: <b>'+(auto.soort==='elektrisch'?'accutemperatuur':'brandstoftrim')+'</b>',3400],
+        ['Hij vroeg de foutcodes op: <b>'+(x.l[0][0]==='g'?'geen':x.l[0][1].split(' · ')[0])+'</b>',5200]
       ];
       ev.forEach(e=>timers.push(setTimeout(()=>{
         const st=$('pg-st'); if(st && e===ev[0]){ st.textContent='Live verbonden · alleen meekijken'; st.classList.add('ok'); }
@@ -424,7 +290,7 @@
       else on=rnd()>.52;
       if(on) c+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>';
     }
-    return '<svg viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges"><g fill="#07090d">'+c+'</g></svg>';
+    return '<svg viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges"><g fill="#07080a">'+c+'</g></svg>';
   }
   function hash(s){ let h=2166136261; for(const ch of s){ h^=ch.charCodeAt(0); h=Math.imul(h,16777619); } return Math.abs(h)||1; }
   function netjes(w){ return String(w||'').trim().split(/\s+/).map(x=>/^[A-Z]{2,}$/.test(x)?x[0]+x.slice(1).toLowerCase():x).join(' '); }
