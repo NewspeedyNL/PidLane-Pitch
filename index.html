@@ -233,20 +233,10 @@
         <div class="rij"><small>Verzekerd</small><span class="ok">ja</span><em>WAM</em></div>
         <div class="rij"><small>Motor</small><span>146 PIDs gevonden</span><em>OBD</em></div>
       </div>
-      <div class="kaart rv">
-        <div class="score">
-          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#e3dfd4" stroke-width="10"/><circle cx="60" cy="60" r="50" fill="none" stroke="#121316" stroke-width="10" stroke-dasharray="257.6 314.2" stroke-linecap="butt" transform="rotate(-90 60 60)"/><text x="60" y="66" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="34" fill="#121316">82</text><text x="60" y="84" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#5f5d57">VAN 100</text></svg>
-          <div><b>Conditiescore</b><p>Onderhoud 74 · conditie 88. Gezakt van 86: de remvloeistof is bijna aan de beurt, en stationair loopt hij iets onrustiger dan na de laatste beurt.</p></div>
-        </div>
-        <div class="km">
-          <div><span>Remvloeistof</span><u><i style="width:92%"></i></u><span class="dn">92%</span></div>
-          <div><span>Olie en filter</span><u><i style="width:78%"></i></u><span>78%</span></div>
-          <div><span>Onrust stationair</span><u><i style="width:30%"></i></u><span class="dn">↑ licht</span></div>
-          <div><span>Trim bij warme motor</span><u><i style="width:12%"></i></u><span class="up">stabiel</span></div>
-          <div><span>Laadspanning</span><u><i style="width:10%"></i></u><span class="up">stabiel</span></div>
-        </div>
-        <p class="vb">Mediaan van de eerste vijf ritten na de beurt tegen de laatste vijf. Te weinig ritten? Dan staat er "nog 3 ritten nodig", nooit een verzonnen getal.</p>
-      </div>
+      <figure class="rv appkaart">
+        <div class="app-licht"><div class="cdk" data-kleur="oranje"><div class="cdk-kop"><span>Conditiescore</span><span class="cdk-oordeel"><i style="background:var(--or,#ff9f2e)"></i>redelijk</span></div><div class="cdk-hoofd"><svg class="cdk-ring" viewBox="0 0 100 100" role="img" aria-label="Conditiescore 82 van 100"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="6"/><circle cx="50" cy="50" r="44" fill="none" stroke="var(--or,#ff9f2e)" stroke-width="6" stroke-dasharray="226.7 276.5" transform="rotate(-90 50 50)"/><text x="50" y="55" text-anchor="middle" class="cdk-getal">82</text><text x="50" y="72" text-anchor="middle" class="cdk-van">VAN 100</text></svg><div class="cdk-delen"><div class="cdk-deel"><span>Onderhoud</span><u><i style="width:74%;background:var(--or,#ff9f2e)"></i></u><b>74</b></div><div class="cdk-deel"><span>Motor</span><u><i style="width:88%;background:var(--gn,#1fd189)"></i></u><b>88</b></div><div class="cdk-deel"><span>Brandstof</span><u><i style="width:91%;background:var(--gn,#1fd189)"></i></u><b>91</b></div><div class="cdk-deel"><span>Accu</span><u><i style="width:93%;background:var(--gn,#1fd189)"></i></u><b>93</b></div></div></div><div class="cdk-blok"><div class="cdk-label"><span>Verloop · 15 metingen</span><b class="neer">−4</b></div><svg class="cdk-lijn" viewBox="0 0 300 54" preserveAspectRatio="none" role="img" aria-label="Verloop van de score"><line x1="4" x2="296" y1="42" y2="42" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="2 4"/><polyline fill="none" stroke="var(--or,#ff9f2e)" stroke-width="2" stroke-linejoin="round" points="4,13.8 24.9,12 45.7,13.8 66.6,13.8 87.4,15.6 108.3,13.8 129.1,15.6 150,17.3 170.9,15.6 191.7,17.3 212.6,19.1 233.4,17.3 254.3,19.1 275.1,20.8 296,20.8"/><circle cx="296" cy="20.8" r="3.5" fill="var(--or,#ff9f2e)"/></svg></div><div class="cdk-blok"><div class="cdk-label"><span>Grootste oorzaak</span><b class="neer">−3,2</b></div><div class="cdk-oorzaak">Remvloeistof: 22 maanden geleden ververst — bijna aan de beurt.</div></div><div class="cdk-voet">Je laatste 5 ritten tegen de eerste 5 na de beurt van 2026-07-14.</div></div></div>
+        <figcaption><span class="tag">voorbeeld</span> Zo staat hij in de app, op het tabblad Conditie. Gemaakt met dezelfde code; de waarden zijn een voorbeeld.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
