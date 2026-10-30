@@ -164,7 +164,7 @@ img,svg,video,canvas{display:block;max-width:100%}
 .stem-l{display:grid;grid-template-columns:30% 25% 25% 20%;font:500 11px/1 var(--fm);letter-spacing:.14em;color:var(--mu);margin-top:10px}
 .stem-l span{border-left:1px solid var(--rule2);padding:6px 0 0 8px}
 .real{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(28px,5vw,72px);align-items:center;margin-top:clamp(64px,9vw,110px)}
-.real .film{aspect-ratio:1080/480;border-radius:18px;border:6px solid #1b1d22;box-shadow:0 0 0 1px var(--rule)}
+.real .film{aspect-ratio:1280/547;border-radius:18px;border:6px solid #1b1d22;box-shadow:0 0 0 1px var(--rule)}
 @media (max-width:860px){.real{grid-template-columns:1fr}.real .film{order:-1}}
 
 /* ═══════════ Banden × weer ═══════════ */
