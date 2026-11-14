@@ -1,0 +1,19 @@
+# Tests van de website. Draait op elke PR en push naar main.
+# tools/test-foutcodes.js: kloppen de foutcodepagina's (/foutcode/) met
+# foutcode/bron.json, en zijn ze veilig en vindbaar opgebouwd?
+name: Tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  foutcodes:
+    name: foutcodepagina's
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --check tools/foutcodes.js
+      - run: node tools/test-foutcodes.js
