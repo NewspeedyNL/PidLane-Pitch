@@ -30,7 +30,7 @@
 {"@type":"MobileApplication","name":"PidLane: OBD2 & AI Diagnose","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","inLanguage":"nl","url":"https://play.google.com/store/apps/details?id=nl.pidlane.app","installUrl":"https://play.google.com/store/apps/details?id=nl.pidlane.app","publisher":{"@id":"https://pidlane.nl/#org"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"screenshot":["https://pidlane.nl/img/app-conclusie.webp","https://pidlane.nl/img/app-onderzoek.webp","https://pidlane.nl/img/app-live.webp"]},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Heeft de expert die meekijkt een adapter nodig?","acceptedAnswer":{"@type":"Answer","text":"Nee. Alleen wie bij de auto staat heeft een adapter. De expert opent PidLane, tikt op Ik ben de expert en typt de code, of opent de link. Hij kan meekijken en foutcodes opvragen, maar niets aan de auto veranderen."}},
-{"@type":"Question","name":"Welke adapter heb ik nodig?","acceptedAnswer":{"@type":"Answer","text":"Een OBD2-adapter met Bluetooth Classic (ELM327 of STN, bijvoorbeeld OBDLink MX+ of Vgate vLinker MC+). Adapters die alleen Bluetooth Low Energy kennen werken niet. Aan een laptop kan het ook via USB, in Chrome."}},
+{"@type":"Question","name":"Welke adapter heb ik nodig?","acceptedAnswer":{"@type":"Answer","text":"Een OBD2-adapter met Bluetooth: Bluetooth Classic (ELM327 of STN, bijvoorbeeld OBDLink MX+ of Vgate vLinker MC+) of Bluetooth Low Energy (bijvoorbeeld Vgate iCar Pro, Veepeak BLE of LELink). Een WiFi-adapter werkt niet. Aan een laptop kan het ook via USB, in Chrome."}},
 {"@type":"Question","name":"Werkt het met mijn auto?","acceptedAnswer":{"@type":"Answer","text":"Vrijwel elke benzineauto vanaf 2001 en diesel vanaf 2004 in Europa heeft een OBD2-poort. Welke sensoren je te zien krijgt verschilt per auto; PidLane laat alleen zien wat jouw auto echt levert."}},
 {"@type":"Question","name":"Werkt het op een iPhone?","acceptedAnswer":{"@type":"Answer","text":"Het uitlezen van de auto nog niet: daarvoor is een Android-telefoon nodig, met de app of met Chrome. Meekijken op afstand, de kenteken-check en foutcodes opzoeken werken op elk toestel met een browser."}},
 {"@type":"Question","name":"Ziet Hyperlane er op elke telefoon zo uit?","acceptedAnswer":{"@type":"Answer","text":"Op elke Android-telefoon met WebGL, en dat zijn ze vrijwel allemaal. Zonder WebGL krijg je een rustiger verloop in dezelfde kleuren. Wie in de instellingen van de telefoon minder beweging kiest, krijgt een stilstaand beeld."}},
@@ -352,6 +352,16 @@
   </div>
 </section>
 
+<!-- ═════ De app zoals hij nu is (schermen uit de demomodus, 15-11-2026) ═════ -->
+<section class="sec" id="schermen">
+  <div class="wrap">
+    <p class="kick rv"><b>Zo ziet het eruit</b></p>
+    <h2 class="d2 rv" style="margin:34px 0 clamp(28px,4vw,48px)">De echte app. <i>Geen mockup.</i></h2>
+    <div class="rv" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;-webkit-overflow-scrolling:touch"><figure style="flex:0 0 clamp(200px,24vw,270px);margin:0;scroll-snap-align:start"><img src="img/app/meekijken.webp" width="540" height="960" alt="PidLane-scherm: Je monteur kijkt live mee" loading="lazy" style="width:100%;height:auto;border-radius:18px;display:block"></figure><figure style="flex:0 0 clamp(200px,24vw,270px);margin:0;scroll-snap-align:start"><img src="img/app/foutcodes.webp" width="540" height="960" alt="PidLane-scherm: Lampje aan? Weet het in 30 seconden" loading="lazy" style="width:100%;height:auto;border-radius:18px;display:block"></figure><figure style="flex:0 0 clamp(200px,24vw,270px);margin:0;scroll-snap-align:start"><img src="img/app/standen.webp" width="540" height="960" alt="PidLane-scherm: Kies je stand: Eco, Sport of Cruise" loading="lazy" style="width:100%;height:auto;border-radius:18px;display:block"></figure><figure style="flex:0 0 clamp(200px,24vw,270px);margin:0;scroll-snap-align:start"><img src="img/app/slim.webp" width="540" height="960" alt="PidLane-scherm: Alleen wat er nu toe doet" loading="lazy" style="width:100%;height:auto;border-radius:18px;display:block"></figure><figure style="flex:0 0 clamp(200px,24vw,270px);margin:0;scroll-snap-align:start"><img src="img/app/grafiek.webp" width="540" height="960" alt="PidLane-scherm: Zie het verloop, niet één moment" loading="lazy" style="width:100%;height:auto;border-radius:18px;display:block"></figure><figure style="flex:0 0 clamp(200px,24vw,270px);margin:0;scroll-snap-align:start"><img src="img/app/accu.webp" width="540" height="960" alt="PidLane-scherm: Weet hoe je accu ervoor staat" loading="lazy" style="width:100%;height:auto;border-radius:18px;display:block"></figure><figure style="flex:0 0 clamp(200px,24vw,270px);margin:0;scroll-snap-align:start"><img src="img/app/ik-wil.webp" width="540" height="960" alt="PidLane-scherm: Kopen, verkopen of op reis: één tik" loading="lazy" style="width:100%;height:auto;border-radius:18px;display:block"></figure></div>
+    <p class="rv" style="margin-top:14px;opacity:.7;font-size:14px">Opgenomen in de demomodus: een gesimuleerde Mazda CX-5. Probeer hem zelf op <a href="https://app.pidlane.nl" target="_blank" rel="noopener">app.pidlane.nl</a>, zonder adapter.</p>
+  </div>
+</section>
+
 <!-- ═════ Start + vragen ═════ -->
 <section class="sec paper" id="zo-begin-je">
   <div class="wrap">
@@ -359,14 +369,14 @@
     <h2 class="d2 rv" style="margin:34px 0 clamp(40px,5vw,64px)">Drie stappen. <i>Vandaag nog.</i></h2>
     <div class="start">
       <div class="rv"><span class="mono"><span>01</span><span>± 1 min</span></span><h3>Installeer de app</h3><p>Via <a href="https://play.google.com/store/apps/details?id=nl.pidlane.app" target="_blank" rel="noopener">Google Play</a>, of open <a href="https://app.pidlane.nl">app.pidlane.nl</a> in Chrome. Geen adapter? Kies <b>Simuleer verbinding</b>.</p></div>
-      <div class="rv"><span class="mono"><span>02</span><span>± 1 min</span></span><h3>Adapter in de poort</h3><p>Een OBD2-adapter met Bluetooth Classic (ELM327 of STN). De poort zit meestal onder het stuur. Contact aan, koppelen, klaar.</p></div>
+      <div class="rv"><span class="mono"><span>02</span><span>± 1 min</span></span><h3>Adapter in de poort</h3><p>Een Bluetooth OBD2-adapter (ELM327, STN of BLE; geen WiFi). De poort zit meestal onder het stuur. Contact aan, koppelen, klaar.</p></div>
       <div class="rv"><span class="mono"><span>03</span><span>± 2–4 min</span></span><h3>Rijden of laten zoeken</h3><p>Zet Hyperlane aan, laat PidLane zoeken naar de oorzaak, of tik op <b>Laat iemand meekijken</b>.</p></div>
     </div>
 
     <div class="twee" style="margin-top:clamp(80px,10vw,130px)" id="vragen">
       <div><p class="kick rv"><b>Vragen</b></p><h2 class="d2 rv" style="margin-top:34px">Goede <i>vragen.</i></h2></div>
       <div class="faq rv">
-        <details><summary>Welke adapter heb ik nodig?</summary><p>Een OBD2-adapter met Bluetooth Classic (ELM327 of STN, bijvoorbeeld OBDLink MX+ of Vgate vLinker MC+). Adapters die alleen Bluetooth Low Energy kennen werken niet. Aan een laptop kan het ook via USB, in Chrome.</p></details>
+        <details><summary>Welke adapter heb ik nodig?</summary><p>Een OBD2-adapter met Bluetooth: Bluetooth Classic (ELM327 of STN, bijvoorbeeld OBDLink MX+ of Vgate vLinker MC+) of Bluetooth Low Energy (bijvoorbeeld Vgate iCar Pro, Veepeak BLE of LELink). Een WiFi-adapter werkt niet. Aan een laptop kan het ook via USB, in Chrome.</p></details>
         <details><summary>Werkt het met mijn auto?</summary><p>Vrijwel elke benzineauto vanaf 2001 en diesel vanaf 2004 in Europa heeft een OBD2-poort. Welke sensoren je te zien krijgt verschilt per auto; PidLane laat alleen zien wat jouw auto echt levert.</p></details>
         <details><summary>Ziet Hyperlane er op elke telefoon zo uit?</summary><p>Op elke Android-telefoon met WebGL, en dat zijn ze vrijwel allemaal. Zonder WebGL krijg je een rustiger verloop in dezelfde kleuren. Wie in de instellingen van de telefoon minder beweging kiest, krijgt een stilstaand beeld.</p></details>
         <details><summary>Leest hij de bandenspanning van elke auto?</summary><p>Nee. Alleen van auto's die die via OBD doorgeven, zoals Mazda. De winterkaart met banden- en sproeieradvies werkt op elke auto, want die rust op je profiel en de verwachting.</p></details>
